@@ -20,10 +20,11 @@ FRIENDS_TEAMS = {
 }
 
 TEAM_INFO = {
-    "France":    {"flag": "🇫🇷", "color": "#002395", "secondary": "#ED2939",  "abbreviation": "FRA"},
-    "Portugal":  {"flag": "🇵🇹", "color": "#006600", "secondary": "#FF0000",  "abbreviation": "POR"},
-    "Spain":     {"flag": "🇪🇸", "color": "#c60b1e", "secondary": "#ffc400",  "abbreviation": "ESP"},
-    "Argentina": {"flag": "🇦🇷", "color": "#74ACDF", "secondary": "#FFFFFF",  "abbreviation": "ARG"},
+    # Colors: official 2024-26 home kit colours
+    "France":    {"flag": "🇫🇷", "color": "#002395", "secondary": "#EF3340",  "abbreviation": "FRA"},  # FFF deep navy / tricolore red
+    "Portugal":  {"flag": "🇵🇹", "color": "#DA291C", "secondary": "#006A35",  "abbreviation": "POR"},  # Nike challenge red / FPF green
+    "Spain":     {"flag": "🇪🇸", "color": "#C8102E", "secondary": "#F4C300",  "abbreviation": "ESP"},  # RFEF red / Adidas gold
+    "Argentina": {"flag": "🇦🇷", "color": "#74ACDF", "secondary": "#FFFFFF",  "abbreviation": "ARG"},  # AFA sky blue / white
 }
 
 # Pre-tournament strength ratings (FIFA-ranking-based, scale 0-100)

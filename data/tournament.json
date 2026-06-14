@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-14T02:57:42.282696+00:00",
+  "last_updated": "2026-06-14T03:04:21.584993+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -11,17 +11,17 @@
     "Aaditya": {
       "team": "Portugal",
       "flag": "\ud83c\uddf5\ud83c\uddf9",
-      "color": "#006600"
+      "color": "#DA291C"
     },
     "Varun": {
       "team": "Portugal",
       "flag": "\ud83c\uddf5\ud83c\uddf9",
-      "color": "#006600"
+      "color": "#DA291C"
     },
     "Mishika": {
       "team": "Spain",
       "flag": "\ud83c\uddea\ud83c\uddf8",
-      "color": "#c60b1e"
+      "color": "#C8102E"
     },
     "Saumya": {
       "team": "Argentina",
@@ -43,7 +43,7 @@
     "France": {
       "flag": "\ud83c\uddeb\ud83c\uddf7",
       "color": "#002395",
-      "secondary": "#ED2939",
+      "secondary": "#EF3340",
       "abbreviation": "FRA",
       "group": "Group I",
       "played": 0,
@@ -57,15 +57,15 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 9.8,
-      "final_probability": 16.6,
-      "semis_probability": 26.6,
-      "quarters_probability": 42.1
+      "win_probability": 10.1,
+      "final_probability": 16.7,
+      "semis_probability": 27.0,
+      "quarters_probability": 41.1
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
-      "color": "#006600",
-      "secondary": "#FF0000",
+      "color": "#DA291C",
+      "secondary": "#006A35",
       "abbreviation": "POR",
       "group": "Group K",
       "played": 0,
@@ -79,15 +79,15 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 5.6,
-      "final_probability": 10.3,
-      "semis_probability": 18.5,
-      "quarters_probability": 33.1
+      "win_probability": 4.8,
+      "final_probability": 9.3,
+      "semis_probability": 17.0,
+      "quarters_probability": 31.1
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
-      "color": "#c60b1e",
-      "secondary": "#ffc400",
+      "color": "#C8102E",
+      "secondary": "#F4C300",
       "abbreviation": "ESP",
       "group": "Group H",
       "played": 0,
@@ -101,10 +101,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 7.3,
-      "final_probability": 13.6,
-      "semis_probability": 23.2,
-      "quarters_probability": 37.7
+      "win_probability": 7.6,
+      "final_probability": 13.2,
+      "semis_probability": 22.2,
+      "quarters_probability": 37.1
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -123,10 +123,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 14.5,
-      "final_probability": 21.7,
-      "semis_probability": 32.2,
-      "quarters_probability": 47.4
+      "win_probability": 13.6,
+      "final_probability": 20.6,
+      "semis_probability": 31.0,
+      "quarters_probability": 46.6
     }
   },
   "recent_matches": [
@@ -182,6 +182,15 @@
       "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-13",
+      "status": "FINISHED"
+    },
+    {
+      "home": "Haiti",
+      "away": "Scotland",
+      "home_score": 0,
+      "away_score": 1,
+      "stage": "Group Stage",
+      "date": "2026-06-14",
       "status": "FINISHED"
     }
   ],

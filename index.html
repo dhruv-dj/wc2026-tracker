@@ -833,17 +833,18 @@ function renderUpcoming(data) {
   const tracked = new Set(Object.keys(data.teams));
   const fm = friendsForTeam(data.friends);
 
-  const now = new Date();
-  const todayStr    = now.toISOString().slice(0, 10);
-  const tmrw        = new Date(now); tmrw.setDate(tmrw.getDate() + 1);
-  const tomorrowStr = tmrw.toISOString().slice(0, 10);
+  // All dates relative to Central Time (America/Chicago)
+  const CT = "America/Chicago";
+  const todayStr    = new Date().toLocaleDateString("en-CA", { timeZone: CT });
+  const tmrwDate    = new Date(); tmrwDate.setDate(tmrwDate.getDate() + 1);
+  const tomorrowStr = tmrwDate.toLocaleDateString("en-CA", { timeZone: CT });
 
   function fmtDate(d) {
     if (d === todayStr) return `<span class="today-pill">Today</span>`;
     if (d === tomorrowStr) return "Tomorrow";
-    const [, mm, dd] = d.split("-");
-    const label = new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
-    return label;
+    return new Date(d + "T12:00:00").toLocaleDateString("en-GB", {
+      timeZone: CT, weekday: "short", day: "numeric", month: "short"
+    });
   }
 
   const html = upcoming.map(m => {

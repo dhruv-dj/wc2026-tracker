@@ -532,11 +532,12 @@ def main():
             matches = parse_fdo_matches(fdo_matches) if fdo_matches else []
             print(f"✅ football-data.org: {len(groups)} groups, {len(matches)} matches")
 
-    # Last resort: demo data
+    # If no live source is reachable, preserve the existing JSON rather than
+    # overwriting it with incorrect placeholder data. Stale data is always
+    # preferable to made-up data.
     if not groups:
-        print("⚠️  No live API available — using placeholder data")
-        groups  = DEMO_GROUPS
-        matches = DEMO_MATCHES
+        print("⚠️  No live API available — preserving existing data/tournament.json unchanged.")
+        return
 
     all_teams     = [t["team"] for gt in groups.values() for t in gt]
     adj_ratings   = adjust_ratings(BASE_STRENGTH, groups)

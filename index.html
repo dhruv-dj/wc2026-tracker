@@ -38,6 +38,44 @@
         radial-gradient(ellipse at 85% 40%, rgba(60,172,59,0.04) 0%, transparent 45%);
     }
 
+    /* ── Tab nav ─────────────────────────────────────────────────────── */
+    .tab-nav {
+      background: #000000;
+      display: flex;
+      align-items: stretch;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.85rem 1rem;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      color: var(--gold-lt);
+    }
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px 2px 0 0;
+    }
+
     /* ── Header ──────────────────────────────────────────────────────── */
     .header {
       background: #000000;
@@ -504,13 +542,477 @@
       background: var(--card-hi);
     }
 
+    /* ══════════════════════════════════════════════════════════════════ */
+    /* ── BRACKET PAGE STYLES ─────────────────────────────────────────── */
+    /* ══════════════════════════════════════════════════════════════════ */
+
+    /* ── Bracket header ──────────────────────────────────────────────── */
+    .b-header {
+      background: #000;
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .b-header::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 240px;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .b-header h2 {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--gold-lt) 0%, var(--gold) 50%, var(--gold-lt) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .b-deadline {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .b-deadline strong { color: var(--gold-lt); }
+    .b-countdown {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.3rem 0.9rem;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    /* ── Token notice ────────────────────────────────────────────────── */
+    .b-token-notice {
+      margin: 1rem 1.5rem;
+      padding: 0.9rem 1.2rem;
+      background: rgba(201,168,76,0.04);
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .b-token-notice span { flex: 1; font-size: 0.83rem; color: #aaaabc; min-width: 200px; }
+    .b-token-notice span strong { color: var(--gold-lt); }
+
+    /* ── Auth section ────────────────────────────────────────────────── */
+    .b-auth {
+      margin: 1rem 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .b-auth-title {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .b-auth-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+    .b-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .b-field label {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .b-select, .b-input {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+      transition: border-color 0.2s;
+    }
+    .b-select:focus, .b-input:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .b-select { min-width: 140px; cursor: pointer; }
+    .b-input { width: 110px; letter-spacing: 0.15em; }
+    .b-input[type="password"] { width: 110px; }
+
+    /* ── Buttons ─────────────────────────────────────────────────────── */
+    .btn {
+      background: var(--gold);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--gold-lt); }
+    .btn:active { transform: scale(0.97); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      color: var(--gold);
+    }
+    .btn-outline:hover { background: rgba(201,168,76,0.08); }
+    .btn-danger {
+      background: var(--canada);
+      color: #fff;
+    }
+    .btn-danger:hover { background: #ff2222; }
+
+    /* ── User bar ────────────────────────────────────────────────────── */
+    .b-userbar {
+      margin: 1rem 1.5rem;
+      padding: 0.9rem 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .b-userbar-info {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .b-userbar-info span { color: var(--gold-lt); }
+    .b-status-badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 3px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 0.5rem;
+    }
+    .b-status-editing { background: rgba(60,172,59,0.2); color: var(--mexico); border: 1px solid rgba(60,172,59,0.3); }
+    .b-status-locked  { background: rgba(230,29,37,0.15); color: #ff6060; border: 1px solid rgba(230,29,37,0.25); }
+
+    /* ── Bracket columns container ───────────────────────────────────── */
+    .b-bracket-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 1.5rem 1.5rem;
+    }
+    .b-bracket-cols {
+      display: flex;
+      gap: 1rem;
+      min-width: max-content;
+      align-items: flex-start;
+      padding-top: 0.5rem;
+    }
+    .b-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      min-width: 180px;
+    }
+    .b-col-header {
+      font-size: 0.62rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border-gold);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .b-col-header::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 12px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, var(--usa) 0%, var(--canada) 50%, var(--mexico) 100%);
+      flex-shrink: 0;
+    }
+
+    /* ── Match card ──────────────────────────────────────────────────── */
+    .b-match {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .b-match:hover { border-color: var(--border-gold); }
+    /* Tracked team left border */
+    .b-match.b-match-tracked {
+      border-left: 3px solid;
+    }
+    .b-divider {
+      height: 1px;
+      background: var(--border);
+    }
+    .b-team {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.7rem;
+      cursor: pointer;
+      transition: background 0.15s;
+      position: relative;
+      min-height: 2.5rem;
+    }
+    .b-team:hover:not(.b-tbd):not(.b-locked) {
+      background: var(--card-hi);
+    }
+    .b-team.b-picked {
+      background: rgba(201,168,76,0.08);
+    }
+    .b-team.b-tbd {
+      cursor: default;
+      opacity: 0.45;
+    }
+    .b-team.b-locked {
+      cursor: not-allowed;
+    }
+    .b-flag { font-size: 1rem; line-height: 1; flex-shrink: 0; }
+    .b-name {
+      flex: 1;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+    .b-check {
+      font-size: 0.7rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      font-weight: 900;
+    }
+
+    /* ── Champion display ────────────────────────────────────────────── */
+    .b-champion {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      min-width: 160px;
+    }
+    .b-champion-label {
+      font-size: 0.58rem;
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .b-champion-trophy { font-size: 2rem; display: block; margin-bottom: 0.35rem; }
+    .b-champion-name {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--gold-lt);
+    }
+    .b-champion-tbd {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── Save / Lock buttons bar ─────────────────────────────────────── */
+    .b-actions {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0 1.5rem 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .b-save-status {
+      font-size: 0.75rem;
+      color: var(--muted);
+      flex: 1;
+    }
+    .b-save-status.success { color: var(--mexico); }
+    .b-save-status.error { color: var(--canada); }
+
+    /* ── All brackets overview ───────────────────────────────────────── */
+    .b-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.85rem;
+    }
+    .b-overview-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .b-overview-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .b-overview-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: rgba(201,168,76,0.03);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .b-overview-name {
+      flex: 1;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .b-overview-champ {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold-lt);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .b-overview-expand {
+      font-size: 0.7rem;
+      color: var(--muted);
+      transition: transform 0.2s;
+    }
+    .b-overview-expand.open { transform: rotate(180deg); }
+    .b-overview-body {
+      padding: 0.85rem 1rem;
+      display: none;
+    }
+    .b-overview-body.open { display: block; }
+    .b-overview-final {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .b-overview-final strong { color: var(--text); }
+    /* Inline mini bracket in overview */
+    .b-mini-rounds { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+    .b-mini-col { display: flex; flex-direction: column; gap: 0.25rem; min-width: 110px; }
+    .b-mini-col-hdr {
+      font-size: 0.55rem;
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: center;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid var(--border-gold);
+      margin-bottom: 0.1rem;
+    }
+    .b-mini-team {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .b-mini-team.b-mini-tbd { color: var(--muted); font-style: italic; }
+
+    /* ── Token modal overlay ─────────────────────────────────────────── */
+    .b-modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(5,5,11,0.85);
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .b-modal {
+      background: var(--card);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 1.75rem;
+      max-width: 440px;
+      width: 100%;
+    }
+    .b-modal h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--gold-lt);
+      margin-bottom: 0.75rem;
+    }
+    .b-modal p {
+      font-size: 0.82rem;
+      color: #888899;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .b-modal p strong { color: var(--text); }
+    .b-modal-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: monospace;
+      font-size: 0.85rem;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .b-modal-input:focus { outline: none; border-color: var(--gold); }
+    .b-modal-actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
+
     @media (max-width: 480px) {
       .lb-item { flex-wrap: wrap; }
       .lb-probs { text-align: left; width: 100%; padding-left: 4.2rem; }
+      .b-auth-row { flex-direction: column; align-items: flex-start; }
+      .b-input { width: 100%; }
+      .b-select { width: 100%; }
     }
   </style>
 </head>
 <body>
+
+<!-- ── Tab navigation ───────────────────────────────────────────────────── -->
+<nav class="tab-nav">
+  <button class="tab-btn active" id="tab-tracker" onclick="switchTab('tracker')">⚽ Tracker</button>
+  <button class="tab-btn" id="tab-bracket" onclick="switchTab('bracket')">🏆 Bracket</button>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- TRACKER PAGE                                                          -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div id="tracker-page">
 
 <!-- ── Header ──────────────────────────────────────────────────────────── -->
 <header class="header">
@@ -610,6 +1112,104 @@
   <p style="margin-top:0.4rem">FIFA World Cup 2026 &mdash; built for the group chat</p>
 </footer>
 
+</div><!-- #tracker-page -->
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- BRACKET PAGE                                                          -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div id="bracket-page" style="display:none">
+
+  <!-- Header -->
+  <div class="b-header">
+    <h2>🏆 Knockout Bracket Challenge</h2>
+    <div class="b-deadline">Lock deadline: <strong>26 Jun 2026, 00:00 UTC</strong></div>
+    <div class="b-countdown" id="b-countdown">Loading countdown…</div>
+  </div>
+
+  <!-- GitHub token notice -->
+  <div class="b-token-notice" id="b-token-notice">
+    <span>⚠️ <strong>GitHub token not set.</strong> You need a token to save your bracket. Picks are stored in the shared repo so everyone can see each other's brackets.</span>
+    <button class="btn" onclick="openTokenModal()">Set token</button>
+  </div>
+
+  <!-- Auth section -->
+  <div class="b-auth" id="b-auth-section">
+    <div class="b-auth-title">🔐 Login to edit your bracket</div>
+    <div class="b-auth-row">
+      <div class="b-field">
+        <label>Your name</label>
+        <select class="b-select" id="b-name-select">
+          <option value="">-- Select --</option>
+          <option>Dhruv</option>
+          <option>Aaditya</option>
+          <option>Varun</option>
+          <option>Mishika</option>
+          <option>Saumya</option>
+          <option>Rohith</option>
+          <option>Sharanya</option>
+        </select>
+      </div>
+      <div class="b-field">
+        <label>PIN</label>
+        <input class="b-input" type="password" id="b-pin-input" maxlength="8" placeholder="••••" />
+      </div>
+      <button class="btn" onclick="bLogin()" style="align-self:flex-end">Unlock</button>
+    </div>
+    <div id="b-auth-error" style="margin-top:0.6rem;font-size:0.78rem;color:var(--canada);display:none">
+      ❌ Incorrect name or PIN. Try again.
+    </div>
+  </div>
+
+  <!-- User bar (shown when logged in) -->
+  <div class="b-userbar" id="b-userbar" style="display:none">
+    <div class="b-userbar-info">
+      👤 <span id="b-logged-name">—</span>
+      <span class="b-status-badge b-status-editing" id="b-lock-badge">✏️ Editing</span>
+    </div>
+    <button class="btn btn-outline" onclick="bLogout()">Switch user</button>
+  </div>
+
+  <!-- Bracket fill -->
+  <section class="section" id="b-bracket-section" style="display:none">
+    <h2 class="section-title">🗂️ Fill your bracket</h2>
+    <div class="b-bracket-wrap">
+      <div class="b-bracket-cols" id="b-bracket-cols">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Save / Lock actions -->
+    <div class="b-actions" id="b-actions">
+      <button class="btn btn-outline" onclick="bSaveDraft()">💾 Save Draft</button>
+      <button class="btn" onclick="bLockBracket()">🔒 Lock My Bracket</button>
+      <span class="b-save-status" id="b-save-status"></span>
+    </div>
+  </section>
+
+  <!-- All brackets overview -->
+  <section class="section">
+    <h2 class="section-title">📋 All Brackets</h2>
+    <div class="b-overview-grid" id="b-overview-grid">
+      <p style="color:var(--muted);font-size:0.85rem">Loading brackets…</p>
+    </div>
+  </section>
+
+</div><!-- #bracket-page -->
+
+<!-- ── GitHub Token Modal ─────────────────────────────────────────────── -->
+<div class="b-modal-overlay" id="b-token-modal" style="display:none" onclick="closeTokenModalIfBg(event)">
+  <div class="b-modal">
+    <h3>🔑 Set GitHub Token</h3>
+    <p>Create a <strong>fine-grained GitHub PAT</strong> with <strong>Read &amp; Write access to Contents</strong> of <strong>dhruv-dj/wc2026-tracker</strong>. Share it with all friends via the group chat.</p>
+    <p>The token is saved only in <em>your browser's</em> localStorage — never sent anywhere except directly to GitHub's API.</p>
+    <input class="b-modal-input" type="password" id="b-token-input" placeholder="github_pat_…" autocomplete="off" />
+    <div class="b-modal-actions">
+      <button class="btn btn-outline" onclick="closeTokenModal()">Cancel</button>
+      <button class="btn" onclick="saveToken()">Save token</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ── Config ────────────────────────────────────────────────────────────────
 const FRIENDS = {
@@ -621,6 +1221,22 @@ const FRIENDS = {
   Rohith:   { team: "Argentina", color: "#74ACDF" },
   Sharanya: { team: "Argentina", color: "#74ACDF" },
 };
+
+// Change these PINs before sharing — tell each friend their PIN privately
+const FRIEND_PINS = {
+  Dhruv:    "1111",
+  Aaditya:  "2222",
+  Varun:    "3333",
+  Mishika:  "4444",
+  Saumya:   "5555",
+  Rohith:   "6666",
+  Sharanya: "7777",
+};
+
+const BRACKET_REPO = "dhruv-dj/wc2026-tracker";
+
+// Token stored in localStorage, never in source code
+function getGHToken() { return localStorage.getItem('wc2026_gh_token') || ''; }
 
 // Map team → friends backing it
 function friendsForTeam(friends) {
@@ -973,12 +1589,15 @@ function renderGroups(data) {
   $("groups-grid").innerHTML = html;
 }
 
-// ── Main load ─────────────────────────────────────────────────────────────
+// ── Main load (tracker only) ──────────────────────────────────────────────
+let trackerData = null;
+
 async function load() {
   try {
     const resp = await fetch(`data/tournament.json?v=${Date.now()}`);
     if (!resp.ok) throw new Error(resp.statusText);
     const data = await resp.json();
+    trackerData = data;
 
     // Header
     $("stage-badge").textContent = data.tournament_stage ?? "Group Stage";
@@ -1004,6 +1623,618 @@ async function load() {
 load();
 // Auto-refresh every 10 minutes if tab is visible
 setInterval(() => { if (!document.hidden) load(); }, 10 * 60 * 1000);
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// TAB SWITCHING
+// ══════════════════════════════════════════════════════════════════════════
+let bracketLoaded = false;
+
+function switchTab(tab) {
+  const isTracker = tab === 'tracker';
+  $("tracker-page").style.display = isTracker ? "" : "none";
+  $("bracket-page").style.display = isTracker ? "none" : "";
+  $("tab-tracker").classList.toggle("active", isTracker);
+  $("tab-bracket").classList.toggle("active", !isTracker);
+
+  if (!isTracker && !bracketLoaded) {
+    bracketLoaded = true;
+    initBracketPage();
+  }
+}
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — STATE
+// ══════════════════════════════════════════════════════════════════════════
+
+let bracketMeta = null;      // full brackets.json parsed
+let currentUser = null;      // logged-in friend name
+let userPicks = null;        // { r32:[16], r16:[8], qf:[4], sf:[2], final:null, locked:false }
+let allTeams = {};           // name → { flag, color } built from trackerData
+let trackedTeams = new Set();// teams that friends are rooting for
+
+// Build team lookup from trackerData (or fall back to empty)
+function buildTeamLookup() {
+  allTeams = {};
+  trackedTeams = new Set();
+  if (!trackerData) return;
+  for (const [name, td] of Object.entries(trackerData.teams || {})) {
+    allTeams[name] = { flag: td.flag || "", color: td.color || "" };
+    trackedTeams.add(name);
+  }
+  // Also include all_groups teams (no flag/color, but at least trackable)
+  for (const teams of Object.values(trackerData.all_groups || {})) {
+    for (const t of teams) {
+      if (!allTeams[t.team]) allTeams[t.team] = { flag: "", color: "" };
+    }
+  }
+}
+
+function teamFlag(name) {
+  return allTeams[name]?.flag ?? "";
+}
+
+function teamColor(name) {
+  return allTeams[name]?.color ?? "";
+}
+
+function isDeadlinePassed() {
+  if (!bracketMeta) return false;
+  return new Date() >= new Date(bracketMeta.lock_deadline);
+}
+
+function emptyPicks() {
+  return {
+    r32:    Array(16).fill(null),
+    r16:    Array(8).fill(null),
+    qf:     Array(4).fill(null),
+    sf:     Array(2).fill(null),
+    final:  null,
+    locked: false,
+  };
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — GITHUB API
+// ══════════════════════════════════════════════════════════════════════════
+
+async function loadBracketsFromGH() {
+  const token = getGHToken();
+  const url = `https://api.github.com/repos/${BRACKET_REPO}/contents/data/brackets.json`;
+  const headers = { Accept: "application/vnd.github.v3+json" };
+  if (token) headers["Authorization"] = `token ${token}`;
+
+  const resp = await fetch(url, { headers });
+  if (!resp.ok) throw new Error(`GitHub API ${resp.status}: ${resp.statusText}`);
+  const json = await resp.json();
+  const decoded = JSON.parse(atob(json.content.replace(/\n/g, "")));
+  decoded._sha = json.sha; // stash SHA for later PUT
+  return decoded;
+}
+
+async function saveBracketsToGH(bracketDataObj) {
+  const token = getGHToken();
+  if (!token) throw new Error("No GitHub token set");
+
+  const url = `https://api.github.com/repos/${BRACKET_REPO}/contents/data/brackets.json`;
+  const headers = {
+    Accept: "application/vnd.github.v3+json",
+    Authorization: `token ${token}`,
+    "Content-Type": "application/json",
+  };
+
+  // GET current SHA
+  let sha = bracketDataObj._sha;
+  if (!sha) {
+    const getResp = await fetch(url, { headers });
+    if (!getResp.ok) throw new Error(`GET failed: ${getResp.status}`);
+    const getJson = await getResp.json();
+    sha = getJson.sha;
+  }
+
+  // Strip internal _sha before saving
+  const toSave = Object.assign({}, bracketDataObj);
+  delete toSave._sha;
+  toSave.last_updated = new Date().toISOString();
+
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(toSave, null, 2))));
+
+  const putResp = await fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({
+      message: `Update brackets: ${currentUser || "anonymous"} ${new Date().toISOString()}`,
+      content,
+      sha,
+    }),
+  });
+
+  if (!putResp.ok) {
+    const err = await putResp.json().catch(() => ({}));
+    throw new Error(err.message || `PUT failed: ${putResp.status}`);
+  }
+
+  const putJson = await putResp.json();
+  // update sha for subsequent saves
+  bracketMeta._sha = putJson.content?.sha || sha;
+  bracketMeta.last_updated = toSave.last_updated;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — PAGE INIT
+// ══════════════════════════════════════════════════════════════════════════
+
+async function initBracketPage() {
+  buildTeamLookup();
+  startCountdown();
+  updateTokenNotice();
+
+  try {
+    bracketMeta = await loadBracketsFromGH();
+  } catch (e) {
+    // Fallback to local file
+    try {
+      const r = await fetch(`data/brackets.json?v=${Date.now()}`);
+      bracketMeta = await r.json();
+    } catch (e2) {
+      bracketMeta = { lock_deadline: "2026-06-26T00:00:00Z", r32_matchups: [], brackets: {} };
+    }
+    console.warn("Could not load brackets from GitHub, using local fallback:", e.message);
+  }
+
+  renderOverview();
+}
+
+// ── Countdown ─────────────────────────────────────────────────────────────
+function startCountdown() {
+  function tick() {
+    const deadline = new Date("2026-06-26T00:00:00Z");
+    const now = new Date();
+    const diff = deadline - now;
+    if (diff <= 0) {
+      $("b-countdown").textContent = "🔒 Bracket locked";
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    $("b-countdown").textContent = `⏱ ${d}d ${h}h ${m}m ${s}s until lock`;
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+// ── Token notice ──────────────────────────────────────────────────────────
+function updateTokenNotice() {
+  $("b-token-notice").style.display = getGHToken() ? "none" : "";
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — AUTH
+// ══════════════════════════════════════════════════════════════════════════
+
+function bLogin() {
+  const name = $("b-name-select").value.trim();
+  const pin  = $("b-pin-input").value.trim();
+  const err  = $("b-auth-error");
+
+  if (!name || !FRIEND_PINS[name] || FRIEND_PINS[name] !== pin) {
+    err.style.display = "";
+    return;
+  }
+  err.style.display = "none";
+  currentUser = name;
+  showLoggedInUI();
+}
+
+function bLogout() {
+  currentUser = null;
+  userPicks = null;
+  $("b-auth-section").style.display = "";
+  $("b-userbar").style.display = "none";
+  $("b-bracket-section").style.display = "none";
+  $("b-pin-input").value = "";
+  $("b-name-select").value = "";
+}
+
+function showLoggedInUI() {
+  $("b-auth-section").style.display = "none";
+  $("b-userbar").style.display = "";
+  $("b-logged-name").textContent = currentUser;
+
+  // Load existing picks
+  const existing = bracketMeta?.brackets?.[currentUser];
+  userPicks = existing
+    ? JSON.parse(JSON.stringify(existing)) // deep clone
+    : emptyPicks();
+
+  // Ensure arrays are correct length
+  if (!userPicks.r32)   userPicks.r32   = Array(16).fill(null);
+  if (!userPicks.r16)   userPicks.r16   = Array(8).fill(null);
+  if (!userPicks.qf)    userPicks.qf    = Array(4).fill(null);
+  if (!userPicks.sf)    userPicks.sf    = Array(2).fill(null);
+  if (userPicks.final === undefined) userPicks.final = null;
+  if (userPicks.locked === undefined) userPicks.locked = false;
+
+  const locked = userPicks.locked || isDeadlinePassed();
+  const badge = $("b-lock-badge");
+  badge.textContent = locked ? "🔒 Locked" : "✏️ Editing";
+  badge.className = "b-status-badge " + (locked ? "b-status-locked" : "b-status-editing");
+
+  $("b-bracket-section").style.display = "";
+  $("b-actions").style.display = locked ? "none" : "";
+
+  renderBracket();
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — PICKS CASCADE LOGIC
+// ══════════════════════════════════════════════════════════════════════════
+
+// rounds: r32(16) → r16(8) → qf(4) → sf(2) → final(1)
+// Match i in round N feeds position floor(i/2) in round N+1
+
+function pickTeam(round, matchIdx, teamName) {
+  if (!userPicks) return;
+  if (userPicks.locked || isDeadlinePassed()) return;
+
+  const rounds = ["r32", "r16", "qf", "sf", "final"];
+  const roundSizes = { r32: 16, r16: 8, qf: 4, sf: 2, final: 1 };
+
+  function getArr(r) {
+    if (r === "final") return [userPicks.final];
+    return userPicks[r];
+  }
+  function setVal(r, idx, val) {
+    if (r === "final") { userPicks.final = val; return; }
+    userPicks[r][idx] = val;
+  }
+  function getVal(r, idx) {
+    if (r === "final") return userPicks.final;
+    return userPicks[r][idx];
+  }
+
+  const currentPick = round === "final" ? userPicks.final : userPicks[round][matchIdx];
+
+  // If clicking already-picked team, deselect it
+  if (currentPick === teamName) {
+    cascadeClear(round, matchIdx);
+    renderBracket();
+    return;
+  }
+
+  // Clear cascade from old pick
+  if (currentPick) cascadeClear(round, matchIdx);
+
+  // Set new pick
+  setVal(round, matchIdx, teamName);
+
+  renderBracket();
+}
+
+function cascadeClear(round, matchIdx) {
+  // Clear this slot and propagate up through subsequent rounds
+  const roundSeq = ["r32", "r16", "qf", "sf", "final"];
+  const ri = roundSeq.indexOf(round);
+  if (ri === -1) return;
+
+  let oldName = round === "final" ? userPicks.final : userPicks[round][matchIdx];
+  if (round === "final") {
+    userPicks.final = null;
+    return;
+  }
+  userPicks[round][matchIdx] = null;
+
+  // Walk up
+  let curIdx = matchIdx;
+  for (let i = ri + 1; i < roundSeq.length; i++) {
+    const r = roundSeq[i];
+    const parentIdx = Math.floor(curIdx / 2);
+    const cur = r === "final" ? userPicks.final : userPicks[r][parentIdx];
+    if (cur !== oldName) break; // old pick wasn't advanced here, stop
+    if (r === "final") {
+      userPicks.final = null;
+    } else {
+      userPicks[r][parentIdx] = null;
+    }
+    curIdx = parentIdx;
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — RENDER BRACKET
+// ══════════════════════════════════════════════════════════════════════════
+
+function renderBracket() {
+  if (!userPicks || !bracketMeta) return;
+
+  const matchups = bracketMeta.r32_matchups || [];
+  const locked = userPicks.locked || isDeadlinePassed();
+
+  const cols = [
+    { id: "r32",   label: "Round of 32",   count: 16 },
+    { id: "r16",   label: "Round of 16",   count: 8 },
+    { id: "qf",    label: "Quarter-finals", count: 4 },
+    { id: "sf",    label: "Semi-finals",    count: 2 },
+    { id: "final", label: "Final",          count: 1 },
+  ];
+
+  let html = "";
+  for (const col of cols) {
+    html += `<div class="b-col">`;
+    html += `<div class="b-col-header">${col.label}</div>`;
+
+    if (col.id === "final") {
+      // Final match card
+      const sfPick0 = userPicks.sf[0];
+      const sfPick1 = userPicks.sf[1];
+      html += renderMatchCard("final", 0, sfPick0, sfPick1, null, locked, matchups);
+      // Champion
+      html += renderChampion();
+    } else {
+      for (let i = 0; i < col.count; i++) {
+        let team1, team2;
+
+        if (col.id === "r32") {
+          team1 = matchups[i]?.hint1 ?? "?";
+          team2 = matchups[i]?.hint2 ?? "?";
+          // For r32 we show hints as placeholder names — treat them as TBD (unclickable)
+          // but if we have actual team data matching these names, show them
+          html += renderR32Card(i, team1, team2, locked);
+        } else {
+          const prevRound = cols[cols.findIndex(c => c.id === col.id) - 1].id;
+          const p0Idx = i * 2;
+          const p1Idx = i * 2 + 1;
+          const prevPicks = userPicks[prevRound];
+          team1 = prevPicks[p0Idx] || null;
+          team2 = prevPicks[p1Idx] || null;
+          html += renderMatchCard(col.id, i, team1, team2, userPicks[col.id][i], locked, matchups);
+        }
+      }
+    }
+
+    html += `</div>`;
+  }
+
+  $("b-bracket-cols").innerHTML = html;
+}
+
+function renderR32Card(i, hint1, hint2, locked) {
+  // For R32, r32_matchups give hints (group positions), not real team names.
+  // Picks store actual team name if user has picked, else null → show hint as TBD label.
+  const pick = userPicks.r32[i];
+  const team1Picked = pick === hint1;
+  const team2Picked = pick === hint2;
+
+  // Tracked color for match card border
+  const trackedColor = (trackedTeams.has(hint1) ? teamColor(hint1) : null)
+    || (trackedTeams.has(hint2) ? teamColor(hint2) : null);
+
+  const matchClass = trackedColor ? `b-match b-match-tracked` : `b-match`;
+  const trackStyle = trackedColor ? `border-left-color:${trackedColor}` : "";
+
+  // R32 slots: hint1 and hint2 are group-position placeholders.
+  // We treat them as TBD (non-clickable for now).
+  // A separate UI for picking actual teams from groups could be added later.
+  // For now, clicking picks the hint string as the winner (placeholder).
+
+  function teamRow(hint, isPicked, isLocked) {
+    const flag = teamFlag(hint);
+    const cls = isPicked ? "b-team b-picked" : (isLocked ? "b-team b-locked" : "b-team");
+    const check = isPicked ? `<span class="b-check">✓</span>` : "";
+    const onclick = isLocked
+      ? ""
+      : `onclick="pickTeam('r32', ${i}, ${JSON.stringify(hint)})"`;
+    return `<div class="${cls}" ${onclick}>
+      <span class="b-flag">${flag}</span>
+      <span class="b-name">${hint}</span>
+      ${check}
+    </div>`;
+  }
+
+  return `<div class="${matchClass}" style="${trackStyle}">
+    ${teamRow(hint1, team1Picked, locked)}
+    <div class="b-divider"></div>
+    ${teamRow(hint2, team2Picked, locked)}
+  </div>`;
+}
+
+function renderMatchCard(round, matchIdx, team1, team2, currentPick, locked, matchups) {
+  const teams = [team1, team2];
+  const trackedColor = teams.find(t => t && trackedTeams.has(t));
+  const color = trackedColor ? teamColor(trackedColor) : null;
+
+  const matchClass = color ? `b-match b-match-tracked` : `b-match`;
+  const trackStyle = color ? `border-left-color:${color}` : "";
+
+  function teamRow(teamName) {
+    if (!teamName) {
+      // TBD
+      return `<div class="b-team b-tbd">
+        <span class="b-flag">❓</span>
+        <span class="b-name">TBD</span>
+      </div>`;
+    }
+    const isPicked = currentPick === teamName;
+    const flag = teamFlag(teamName);
+    const cls = isPicked ? "b-team b-picked" : (locked ? "b-team b-locked" : "b-team");
+    const check = isPicked ? `<span class="b-check">✓</span>` : "";
+    const onclick = (locked || !teamName)
+      ? ""
+      : `onclick="pickTeam(${JSON.stringify(round)}, ${matchIdx}, ${JSON.stringify(teamName)})"`;
+    return `<div class="${cls}" ${onclick}>
+      <span class="b-flag">${flag}</span>
+      <span class="b-name">${teamName}</span>
+      ${check}
+    </div>`;
+  }
+
+  return `<div class="${matchClass}" style="${trackStyle}">
+    ${teamRow(team1)}
+    <div class="b-divider"></div>
+    ${teamRow(team2)}
+  </div>`;
+}
+
+function renderChampion() {
+  const champ = userPicks.final;
+  const flag  = champ ? teamFlag(champ) : "";
+  return `<div class="b-champion">
+    <div class="b-champion-label">Champion</div>
+    <span class="b-champion-trophy">🏆</span>
+    ${champ
+      ? `<div class="b-champion-name">${flag} ${champ}</div>`
+      : `<div class="b-champion-tbd">Pick a winner…</div>`
+    }
+  </div>`;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — SAVE / LOCK
+// ══════════════════════════════════════════════════════════════════════════
+
+async function bSaveDraft() {
+  await bSave(false);
+}
+
+async function bLockBracket() {
+  if (!confirm("Lock your bracket? You won't be able to change it after locking.")) return;
+  await bSave(true);
+}
+
+async function bSave(shouldLock) {
+  if (!currentUser || !bracketMeta) return;
+  const status = $("b-save-status");
+  status.textContent = "Saving…";
+  status.className = "b-save-status";
+
+  if (shouldLock) userPicks.locked = true;
+
+  // Merge into bracketMeta
+  if (!bracketMeta.brackets) bracketMeta.brackets = {};
+  bracketMeta.brackets[currentUser] = JSON.parse(JSON.stringify(userPicks));
+
+  try {
+    await saveBracketsToGH(bracketMeta);
+    status.textContent = shouldLock ? "🔒 Bracket locked!" : "✅ Draft saved!";
+    status.className = "b-save-status success";
+
+    if (shouldLock) {
+      showLoggedInUI(); // re-render with locked state
+    }
+    renderOverview();
+  } catch (e) {
+    console.error(e);
+    status.textContent = "❌ Save failed: " + e.message;
+    status.className = "b-save-status error";
+    if (shouldLock) userPicks.locked = false; // revert
+  }
+
+  setTimeout(() => { if (status) status.textContent = ""; }, 5000);
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — ALL BRACKETS OVERVIEW
+// ══════════════════════════════════════════════════════════════════════════
+
+function renderOverview() {
+  const grid = $("b-overview-grid");
+  if (!bracketMeta?.brackets || !Object.keys(bracketMeta.brackets).length) {
+    grid.innerHTML = '<p style="color:var(--muted);font-size:0.85rem">No brackets submitted yet. Be the first!</p>';
+    return;
+  }
+
+  const html = Object.entries(bracketMeta.brackets).map(([name, picks]) => {
+    const locked = picks.locked || isDeadlinePassed();
+    const lockIcon = locked ? "🔒" : "✏️";
+    const champ = picks.final;
+    const flag = champ ? teamFlag(champ) : "";
+    const champHtml = champ
+      ? `<span class="b-overview-champ">${flag} ${champ}</span>`
+      : `<span style="color:var(--muted);font-size:0.78rem">No champion picked</span>`;
+
+    // Final match teams
+    const sf = picks.sf || [null, null];
+    const finalTeam1 = sf[0] || "?";
+    const finalTeam2 = sf[1] || "?";
+
+    return `
+    <div class="b-overview-card">
+      <div class="b-overview-head" onclick="toggleOverview(this)">
+        <span style="font-size:1.1rem">👤</span>
+        <span class="b-overview-name">${name} ${lockIcon}</span>
+        ${champHtml}
+        <span class="b-overview-expand">▼</span>
+      </div>
+      <div class="b-overview-body">
+        <div class="b-overview-final">
+          Final: <strong>${teamFlag(finalTeam1)} ${finalTeam1}</strong>
+          vs <strong>${teamFlag(finalTeam2)} ${finalTeam2}</strong>
+        </div>
+        ${renderMiniBracket(picks)}
+      </div>
+    </div>`;
+  }).join("");
+
+  grid.innerHTML = html;
+}
+
+function toggleOverview(headEl) {
+  const body = headEl.nextElementSibling;
+  const arrow = headEl.querySelector(".b-overview-expand");
+  body.classList.toggle("open");
+  arrow.classList.toggle("open");
+}
+
+function renderMiniBracket(picks) {
+  const cols = [
+    { key: "r32",   label: "R32",   arr: picks.r32   || [] },
+    { key: "r16",   label: "R16",   arr: picks.r16   || [] },
+    { key: "qf",    label: "QF",    arr: picks.qf    || [] },
+    { key: "sf",    label: "SF",    arr: picks.sf    || [] },
+    { key: "final", label: "Final", arr: picks.final ? [picks.final] : [null] },
+  ];
+
+  return `<div class="b-mini-rounds">${cols.map(col => `
+    <div class="b-mini-col">
+      <div class="b-mini-col-hdr">${col.label}</div>
+      ${col.arr.map(t => t
+        ? `<div class="b-mini-team">${teamFlag(t)} ${t}</div>`
+        : `<div class="b-mini-team b-mini-tbd">?</div>`
+      ).join("")}
+    </div>`).join("")}
+  </div>`;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// BRACKET — TOKEN MODAL
+// ══════════════════════════════════════════════════════════════════════════
+
+function openTokenModal() {
+  $("b-token-input").value = getGHToken();
+  $("b-token-modal").style.display = "";
+}
+
+function closeTokenModal() {
+  $("b-token-modal").style.display = "none";
+}
+
+function closeTokenModalIfBg(e) {
+  if (e.target === $("b-token-modal")) closeTokenModal();
+}
+
+function saveToken() {
+  const val = $("b-token-input").value.trim();
+  if (val) {
+    localStorage.setItem('wc2026_gh_token', val);
+  } else {
+    localStorage.removeItem('wc2026_gh_token');
+  }
+  closeTokenModal();
+  updateTokenNotice();
+}
 </script>
 </body>
 </html>

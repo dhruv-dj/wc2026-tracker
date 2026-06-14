@@ -1,0 +1,23 @@
+{
+  "last_updated": null,
+  "lock_deadline": "2026-06-26T00:00:00Z",
+  "r32_matchups": [
+    {"hint1": "1st Group A", "hint2": "2nd Group B"},
+    {"hint1": "1st Group C", "hint2": "2nd Group D"},
+    {"hint1": "1st Group E", "hint2": "2nd Group F"},
+    {"hint1": "1st Group G", "hint2": "2nd Group H"},
+    {"hint1": "1st Group I", "hint2": "2nd Group J"},
+    {"hint1": "1st Group K", "hint2": "2nd Group L"},
+    {"hint1": "1st Group B", "hint2": "2nd Group A"},
+    {"hint1": "1st Group D", "hint2": "2nd Group C"},
+    {"hint1": "1st Group F", "hint2": "2nd Group E"},
+    {"hint1": "1st Group H", "hint2": "2nd Group G"},
+    {"hint1": "1st Group J", "hint2": "2nd Group I"},
+    {"hint1": "1st Group L", "hint2": "2nd Group K"},
+    {"hint1": "Best 3rd #1", "hint2": "Best 3rd #2"},
+    {"hint1": "Best 3rd #3", "hint2": "Best 3rd #4"},
+    {"hint1": "Best 3rd #5", "hint2": "Best 3rd #6"},
+    {"hint1": "Best 3rd #7", "hint2": "Best 3rd #8"}
+  ],
+  "brackets": {}
+}

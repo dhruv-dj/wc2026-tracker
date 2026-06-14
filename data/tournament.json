@@ -1,47 +1,47 @@
 {
-  "last_updated": "2026-06-14T15:35:41.870656+00:00",
+  "last_updated": "2026-06-14T18:32:54.067738+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
     "Dhruv": {
       "team": "France",
-      "flag": "🇫🇷",
+      "flag": "\ud83c\uddeb\ud83c\uddf7",
       "color": "#002395"
     },
     "Aaditya": {
       "team": "Portugal",
-      "flag": "🇵🇹",
+      "flag": "\ud83c\uddf5\ud83c\uddf9",
       "color": "#DA291C"
     },
     "Varun": {
       "team": "Portugal",
-      "flag": "🇵🇹",
+      "flag": "\ud83c\uddf5\ud83c\uddf9",
       "color": "#DA291C"
     },
     "Mishika": {
       "team": "Spain",
-      "flag": "🇪🇸",
+      "flag": "\ud83c\uddea\ud83c\uddf8",
       "color": "#C8102E"
     },
     "Saumya": {
       "team": "Argentina",
-      "flag": "🇦🇷",
+      "flag": "\ud83c\udde6\ud83c\uddf7",
       "color": "#74ACDF"
     },
     "Rohith": {
       "team": "Argentina",
-      "flag": "🇦🇷",
+      "flag": "\ud83c\udde6\ud83c\uddf7",
       "color": "#74ACDF"
     },
     "Sharanya": {
       "team": "Argentina",
-      "flag": "🇦🇷",
+      "flag": "\ud83c\udde6\ud83c\uddf7",
       "color": "#74ACDF"
     }
   },
   "teams": {
     "France": {
-      "flag": "🇫🇷",
+      "flag": "\ud83c\uddeb\ud83c\uddf7",
       "color": "#002395",
       "secondary": "#EF3340",
       "abbreviation": "FRA",
@@ -57,13 +57,13 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 10.5,
-      "final_probability": 16.6,
-      "semis_probability": 26.3,
-      "quarters_probability": 41.0
+      "win_probability": 9.7,
+      "final_probability": 16.2,
+      "semis_probability": 26.5,
+      "quarters_probability": 41.1
     },
     "Portugal": {
-      "flag": "🇵🇹",
+      "flag": "\ud83c\uddf5\ud83c\uddf9",
       "color": "#DA291C",
       "secondary": "#006A35",
       "abbreviation": "POR",
@@ -79,13 +79,13 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 5.3,
-      "final_probability": 10.2,
-      "semis_probability": 17.9,
-      "quarters_probability": 31.4
+      "win_probability": 5.1,
+      "final_probability": 9.8,
+      "semis_probability": 17.8,
+      "quarters_probability": 31.9
     },
     "Spain": {
-      "flag": "🇪🇸",
+      "flag": "\ud83c\uddea\ud83c\uddf8",
       "color": "#C8102E",
       "secondary": "#F4C300",
       "abbreviation": "ESP",
@@ -101,13 +101,13 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 7.2,
-      "final_probability": 12.6,
-      "semis_probability": 21.9,
-      "quarters_probability": 36.4
+      "win_probability": 7.1,
+      "final_probability": 12.9,
+      "semis_probability": 22.7,
+      "quarters_probability": 37.3
     },
     "Argentina": {
-      "flag": "🇦🇷",
+      "flag": "\ud83c\udde6\ud83c\uddf7",
       "color": "#74ACDF",
       "secondary": "#FFFFFF",
       "abbreviation": "ARG",
@@ -123,10 +123,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 12.9,
-      "final_probability": 19.8,
-      "semis_probability": 30.4,
-      "quarters_probability": 45.6
+      "win_probability": 13.0,
+      "final_probability": 20.4,
+      "semis_probability": 31.7,
+      "quarters_probability": 46.6
     }
   },
   "recent_matches": [
@@ -201,6 +201,116 @@
       "stage": "Group Stage",
       "date": "2026-06-14",
       "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
+    {
+      "home": "Germany",
+      "away": "Curacao",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-14",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Netherlands",
+      "away": "Japan",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-14",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "C\u00f4te d'Ivoire",
+      "away": "Ecuador",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-14",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Spain",
+      "away": "Cape Verde",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-15",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Sweden",
+      "away": "Tunisia",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-15",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Belgium",
+      "away": "Egypt",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-15",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Saudi Arabia",
+      "away": "Uruguay",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-15",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "France",
+      "away": "Senegal",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-16",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Iran",
+      "away": "New Zealand",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-16",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Iraq",
+      "away": "Norway",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-16",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Argentina",
+      "away": "Algeria",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-17",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Portugal",
+      "away": "Congo DR",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-17",
+      "status": "SCHEDULED"
     }
   ],
   "all_groups": {
@@ -412,7 +522,7 @@
         "points": 0
       },
       {
-        "team": "Côte d'Ivoire",
+        "team": "C\u00f4te d'Ivoire",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -756,151 +866,5 @@
         "points": 0
       }
     ]
-  },
-  "upcoming_matches": [
-    {
-      "home": "Germany",
-      "away": "Curacao",
-      "stage": "Group Stage",
-      "date": "2026-06-14",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Côte d'Ivoire",
-      "away": "Ecuador",
-      "stage": "Group Stage",
-      "date": "2026-06-14",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Netherlands",
-      "away": "Japan",
-      "stage": "Group Stage",
-      "date": "2026-06-14",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Sweden",
-      "away": "Tunisia",
-      "stage": "Group Stage",
-      "date": "2026-06-14",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Spain",
-      "away": "Cape Verde",
-      "stage": "Group Stage",
-      "date": "2026-06-15",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Belgium",
-      "away": "Egypt",
-      "stage": "Group Stage",
-      "date": "2026-06-15",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Iran",
-      "away": "New Zealand",
-      "stage": "Group Stage",
-      "date": "2026-06-15",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Saudi Arabia",
-      "away": "Uruguay",
-      "stage": "Group Stage",
-      "date": "2026-06-15",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "France",
-      "away": "Senegal",
-      "stage": "Group Stage",
-      "date": "2026-06-16",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Argentina",
-      "away": "Algeria",
-      "stage": "Group Stage",
-      "date": "2026-06-16",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Iraq",
-      "away": "Norway",
-      "stage": "Group Stage",
-      "date": "2026-06-16",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Portugal",
-      "away": "Congo DR",
-      "stage": "Group Stage",
-      "date": "2026-06-17",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Austria",
-      "away": "Jordan",
-      "stage": "Group Stage",
-      "date": "2026-06-17",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Uzbekistan",
-      "away": "Colombia",
-      "stage": "Group Stage",
-      "date": "2026-06-17",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "England",
-      "away": "Croatia",
-      "stage": "Group Stage",
-      "date": "2026-06-17",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Ghana",
-      "away": "Panama",
-      "stage": "Group Stage",
-      "date": "2026-06-17",
-      "home_score": null,
-      "away_score": null,
-      "status": "SCHEDULED"
-    }
-  ]
+  }
 }

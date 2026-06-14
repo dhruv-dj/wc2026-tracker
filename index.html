@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚽ FIFA WC 2026 — Friend Tracker</title>
+  <style>
+    :root {
+      --bg:       #080811;
+      --surface:  #0f0f1a;
+      --card:     #161625;
+      --border:   rgba(255,255,255,0.07);
+      --text:     #eeeef5;
+      --muted:    #7777aa;
+      --gold:     #ffd700;
+      --silver:   #c0c0c0;
+      --bronze:   #cd7f32;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* ── Header ──────────────────────────────────────────────────────── */
+    .header {
+      background: linear-gradient(135deg, #0d0d1e 0%, #1a1030 50%, #0d0d1e 100%);
+      border-bottom: 1px solid rgba(255,215,0,0.25);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,215,0,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .header-emoji { font-size: 3.5rem; display: block; margin-bottom: 0.5rem; }
+    .header h1 {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #ffd700, #ff9500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.4rem;
+    }
+    .header-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .stage-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.35rem 1.2rem;
+      border: 1px solid rgba(255,215,0,0.4);
+      border-radius: 100px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Commentary banner ───────────────────────────────────────────── */
+    .commentary {
+      margin: 1.5rem 1.5rem 0;
+      padding: 1.1rem 1.5rem;
+      background: linear-gradient(135deg, rgba(255,215,0,0.06), rgba(255,150,0,0.04));
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 14px;
+      font-size: 1rem;
+      color: #ddd;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .commentary strong { color: var(--gold); }
+
+    /* ── Section ─────────────────────────────────────────────────────── */
+    .section { padding: 1.5rem; }
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Leaderboard ─────────────────────────────────────────────────── */
+    .leaderboard { display: flex; flex-direction: column; gap: 0.6rem; }
+    .lb-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s;
+    }
+    .lb-item:hover { transform: translateX(4px); }
+    .lb-glow {
+      position: absolute; top: 0; left: 0; bottom: 0;
+      width: 4px;
+      border-radius: 14px 0 0 14px;
+    }
+    .lb-rank {
+      font-size: 1.6rem;
+      font-weight: 900;
+      min-width: 2.2rem;
+      text-align: center;
+    }
+    .rank-1 { color: var(--gold); }
+    .rank-2 { color: var(--silver); }
+    .rank-3 { color: var(--bronze); }
+    .rank-n { color: var(--muted); }
+    .lb-flag { font-size: 2.2rem; }
+    .lb-info { flex: 1; min-width: 0; }
+    .lb-team { font-size: 1.1rem; font-weight: 700; }
+    .lb-friends { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+    .lb-probs { text-align: right; }
+    .lb-win-pct {
+      font-size: 1.6rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .lb-win-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .lb-final-pct { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .lb-bar-track {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: rgba(255,255,255,0.05);
+    }
+    .lb-bar-fill {
+      height: 100%;
+      border-radius: 0 3px 3px 0;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ── Friend cards grid ───────────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1rem;
+    }
+    .friend-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .friend-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .card-stripe {
+      height: 5px;
+    }
+    .card-body { padding: 1.25rem 1.25rem 0.5rem; }
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+    .card-flag { font-size: 2.8rem; line-height: 1; }
+    .card-meta { flex: 1; }
+    .card-team { font-size: 1.25rem; font-weight: 800; }
+    .card-friends { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
+    .friend-pill {
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    /* Stats row */
+    .card-stats {
+      display: flex;
+      gap: 0;
+      background: rgba(0,0,0,0.25);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 0.9rem;
+    }
+    .stat-cell {
+      flex: 1;
+      text-align: center;
+      padding: 0.6rem 0.3rem;
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-val { font-size: 1.1rem; font-weight: 700; }
+    .stat-lbl { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Form dots */
+    .card-form { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+    .form-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; min-width: 2.5rem; }
+    .form-dot {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fW { background: #16a34a; color: #fff; }
+    .fD { background: #d97706; color: #fff; }
+    .fL { background: #dc2626; color: #fff; }
+
+    /* Probability bars */
+    .prob-section { padding: 0 1.25rem 1.25rem; }
+    .prob-row { margin-bottom: 0.55rem; }
+    .prob-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      margin-bottom: 0.25rem;
+    }
+    .prob-name { color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .prob-val { font-weight: 700; }
+    .prob-track {
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .prob-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 1.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* Position badge */
+    .pos-badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Matches ─────────────────────────────────────────────────────── */
+    .matches-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .match-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .match-row.tracked { border-left: 3px solid; }
+    .match-team-left  { text-align: right; font-weight: 600; font-size: 0.92rem; }
+    .match-team-right { text-align: left;  font-weight: 600; font-size: 0.92rem; }
+    .match-score-box {
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 0.4rem 0.9rem;
+      font-weight: 800;
+      font-size: 1.05rem;
+      white-space: nowrap;
+      text-align: center;
+      min-width: 60px;
+    }
+    .match-score-box.pending { color: var(--muted); font-size: 0.8rem; }
+    .match-meta {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.2rem;
+    }
+
+    /* ── Group tables ────────────────────────────────────────────────── */
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .group-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .group-title {
+      padding: 0.65rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .group-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .group-table th {
+      padding: 0.3rem 0.5rem;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+    .group-table th:first-child { text-align: left; padding-left: 1rem; }
+    .group-table td { padding: 0.55rem 0.5rem; text-align: center; border-top: 1px solid var(--border); }
+    .group-table td:first-child { text-align: left; padding-left: 1rem; font-weight: 600; }
+    .group-table tr.highlight-row td { background: rgba(255,215,0,0.05); }
+    .team-name-cell { display: flex; align-items: center; gap: 0.4rem; }
+    .qualify-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+    .footer a { color: var(--muted); }
+
+    /* ── Eliminated overlay ──────────────────────────────────────────── */
+    .eliminated-overlay {
+      position: absolute; inset: 0;
+      background: rgba(8,8,17,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      border-radius: 18px;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #ef4444;
+      letter-spacing: 0.08em;
+      backdrop-filter: blur(2px);
+    }
+
+    /* ── Refresh indicator ───────────────────────────────────────────── */
+    .refresh-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.73rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .refresh-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #16a34a;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @media (max-width: 480px) {
+      .lb-item { flex-wrap: wrap; }
+      .lb-probs { text-align: left; width: 100%; padding-left: 4.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────── -->
+<header class="header">
+  <span class="header-emoji">🏆</span>
+  <h1>FIFA World Cup 2026</h1>
+  <p class="header-sub">Friend Tracker &mdash; Who's bringing it home?</p>
+  <div id="stage-badge" class="stage-badge">Loading…</div>
+  <br/>
+  <span class="refresh-pill">
+    <span class="refresh-dot"></span>
+    <span id="last-updated">Fetching latest data…</span>
+  </span>
+</header>
+
+<!-- ── Commentary ──────────────────────────────────────────────────────── -->
+<div class="commentary" id="commentary">🔄 Loading commentary…</div>
+
+<!-- ── Leaderboard ─────────────────────────────────────────────────────── -->
+<section class="section">
+  <h2 class="section-title">🏅 Championship odds</h2>
+  <div class="leaderboard" id="leaderboard"></div>
+</section>
+
+<!-- ── Friend cards ────────────────────────────────────────────────────── -->
+<section class="section">
+  <h2 class="section-title">🎽 Your squads</h2>
+  <div class="cards-grid" id="cards-grid"></div>
+</section>
+
+<!-- ── Recent matches ──────────────────────────────────────────────────── -->
+<section class="section" id="matches-section">
+  <h2 class="section-title">📅 Recent results</h2>
+  <div class="matches-list" id="matches-list"></div>
+</section>
+
+<!-- ── Group tables ────────────────────────────────────────────────────── -->
+<section class="section" id="groups-section">
+  <h2 class="section-title">📊 Group standings</h2>
+  <div class="groups-grid" id="groups-grid"></div>
+</section>
+
+<footer class="footer">
+  <p>Data updates every 3 hours via GitHub Actions &middot; Probabilities via Monte Carlo simulation (8 000 runs)</p>
+  <p style="margin-top:0.4rem">Made with ⚽ for the boys — WC 2026</p>
+</footer>
+
+<script>
+// ── Config ────────────────────────────────────────────────────────────────
+const FRIENDS = {
+  DJ:  { team: "France",    color: "#002395" },
+  AT:  { team: "Portugal",  color: "#006600" },
+  VD:  { team: "Portugal",  color: "#006600" },
+  MS:  { team: "Spain",     color: "#c60b1e" },
+  SS:  { team: "Argentina", color: "#74ACDF" },
+  RK:  { team: "Argentina", color: "#74ACDF" },
+  SR:  { team: "Argentina", color: "#74ACDF" },
+};
+
+// Map team → friends backing it
+function friendsForTeam(friends) {
+  const map = {};
+  for (const [name, info] of Object.entries(friends)) {
+    if (!info.team) continue;
+    (map[info.team] ??= []).push(name);
+  }
+  return map;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+
+function mix(hex, alpha) {
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function rankEmoji(i) {
+  return ["🥇","🥈","🥉"][i] ?? `#${i+1}`;
+}
+
+function formDot(r) {
+  const cls = {W:"fW",D:"fD",L:"fL"}[r] ?? "fL";
+  return `<span class="form-dot ${cls}">${r}</span>`;
+}
+
+function probBar(pct, color, maxPct) {
+  const w = maxPct > 0 ? Math.min(100, pct / maxPct * 100) : 0;
+  return `
+    <div class="prob-track">
+      <div class="prob-fill" style="width:${w}%; background:${color};"></div>
+    </div>`;
+}
+
+function commentary(data) {
+  if (!data) return "⏳ Tournament data loading…";
+  const teams = data.teams;
+  const byWin = Object.entries(teams)
+    .sort((a,b) => b[1].win_probability - a[1].win_probability);
+  const [topTeam, topData] = byWin[0];
+
+  const fm = friendsForTeam(data.friends);
+  const topFriends = (fm[topTeam] || []).join(" & ");
+  const topProb = topData.win_probability;
+
+  const msgs = [];
+
+  // Leader boast
+  if (topFriends) {
+    msgs.push(`👑 <strong>${topFriends}</strong>'s <strong>${topTeam}</strong> are the current favourites at <strong>${topProb}%</strong> — the trophy speech might already be written.`);
+  }
+
+  // Closest race
+  const probs = byWin.map(([,d]) => d.win_probability);
+  const spread = probs[0] - probs[probs.length-1];
+  if (spread < 8) {
+    msgs.push(`🔥 It's an absolutely <strong>nail-biting race</strong> — every team is within ${spread.toFixed(1)}% of each other. Anything can happen!`);
+  }
+
+  // Argentina hype (if applicable)
+  if (teams["Argentina"]) {
+    const arg = teams["Argentina"];
+    const argF = (fm["Argentina"] || []).join(", ");
+    if (arg.win_probability >= 15) {
+      msgs.push(`🇦🇷 Defending champions <strong>Argentina</strong> (${argF}) are looking formidable — ${arg.win_probability}% and rising.`);
+    }
+  }
+
+  // Underdog alert
+  const bottom = byWin[byWin.length-1];
+  const bottomFriends = (fm[bottom[0]] || []).join(" & ");
+  if (bottomFriends && bottom[1].win_probability < 8) {
+    msgs.push(`😬 <strong>${bottomFriends}</strong>'s <strong>${bottom[0]}</strong> need to step it up — only ${bottom[1].win_probability}% chance right now. Prayers accepted.`);
+  }
+
+  return msgs.slice(0,2).join(" &nbsp;|&nbsp; ") || "⚽ The group stage battles are heating up — check back after each matchday!";
+}
+
+// ── Render leaderboard ────────────────────────────────────────────────────
+function renderLeaderboard(data) {
+  const fm = friendsForTeam(data.friends);
+  const ranked = Object.entries(data.teams)
+    .sort((a,b) => b[1].win_probability - a[1].win_probability);
+
+  const maxWin = ranked[0][1].win_probability;
+
+  const html = ranked.map(([team, td], i) => {
+    const friends = (fm[team] || []).join(" · ");
+    const rankCls = ["rank-1","rank-2","rank-3"][i] ?? "rank-n";
+    const color = td.color;
+
+    return `
+    <div class="lb-item">
+      <div class="lb-glow" style="background:${color};"></div>
+      <span class="lb-rank ${rankCls}">${rankEmoji(i)}</span>
+      <span class="lb-flag">${td.flag}</span>
+      <div class="lb-info">
+        <div class="lb-team">${team}</div>
+        <div class="lb-friends">${friends || "—"}</div>
+      </div>
+      <div class="lb-probs">
+        <div class="lb-win-pct" style="color:${color}">${td.win_probability}%</div>
+        <div class="lb-win-label">to win</div>
+        <div class="lb-final-pct">Final: ${td.final_probability}%</div>
+      </div>
+      <div class="lb-bar-track">
+        <div class="lb-bar-fill" style="width:${maxWin>0 ? td.win_probability/maxWin*100 : 0}%; background:${color};"></div>
+      </div>
+    </div>`;
+  }).join("");
+
+  $("leaderboard").innerHTML = html;
+}
+
+// ── Render friend cards ───────────────────────────────────────────────────
+function renderCards(data) {
+  const fm = friendsForTeam(data.friends);
+  const maxWin = Math.max(...Object.values(data.teams).map(t => t.win_probability));
+
+  const html = Object.entries(data.teams).map(([team, td]) => {
+    const friends = fm[team] || [];
+    const pills = friends.map(f =>
+      `<span class="friend-pill" style="background:${mix(td.color,0.25)};color:${td.secondary || '#fff'}">${f}</span>`
+    ).join("");
+
+    const formHtml = td.form?.length
+      ? td.form.map(r => formDot(r)).join("")
+      : '<span style="color:var(--muted);font-size:0.78rem">No games yet</span>';
+
+    const grpLabel = td.group
+      ? `${td.group} &middot; ${["1st","2nd","3rd","4th"][((td.position||1)-1)] || td.position+"th"}`
+      : "—";
+
+    const eliminated = td.eliminated;
+
+    return `
+    <div class="friend-card" style="--team-color:${td.color}">
+      <div class="card-stripe" style="background: linear-gradient(90deg, ${td.color}, ${td.secondary || td.color});"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="card-flag">${td.flag}</span>
+          <div class="card-meta">
+            <div class="card-team">${team}</div>
+            <div class="card-friends">${pills || '<span style="color:var(--muted);font-size:0.78rem">Unassigned</span>'}</div>
+          </div>
+          <span class="pos-badge" style="background:${mix(td.color,0.2)};color:${td.color}">${grpLabel}</span>
+        </div>
+
+        <div class="card-stats">
+          <div class="stat-cell"><div class="stat-val">${td.played}</div><div class="stat-lbl">P</div></div>
+          <div class="stat-cell"><div class="stat-val">${td.won}</div><div class="stat-lbl">W</div></div>
+          <div class="stat-cell"><div class="stat-val">${td.drawn}</div><div class="stat-lbl">D</div></div>
+          <div class="stat-cell"><div class="stat-val">${td.lost}</div><div class="stat-lbl">L</div></div>
+          <div class="stat-cell"><div class="stat-val">${td.gd >= 0 ? '+' : ''}${td.gd}</div><div class="stat-lbl">GD</div></div>
+          <div class="stat-cell"><div class="stat-val">${td.points}</div><div class="stat-lbl">Pts</div></div>
+        </div>
+
+        <div class="card-form">
+          <span class="form-label">Form</span>
+          ${formHtml}
+        </div>
+      </div>
+
+      <div class="prob-section">
+        <div class="prob-row">
+          <div class="prob-header">
+            <span class="prob-name">🏆 Win the trophy</span>
+            <span class="prob-val" style="color:${td.color}">${td.win_probability}%</span>
+          </div>
+          ${probBar(td.win_probability, td.color, maxWin)}
+        </div>
+        <div class="prob-row">
+          <div class="prob-header">
+            <span class="prob-name">🎯 Reach the final</span>
+            <span class="prob-val">${td.final_probability}%</span>
+          </div>
+          ${probBar(td.final_probability, "#666", 50)}
+        </div>
+        <div class="prob-row">
+          <div class="prob-header">
+            <span class="prob-name">⚡ Reach semis</span>
+            <span class="prob-val">${td.semis_probability}%</span>
+          </div>
+          ${probBar(td.semis_probability, "#555", 70)}
+        </div>
+      </div>
+
+      ${eliminated ? `<div class="eliminated-overlay">ELIMINATED ❌</div>` : ""}
+    </div>`;
+  }).join("");
+
+  $("cards-grid").innerHTML = html;
+}
+
+// ── Render matches ────────────────────────────────────────────────────────
+function renderMatches(data) {
+  const tracked = new Set(Object.keys(data.teams));
+  const matches = (data.recent_matches || []).slice().reverse();
+
+  if (!matches.length) {
+    $("matches-list").innerHTML = '<p style="color:var(--muted);text-align:center;padding:1.5rem">No results yet — tournament is just getting started!</p>';
+    return;
+  }
+
+  const html = matches.map(m => {
+    const isTracked = tracked.has(m.home) || tracked.has(m.away);
+    const finished  = m.status === "FINISHED";
+    const color     = isTracked
+      ? (data.teams[m.home]?.color || data.teams[m.away]?.color || "var(--gold)")
+      : "transparent";
+
+    const scoreBox = finished && m.home_score !== null
+      ? `<div class="match-score-box">${m.home_score} — ${m.away_score}</div>`
+      : `<div class="match-score-box pending">vs</div>`;
+
+    return `
+    <div class="match-row ${isTracked ? 'tracked' : ''}" style="border-left-color:${color}">
+      <div class="match-team-left">
+        ${data.teams[m.home]?.flag ?? ""} ${m.home}
+      </div>
+      <div>
+        ${scoreBox}
+        <div class="match-meta">${m.stage?.replace(/_/g," ")} · ${m.date}</div>
+      </div>
+      <div class="match-team-right">
+        ${m.away} ${data.teams[m.away]?.flag ?? ""}
+      </div>
+    </div>`;
+  }).join("");
+
+  $("matches-list").innerHTML = html;
+}
+
+// ── Render groups ─────────────────────────────────────────────────────────
+function renderGroups(data) {
+  const tracked = new Set(Object.keys(data.teams));
+
+  if (!data.all_groups || !Object.keys(data.all_groups).length) {
+    $("groups-grid").innerHTML = '<p style="color:var(--muted)">Group data not available yet.</p>';
+    return;
+  }
+
+  const html = Object.entries(data.all_groups).map(([gname, teams]) => {
+    const rows = teams.map((t, i) => {
+      const isTracked = tracked.has(t.team);
+      const qualifies = i < 2;  // simplified: top 2 always qualify
+      const color = data.teams[t.team]?.color ?? "";
+      return `
+      <tr class="${isTracked ? 'highlight-row' : ''}">
+        <td>
+          <div class="team-name-cell">
+            ${qualifies ? '<span class="qualify-dot"></span>' : '<span style="width:6px;height:6px;display:inline-block;"></span>'}
+            ${data.teams[t.team]?.flag ?? ""} ${t.team}
+          </div>
+        </td>
+        <td>${t.played}</td>
+        <td>${t.won}</td>
+        <td>${t.drawn}</td>
+        <td>${t.lost}</td>
+        <td>${t.gd >= 0 ? '+' : ''}${t.gd}</td>
+        <td style="font-weight:700;${isTracked ? 'color:'+color : ''}">${t.points}</td>
+      </tr>`;
+    }).join("");
+
+    return `
+    <div class="group-card">
+      <div class="group-title">${gname}</div>
+      <table class="group-table">
+        <thead>
+          <tr>
+            <th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }).join("");
+
+  $("groups-grid").innerHTML = html;
+}
+
+// ── Main load ─────────────────────────────────────────────────────────────
+async function load() {
+  try {
+    const resp = await fetch(`data/tournament.json?v=${Date.now()}`);
+    if (!resp.ok) throw new Error(resp.statusText);
+    const data = await resp.json();
+
+    // Header
+    $("stage-badge").textContent = data.tournament_stage ?? "Group Stage";
+    const d = new Date(data.last_updated);
+    $("last-updated").textContent = `Updated ${d.toLocaleString("en-GB", {
+      day:"numeric", month:"short", hour:"2-digit", minute:"2-digit", timeZoneName:"short"
+    })}`;
+
+    $("commentary").innerHTML = commentary(data);
+    renderLeaderboard(data);
+    renderCards(data);
+    renderMatches(data);
+    renderGroups(data);
+
+  } catch (err) {
+    console.error(err);
+    $("commentary").innerHTML = `⚠️ Could not load data — run <code>python scripts/fetch_data.py</code> to generate <code>data/tournament.json</code>.`;
+    $("stage-badge").textContent = "Offline";
+  }
+}
+
+load();
+// Auto-refresh every 10 minutes if tab is visible
+setInterval(() => { if (!document.hidden) load(); }, 10 * 60 * 1000);
+</script>
+</body>
+</html>

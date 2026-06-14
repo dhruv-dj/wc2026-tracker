@@ -390,6 +390,37 @@
       50% { opacity: 0.3; }
     }
 
+    /* ── Methodology ─────────────────────────────────────────────────── */
+    .methodology-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .meth-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .meth-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.2rem;
+    }
+    .meth-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .meth-block h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+    }
+    .meth-block p {
+      font-size: 0.82rem;
+      color: #aaa;
+      line-height: 1.65;
+    }
+
     @media (max-width: 480px) {
       .lb-item { flex-wrap: wrap; }
       .lb-probs { text-align: left; width: 100%; padding-left: 4.2rem; }
@@ -438,21 +469,67 @@
   <div class="groups-grid" id="groups-grid"></div>
 </section>
 
+<!-- ── How odds are calculated ───────────────────────────────────────────── -->
+<section class="section" id="methodology-section">
+  <h2 class="section-title">🎲 How the odds work</h2>
+  <div class="methodology-card">
+    <div class="meth-grid">
+
+      <div class="meth-block">
+        <div class="meth-icon">📊</div>
+        <h3>Step 1 — Team strength</h3>
+        <p>Every team starts with a base strength rating derived from FIFA world rankings and historical World Cup performance. Argentina (defending champions) sit at the top, followed by France, Spain, and Portugal.</p>
+      </div>
+
+      <div class="meth-block">
+        <div class="meth-icon">📈</div>
+        <h3>Step 2 — Live adjustment</h3>
+        <p>As matches are played, ratings shift based on actual results. A team earning more points per game than expected gains rating; one that underperforms loses it. Goal difference adds a further nudge — a 4-0 win moves the needle more than a 1-0 squeaker.</p>
+      </div>
+
+      <div class="meth-block">
+        <div class="meth-icon">🎯</div>
+        <h3>Step 3 — Match simulation</h3>
+        <p>Head-to-head win probability uses a logistic model: a 10-point rating gap translates to roughly a 60/40 advantage. Draw probability shrinks as the skill gap widens. In knockouts there are no draws — penalty-shootout randomness is baked in by compressing odds slightly toward 50/50.</p>
+      </div>
+
+      <div class="meth-block">
+        <div class="meth-icon">🔁</div>
+        <h3>Step 4 — Monte Carlo (8 000 runs)</h3>
+        <p>The entire remaining tournament — every unplayed group game, all 32 knockout matches — is simulated 8 000 times from the current state. The percentage shown is simply how often each team lifted the trophy across those runs. More simulations = smoother numbers; 8 000 keeps the page snappy while staying accurate to within ~1%.</p>
+      </div>
+
+      <div class="meth-block">
+        <div class="meth-icon">⏱️</div>
+        <h3>Updates</h3>
+        <p>GitHub Actions re-runs the full simulation every 3 hours, pulling fresh scores from football-data.org. The page auto-refreshes every 10 minutes. Odds after a major upset can shift dramatically — check back after big games.</p>
+      </div>
+
+      <div class="meth-block">
+        <div class="meth-icon">⚠️</div>
+        <h3>Caveats</h3>
+        <p>This is a fun model, not a betting system. It doesn't account for injuries, suspensions, or tactical matchups. The WC 2026 format (48 teams, 12 groups, 8 best third-place teams advancing) makes early-stage odds especially noisy — they stabilise once knockout brackets are set.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <p>Data updates every 3 hours via GitHub Actions &middot; Probabilities via Monte Carlo simulation (8 000 runs)</p>
-  <p style="margin-top:0.4rem">Made with ⚽ for the boys — WC 2026</p>
+  <p style="margin-top:0.4rem">⚽ WC 2026 — built for the group chat</p>
 </footer>
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────
 const FRIENDS = {
-  DJ:  { team: "France",    color: "#002395" },
-  AT:  { team: "Portugal",  color: "#006600" },
-  VD:  { team: "Portugal",  color: "#006600" },
-  MS:  { team: "Spain",     color: "#c60b1e" },
-  SS:  { team: "Argentina", color: "#74ACDF" },
-  RK:  { team: "Argentina", color: "#74ACDF" },
-  SR:  { team: "Argentina", color: "#74ACDF" },
+  Dhruv:    { team: "France",    color: "#002395" },
+  Aaditya:  { team: "Portugal",  color: "#006600" },
+  Varun:    { team: "Portugal",  color: "#006600" },
+  Mishika:  { team: "Spain",     color: "#c60b1e" },
+  Saumya:   { team: "Argentina", color: "#74ACDF" },
+  Rohith:   { team: "Argentina", color: "#74ACDF" },
+  Sharanya: { team: "Argentina", color: "#74ACDF" },
 };
 
 // Map team → friends backing it

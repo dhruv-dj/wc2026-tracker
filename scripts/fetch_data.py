@@ -10,13 +10,13 @@ from datetime import datetime, timezone
 from collections import defaultdict
 
 FRIENDS_TEAMS = {
-    "DJ":  "France",
-    "AT":  "Portugal",
-    "VD":  "Portugal",
-    "MS":  "Spain",
-    "SS":  "Argentina",
-    "RK":  "Argentina",
-    "SR":  "Argentina",
+    "Dhruv":    "France",
+    "Aaditya":  "Portugal",
+    "Varun":    "Portugal",
+    "Mishika":  "Spain",
+    "Saumya":   "Argentina",
+    "Rohith":   "Argentina",
+    "Sharanya": "Argentina",
 }
 
 TEAM_INFO = {

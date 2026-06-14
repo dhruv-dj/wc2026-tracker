@@ -88,7 +88,7 @@ def fetch_espn_standings():
 def fetch_espn_matches_all():
     from datetime import date, timedelta
     start = date(2026, 6, 11)
-    end   = min(date.today() + timedelta(days=1), date(2026, 7, 19))
+    end   = min(date.today() + timedelta(days=7), date(2026, 7, 19))
     date_param = f"{start.strftime('%Y%m%d')}-{end.strftime('%Y%m%d')}"
     try:
         r = requests.get(
@@ -371,6 +371,15 @@ def build_output(groups, matches, probs):
                        m.get("date", "")))
     tracked_matches = tracked_first[-15:]  # keep last 15 most relevant
 
+    # Upcoming: all scheduled matches sorted by date, tracked-team ones first within each day
+    upcoming = sorted(
+        [m for m in matches if m.get("status") == "SCHEDULED"],
+        key=lambda m: (
+            m.get("date", ""),
+            0 if (m.get("home") in TRACKED_TEAMS or m.get("away") in TRACKED_TEAMS) else 1,
+        )
+    )
+
     total_played = sum(t["played"] for gt in groups.values() for t in gt)
     stage = "Knockout Stage" if total_played >= 72 else "Group Stage"
 
@@ -388,6 +397,7 @@ def build_output(groups, matches, probs):
         },
         "teams": teams_data,
         "recent_matches": tracked_matches[-10:],
+        "upcoming_matches": upcoming[:12],
         "all_groups": {
             gn: [{"team": t["team"], "played": t["played"], "won": t["won"],
                   "drawn": t["drawn"], "lost": t["lost"],
@@ -478,14 +488,22 @@ DEMO_GROUPS = {
 }
 
 DEMO_MATCHES = [
-    {"home": "France",    "away": "Morocco",   "home_score": 2, "away_score": 0, "stage": "GROUP_STAGE", "date": "2026-06-12", "status": "FINISHED"},
-    {"home": "Argentina", "away": "Ecuador",   "home_score": 3, "away_score": 0, "stage": "GROUP_STAGE", "date": "2026-06-12", "status": "FINISHED"},
-    {"home": "Portugal",  "away": "Ghana",     "home_score": 2, "away_score": 0, "stage": "GROUP_STAGE", "date": "2026-06-12", "status": "FINISHED"},
-    {"home": "Spain",     "away": "Colombia",  "home_score": 2, "away_score": 2, "stage": "GROUP_STAGE", "date": "2026-06-13", "status": "FINISHED"},
-    {"home": "Austria",   "away": "France",    "home_score": 1, "away_score": 2, "stage": "GROUP_STAGE", "date": "2026-06-14", "status": "FINISHED"},
-    {"home": "Saudi Arabia","away":"Argentina","home_score": 1, "away_score": 2, "stage": "GROUP_STAGE", "date": "2026-06-14", "status": "FINISHED"},
-    {"home": "Uruguay",   "away": "Portugal",  "home_score": 0, "away_score": 2, "stage": "GROUP_STAGE", "date": "2026-06-14", "status": "FINISHED"},
-    {"home": "Spain",     "away": "Japan",     "home_score": 1, "away_score": 0, "stage": "GROUP_STAGE", "date": "2026-06-15", "status": "FINISHED"},
+    {"home": "France",    "away": "Morocco",   "home_score": 2, "away_score": 0, "stage": "Group Stage", "date": "2026-06-12", "status": "FINISHED"},
+    {"home": "Argentina", "away": "Ecuador",   "home_score": 3, "away_score": 0, "stage": "Group Stage", "date": "2026-06-12", "status": "FINISHED"},
+    {"home": "Portugal",  "away": "Ghana",     "home_score": 2, "away_score": 0, "stage": "Group Stage", "date": "2026-06-12", "status": "FINISHED"},
+    {"home": "Spain",     "away": "Colombia",  "home_score": 2, "away_score": 2, "stage": "Group Stage", "date": "2026-06-13", "status": "FINISHED"},
+    {"home": "Austria",   "away": "France",    "home_score": 1, "away_score": 2, "stage": "Group Stage", "date": "2026-06-14", "status": "FINISHED"},
+    {"home": "Saudi Arabia","away":"Argentina","home_score": 1, "away_score": 2, "stage": "Group Stage", "date": "2026-06-14", "status": "FINISHED"},
+    {"home": "Uruguay",   "away": "Portugal",  "home_score": 0, "away_score": 2, "stage": "Group Stage", "date": "2026-06-14", "status": "FINISHED"},
+    {"home": "Spain",     "away": "Japan",     "home_score": 1, "away_score": 0, "stage": "Group Stage", "date": "2026-06-15", "status": "FINISHED"},
+    # Upcoming scheduled matches
+    {"home": "France",    "away": "Iraq",      "home_score": None, "away_score": None, "stage": "Group Stage", "date": "2026-06-18", "status": "SCHEDULED"},
+    {"home": "Argentina", "away": "Austria",   "home_score": None, "away_score": None, "stage": "Group Stage", "date": "2026-06-18", "status": "SCHEDULED"},
+    {"home": "Germany",   "away": "Ecuador",   "home_score": None, "away_score": None, "stage": "Group Stage", "date": "2026-06-18", "status": "SCHEDULED"},
+    {"home": "Portugal",  "away": "Uruguay",   "home_score": None, "away_score": None, "stage": "Group Stage", "date": "2026-06-19", "status": "SCHEDULED"},
+    {"home": "Spain",     "away": "Jordan",    "home_score": None, "away_score": None, "stage": "Group Stage", "date": "2026-06-19", "status": "SCHEDULED"},
+    {"home": "England",   "away": "Nigeria",   "home_score": None, "away_score": None, "stage": "Group Stage", "date": "2026-06-19", "status": "SCHEDULED"},
+    {"home": "Brazil",    "away": "Scotland",  "home_score": None, "away_score": None, "stage": "Group Stage", "date": "2026-06-20", "status": "SCHEDULED"},
 ]
 
 

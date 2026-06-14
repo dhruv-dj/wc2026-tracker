@@ -467,6 +467,43 @@
       line-height: 1.65;
     }
 
+    /* ── Upcoming matches ────────────────────────────────────────────── */
+    .upcoming-badge {
+      display: inline-block;
+      padding: 0.22rem 0.7rem;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .today-pill {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 0.1rem 0.45rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .upcoming-friends {
+      font-size: 0.65rem;
+      color: var(--gold-lt);
+      text-align: center;
+      margin-top: 0.18rem;
+      letter-spacing: 0.02em;
+    }
+    .match-row.upcoming-tracked {
+      background: var(--card-hi);
+    }
+
     @media (max-width: 480px) {
       .lb-item { flex-wrap: wrap; }
       .lb-probs { text-align: left; width: 100%; padding-left: 4.2rem; }
@@ -501,6 +538,12 @@
 <section class="section">
   <h2 class="section-title">🎽 Your squads</h2>
   <div class="cards-grid" id="cards-grid"></div>
+</section>
+
+<!-- ── Upcoming matches ─────────────────────────────────────────────────── -->
+<section class="section" id="upcoming-section" style="display:none">
+  <h2 class="section-title">🗓️ Upcoming matches</h2>
+  <div class="matches-list" id="upcoming-list"></div>
 </section>
 
 <!-- ── Recent matches ──────────────────────────────────────────────────── -->
@@ -776,6 +819,71 @@ function renderCards(data) {
   $("cards-grid").innerHTML = html;
 }
 
+// ── Render upcoming matches ───────────────────────────────────────────────
+function renderUpcoming(data) {
+  const section = $("upcoming-section");
+  const upcoming = data.upcoming_matches || [];
+
+  if (!upcoming.length) {
+    section.style.display = "none";
+    return;
+  }
+  section.style.display = "";
+
+  const tracked = new Set(Object.keys(data.teams));
+  const fm = friendsForTeam(data.friends);
+
+  const now = new Date();
+  const todayStr    = now.toISOString().slice(0, 10);
+  const tmrw        = new Date(now); tmrw.setDate(tmrw.getDate() + 1);
+  const tomorrowStr = tmrw.toISOString().slice(0, 10);
+
+  function fmtDate(d) {
+    if (d === todayStr) return `<span class="today-pill">Today</span>`;
+    if (d === tomorrowStr) return "Tomorrow";
+    const [, mm, dd] = d.split("-");
+    const label = new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
+    return label;
+  }
+
+  const html = upcoming.map(m => {
+    const homeTracked = tracked.has(m.home);
+    const awayTracked = tracked.has(m.away);
+    const isTracked   = homeTracked || awayTracked;
+    const color       = isTracked
+      ? (data.teams[m.home]?.color || data.teams[m.away]?.color || "var(--gold)")
+      : "transparent";
+
+    const homeFriends = homeTracked ? (fm[m.home] || []) : [];
+    const awayFriends = awayTracked ? (fm[m.away] || []) : [];
+    const allFriends  = [...homeFriends, ...awayFriends];
+    const friendsHtml = allFriends.length
+      ? `<div class="upcoming-friends">👤 ${allFriends.join(" · ")}</div>`
+      : "";
+
+    const scoreBox = isTracked
+      ? `<div class="upcoming-badge">Upcoming</div>`
+      : `<div class="match-score-box pending">vs</div>`;
+
+    return `
+    <div class="match-row ${isTracked ? "tracked upcoming-tracked" : ""}" style="border-left-color:${color}">
+      <div class="match-team-left">
+        ${data.teams[m.home]?.flag ?? ""} ${m.home}
+      </div>
+      <div>
+        ${scoreBox}
+        <div class="match-meta">${m.stage?.replace(/_/g," ")} · ${fmtDate(m.date)}</div>
+        ${friendsHtml}
+      </div>
+      <div class="match-team-right">
+        ${m.away} ${data.teams[m.away]?.flag ?? ""}
+      </div>
+    </div>`;
+  }).join("");
+
+  $("upcoming-list").innerHTML = html;
+}
+
 // ── Render matches ────────────────────────────────────────────────────────
 function renderMatches(data) {
   const tracked = new Set(Object.keys(data.teams));
@@ -882,6 +990,7 @@ async function load() {
     $("commentary").innerHTML = commentary(data);
     renderLeaderboard(data);
     renderCards(data);
+    renderUpcoming(data);
     renderMatches(data);
     renderGroups(data);
 

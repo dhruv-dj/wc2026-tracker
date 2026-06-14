@@ -50,10 +50,56 @@ BASE_STRENGTH = {
 
 TRACKED_TEAMS = set(FRIENDS_TEAMS.values())
 
+# ESPN uses different names for some countries — normalise to match BASE_STRENGTH
+ESPN_NAME_MAP = {
+    "Czechia":             "Czech Republic",
+    "Ivory Coast":         "Côte d'Ivoire",
+    "Türkiye":             "Turkey",
+    "Bosnia-Herzegovina":  "Bosnia and Herzegovina",
+    "United States":       "USA",
+    "Korea Republic":      "South Korea",
+    "IR Iran":             "Iran",
+    "Curaçao":             "Curacao",
+}
+
+def _norm(name):
+    return ESPN_NAME_MAP.get(name, name)
+
 
 # ---------------------------------------------------------------------------
 # Data fetching
 # ---------------------------------------------------------------------------
+
+def fetch_espn_standings():
+    try:
+        r = requests.get(
+            "https://site.api.espn.com/apis/v2/sports/soccer/fifa.world/standings",
+            timeout=15)
+        if r.status_code == 200:
+            data = r.json()
+            if data.get("children"):
+                return data
+    except Exception as e:
+        print(f"ESPN standings error: {e}")
+    return None
+
+
+def fetch_espn_matches_all():
+    from datetime import date, timedelta
+    start = date(2026, 6, 11)
+    end   = min(date.today() + timedelta(days=1), date(2026, 7, 19))
+    date_param = f"{start.strftime('%Y%m%d')}-{end.strftime('%Y%m%d')}"
+    try:
+        r = requests.get(
+            f"https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+            f"?limit=200&dates={date_param}",
+            timeout=15)
+        if r.status_code == 200:
+            return r.json().get("events", [])
+    except Exception as e:
+        print(f"ESPN scoreboard error: {e}")
+    return []
+
 
 def fetch_football_data_org():
     api_key = os.environ.get("FOOTBALL_DATA_API_KEY", "")
@@ -72,26 +118,57 @@ def fetch_football_data_org():
     return None, None
 
 
-def fetch_espn_data():
-    slugs = ["fifa.world", "fifa.world.2026", "soccer.world"]
-    for slug in slugs:
-        try:
-            r = requests.get(
-                f"https://site.api.espn.com/apis/v2/sports/soccer/{slug}/standings",
-                timeout=15)
-            if r.status_code == 200:
-                data = r.json()
-                if data.get("standings") or data.get("children"):
-                    print(f"ESPN OK: {slug}")
-                    return data, slug
-        except Exception as e:
-            print(f"ESPN {slug} error: {e}")
-    return None, None
-
-
 # ---------------------------------------------------------------------------
 # Parsers
 # ---------------------------------------------------------------------------
+
+def parse_espn_standings(data):
+    groups = {}
+    for child in data.get("children", []):
+        gname   = child.get("name", "Group ?")
+        entries = child.get("standings", {}).get("entries", [])
+        teams   = []
+        for entry in entries:
+            stats = {s["name"]: s["value"] for s in entry.get("stats", []) if "value" in s}
+            teams.append({
+                "team":     _norm(entry["team"]["displayName"]),
+                "position": int(stats.get("rank", 0)),
+                "played":   int(stats.get("gamesPlayed", 0)),
+                "won":      int(stats.get("wins", 0)),
+                "drawn":    int(stats.get("ties", 0)),
+                "lost":     int(stats.get("losses", 0)),
+                "gf":       int(stats.get("pointsFor", 0)),
+                "ga":       int(stats.get("pointsAgainst", 0)),
+                "gd":       int(stats.get("pointDifferential", 0)),
+                "points":   int(stats.get("points", 0)),
+            })
+        groups[gname] = sorted(teams, key=lambda x: (-x["points"], -x["gd"], -x["gf"]))
+    return groups
+
+
+def parse_espn_matches(events):
+    matches = []
+    for event in events:
+        comp        = event["competitions"][0]
+        status_type = comp["status"]["type"]
+        competitors = comp.get("competitors", [])
+        home = next((c for c in competitors if c["homeAway"] == "home"), None)
+        away = next((c for c in competitors if c["homeAway"] == "away"), None)
+        if not home or not away:
+            continue
+        finished = status_type.get("completed", False)
+        stage    = event.get("season", {}).get("slug", "group-stage").replace("-", " ").title()
+        matches.append({
+            "home":       _norm(home["team"]["displayName"]),
+            "away":       _norm(away["team"]["displayName"]),
+            "home_score": int(float(home["score"])) if finished and home.get("score") else None,
+            "away_score": int(float(away["score"])) if finished and away.get("score") else None,
+            "stage":      stage,
+            "date":       event["date"][:10],
+            "status":     "FINISHED" if finished else "SCHEDULED",
+        })
+    return matches
+
 
 def parse_fdo_standings(data):
     groups = {}
@@ -286,8 +363,12 @@ def build_output(groups, matches, probs):
             "quarters_probability": probs["quarters"].get(team, 0),
         }
 
-    tracked_matches = [m for m in matches
-                       if m.get("home") in TRACKED_TEAMS or m.get("away") in TRACKED_TEAMS]
+    # Show all finished matches; tracked-team matches bubble to the top
+    finished = [m for m in matches if m.get("status") == "FINISHED"]
+    tracked_first = sorted(finished,
+        key=lambda m: (0 if (m.get("home") in TRACKED_TEAMS or m.get("away") in TRACKED_TEAMS) else 1,
+                       m.get("date", "")))
+    tracked_matches = tracked_first[-15:]  # keep last 15 most relevant
 
     total_played = sum(t["played"] for gt in groups.values() for t in gt)
     stage = "Knockout Stage" if total_played >= 72 else "Group Stage"
@@ -416,21 +497,23 @@ def main():
 
     groups, matches = {}, []
 
-    # Try football-data.org (requires API key in env)
-    fdo_standings, fdo_matches = fetch_football_data_org()
-    if fdo_standings:
-        groups  = parse_fdo_standings(fdo_standings)
-        matches = parse_fdo_matches(fdo_matches) if fdo_matches else []
-        print(f"✅ football-data.org: {len(groups)} groups, {len(matches)} matches")
+    # Primary: ESPN (no API key required)
+    espn_standings = fetch_espn_standings()
+    if espn_standings:
+        groups = parse_espn_standings(espn_standings)
+        events = fetch_espn_matches_all()
+        matches = parse_espn_matches(events)
+        print(f"✅ ESPN: {len(groups)} groups, {len(matches)} matches")
 
-    # Fall back to ESPN (no auth)
+    # Secondary: football-data.org (richer match metadata if key is set)
     if not groups:
-        espn_data, slug = fetch_espn_data()
-        if espn_data:
-            print(f"✅ ESPN ({slug}) — note: manual parsing may be incomplete")
-            # ESPN standings format is complex and varies — extend here if needed
+        fdo_standings, fdo_matches = fetch_football_data_org()
+        if fdo_standings:
+            groups  = parse_fdo_standings(fdo_standings)
+            matches = parse_fdo_matches(fdo_matches) if fdo_matches else []
+            print(f"✅ football-data.org: {len(groups)} groups, {len(matches)} matches")
 
-    # Fall back to demo data
+    # Last resort: demo data
     if not groups:
         print("⚠️  No live API available — using placeholder data")
         groups  = DEMO_GROUPS

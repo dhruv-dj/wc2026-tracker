@@ -280,8 +280,8 @@
       border-radius: 12px;
     }
     .match-row.tracked { border-left: 3px solid; }
-    .match-team-left  { text-align: right; font-weight: 600; font-size: 0.92rem; }
-    .match-team-right { text-align: left;  font-weight: 600; font-size: 0.92rem; }
+    .match-team-left  { text-align: right; font-weight: 600; font-size: 0.92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+    .match-team-right { text-align: left;  font-weight: 600; font-size: 0.92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
     .match-score-box {
       background: rgba(255,255,255,0.08);
       border-radius: 8px;
@@ -333,9 +333,10 @@
     }
     .group-table th:first-child { text-align: left; padding-left: 1rem; }
     .group-table td { padding: 0.55rem 0.5rem; text-align: center; border-top: 1px solid var(--border); }
-    .group-table td:first-child { text-align: left; padding-left: 1rem; font-weight: 600; }
+    .group-table td:first-child { text-align: left; padding-left: 1rem; font-weight: 600; max-width: 150px; }
     .group-table tr.highlight-row td { background: rgba(255,215,0,0.05); }
-    .team-name-cell { display: flex; align-items: center; gap: 0.4rem; }
+    .team-name-cell { display: flex; align-items: center; gap: 0.4rem; overflow: hidden; }
+    .team-name-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
     .qualify-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
@@ -561,8 +562,8 @@ function formDot(r) {
   return `<span class="form-dot ${cls}">${r}</span>`;
 }
 
-function probBar(pct, color, maxPct) {
-  const w = maxPct > 0 ? Math.min(100, pct / maxPct * 100) : 0;
+function probBar(pct, color) {
+  const w = Math.min(100, pct);
   return `
     <div class="prob-track">
       <div class="prob-fill" style="width:${w}%; background:${color};"></div>
@@ -704,21 +705,21 @@ function renderCards(data) {
             <span class="prob-name">🏆 Win the trophy</span>
             <span class="prob-val" style="color:${td.color}">${td.win_probability}%</span>
           </div>
-          ${probBar(td.win_probability, td.color, maxWin)}
+          ${probBar(td.win_probability, td.color)}
         </div>
         <div class="prob-row">
           <div class="prob-header">
             <span class="prob-name">🎯 Reach the final</span>
             <span class="prob-val">${td.final_probability}%</span>
           </div>
-          ${probBar(td.final_probability, "#666", 50)}
+          ${probBar(td.final_probability, "#888")}
         </div>
         <div class="prob-row">
           <div class="prob-header">
             <span class="prob-name">⚡ Reach semis</span>
             <span class="prob-val">${td.semis_probability}%</span>
           </div>
-          ${probBar(td.semis_probability, "#555", 70)}
+          ${probBar(td.semis_probability, "#666")}
         </div>
       </div>
 
@@ -786,8 +787,8 @@ function renderGroups(data) {
       <tr class="${isTracked ? 'highlight-row' : ''}">
         <td>
           <div class="team-name-cell">
-            ${qualifies ? '<span class="qualify-dot"></span>' : '<span style="width:6px;height:6px;display:inline-block;"></span>'}
-            ${data.teams[t.team]?.flag ?? ""} ${t.team}
+            ${qualifies ? '<span class="qualify-dot"></span>' : '<span style="width:6px;height:6px;flex-shrink:0;display:inline-block;"></span>'}
+            <span class="team-name-text">${data.teams[t.team]?.flag ?? ""} ${t.team}</span>
           </div>
         </td>
         <td>${t.played}</td>

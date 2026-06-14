@@ -1,39 +1,39 @@
 {
-  "last_updated": "2026-06-14T02:45:44.465150+00:00",
+  "last_updated": "2026-06-14T02:57:42.282696+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
-    "DJ": {
+    "Dhruv": {
       "team": "France",
       "flag": "\ud83c\uddeb\ud83c\uddf7",
       "color": "#002395"
     },
-    "AT": {
+    "Aaditya": {
       "team": "Portugal",
       "flag": "\ud83c\uddf5\ud83c\uddf9",
       "color": "#006600"
     },
-    "VD": {
+    "Varun": {
       "team": "Portugal",
       "flag": "\ud83c\uddf5\ud83c\uddf9",
       "color": "#006600"
     },
-    "MS": {
+    "Mishika": {
       "team": "Spain",
       "flag": "\ud83c\uddea\ud83c\uddf8",
       "color": "#c60b1e"
     },
-    "SS": {
+    "Saumya": {
       "team": "Argentina",
       "flag": "\ud83c\udde6\ud83c\uddf7",
       "color": "#74ACDF"
     },
-    "RK": {
+    "Rohith": {
       "team": "Argentina",
       "flag": "\ud83c\udde6\ud83c\uddf7",
       "color": "#74ACDF"
     },
-    "SR": {
+    "Sharanya": {
       "team": "Argentina",
       "flag": "\ud83c\udde6\ud83c\uddf7",
       "color": "#74ACDF"
@@ -57,10 +57,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 10.1,
-      "final_probability": 16.7,
-      "semis_probability": 26.5,
-      "quarters_probability": 42.5
+      "win_probability": 9.8,
+      "final_probability": 16.6,
+      "semis_probability": 26.6,
+      "quarters_probability": 42.1
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -79,10 +79,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 5.4,
-      "final_probability": 10.0,
-      "semis_probability": 18.4,
-      "quarters_probability": 32.4
+      "win_probability": 5.6,
+      "final_probability": 10.3,
+      "semis_probability": 18.5,
+      "quarters_probability": 33.1
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -101,10 +101,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 6.9,
-      "final_probability": 12.5,
-      "semis_probability": 22.0,
-      "quarters_probability": 36.1
+      "win_probability": 7.3,
+      "final_probability": 13.6,
+      "semis_probability": 23.2,
+      "quarters_probability": 37.7
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -123,13 +123,68 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 13.8,
-      "final_probability": 20.7,
-      "semis_probability": 31.4,
-      "quarters_probability": 46.6
+      "win_probability": 14.5,
+      "final_probability": 21.7,
+      "semis_probability": 32.2,
+      "quarters_probability": 47.4
     }
   },
-  "recent_matches": [],
+  "recent_matches": [
+    {
+      "home": "Mexico",
+      "away": "South Africa",
+      "home_score": 2,
+      "away_score": 0,
+      "stage": "Group Stage",
+      "date": "2026-06-11",
+      "status": "FINISHED"
+    },
+    {
+      "home": "South Korea",
+      "away": "Czech Republic",
+      "home_score": 2,
+      "away_score": 1,
+      "stage": "Group Stage",
+      "date": "2026-06-12",
+      "status": "FINISHED"
+    },
+    {
+      "home": "Canada",
+      "away": "Bosnia and Herzegovina",
+      "home_score": 1,
+      "away_score": 1,
+      "stage": "Group Stage",
+      "date": "2026-06-12",
+      "status": "FINISHED"
+    },
+    {
+      "home": "USA",
+      "away": "Paraguay",
+      "home_score": 4,
+      "away_score": 1,
+      "stage": "Group Stage",
+      "date": "2026-06-13",
+      "status": "FINISHED"
+    },
+    {
+      "home": "Qatar",
+      "away": "Switzerland",
+      "home_score": 1,
+      "away_score": 1,
+      "stage": "Group Stage",
+      "date": "2026-06-13",
+      "status": "FINISHED"
+    },
+    {
+      "home": "Brazil",
+      "away": "Morocco",
+      "home_score": 1,
+      "away_score": 1,
+      "stage": "Group Stage",
+      "date": "2026-06-13",
+      "status": "FINISHED"
+    }
+  ],
   "all_groups": {
     "Group A": [
       {
@@ -155,7 +210,7 @@
         "points": 3
       },
       {
-        "team": "Czechia",
+        "team": "Czech Republic",
         "played": 1,
         "won": 0,
         "drawn": 0,
@@ -179,17 +234,6 @@
     ],
     "Group B": [
       {
-        "team": "Bosnia-Herzegovina",
-        "played": 1,
-        "won": 0,
-        "drawn": 1,
-        "lost": 0,
-        "gf": 1,
-        "ga": 1,
-        "gd": 0,
-        "points": 1
-      },
-      {
         "team": "Canada",
         "played": 1,
         "won": 0,
@@ -201,7 +245,7 @@
         "points": 1
       },
       {
-        "team": "Qatar",
+        "team": "Bosnia and Herzegovina",
         "played": 1,
         "won": 0,
         "drawn": 1,
@@ -221,20 +265,20 @@
         "ga": 1,
         "gd": 0,
         "points": 1
+      },
+      {
+        "team": "Qatar",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 1,
+        "ga": 1,
+        "gd": 0,
+        "points": 1
       }
     ],
     "Group C": [
-      {
-        "team": "Scotland",
-        "played": 1,
-        "won": 1,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 1,
-        "ga": 0,
-        "gd": 1,
-        "points": 3
-      },
       {
         "team": "Brazil",
         "played": 1,
@@ -258,31 +302,7 @@
         "points": 1
       },
       {
-        "team": "Haiti",
-        "played": 1,
-        "won": 0,
-        "drawn": 0,
-        "lost": 1,
-        "gf": 0,
-        "ga": 1,
-        "gd": -1,
-        "points": 0
-      }
-    ],
-    "Group D": [
-      {
-        "team": "United States",
-        "played": 1,
-        "won": 1,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 4,
-        "ga": 1,
-        "gd": 3,
-        "points": 3
-      },
-      {
-        "team": "Australia",
+        "team": "Scotland",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -293,7 +313,42 @@
         "points": 0
       },
       {
+        "team": "Haiti",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ],
+    "Group D": [
+      {
+        "team": "USA",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 4,
+        "ga": 1,
+        "gd": 3,
+        "points": 3
+      },
+      {
         "team": "Turkey",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "team": "Australia",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -317,7 +372,7 @@
     ],
     "Group E": [
       {
-        "team": "Cura\u00e7ao",
+        "team": "Ecuador",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -339,7 +394,7 @@
         "points": 0
       },
       {
-        "team": "Ecuador",
+        "team": "C\u00f4te d'Ivoire",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -350,7 +405,7 @@
         "points": 0
       },
       {
-        "team": "Ivory Coast",
+        "team": "Curacao",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -362,17 +417,6 @@
       }
     ],
     "Group F": [
-      {
-        "team": "Japan",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
       {
         "team": "Netherlands",
         "played": 0,
@@ -396,6 +440,17 @@
         "points": 0
       },
       {
+        "team": "Japan",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
         "team": "Tunisia",
         "played": 0,
         "won": 0,
@@ -408,17 +463,6 @@
       }
     ],
     "Group G": [
-      {
-        "team": "Egypt",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
       {
         "team": "Belgium",
         "played": 0,
@@ -442,6 +486,17 @@
         "points": 0
       },
       {
+        "team": "Egypt",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
         "team": "New Zealand",
         "played": 0,
         "won": 0,
@@ -454,28 +509,6 @@
       }
     ],
     "Group H": [
-      {
-        "team": "Cape Verde Islands",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
-        "team": "Saudi Arabia",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
       {
         "team": "Spain",
         "played": 0,
@@ -497,33 +530,44 @@
         "ga": 0,
         "gd": 0,
         "points": 0
+      },
+      {
+        "team": "Saudi Arabia",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "team": "Cape Verde",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
       }
     ],
     "Group I": [
       {
-        "team": "France",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
-        "team": "Iraq",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
         "team": "Norway",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "team": "France",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -543,33 +587,22 @@
         "ga": 0,
         "gd": 0,
         "points": 0
+      },
+      {
+        "team": "Iraq",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
       }
     ],
     "Group J": [
       {
-        "team": "Algeria",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
         "team": "Argentina",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
-        "team": "Jordan",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -589,11 +622,9 @@
         "ga": 0,
         "gd": 0,
         "points": 0
-      }
-    ],
-    "Group K": [
+      },
       {
-        "team": "Congo DR",
+        "team": "Algeria",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -603,6 +634,19 @@
         "gd": 0,
         "points": 0
       },
+      {
+        "team": "Jordan",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ],
+    "Group K": [
       {
         "team": "Colombia",
         "played": 0,
@@ -635,11 +679,9 @@
         "ga": 0,
         "gd": 0,
         "points": 0
-      }
-    ],
-    "Group L": [
+      },
       {
-        "team": "England",
+        "team": "Congo DR",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -648,9 +690,11 @@
         "ga": 0,
         "gd": 0,
         "points": 0
-      },
+      }
+    ],
+    "Group L": [
       {
-        "team": "Ghana",
+        "team": "England",
         "played": 0,
         "won": 0,
         "drawn": 0,
@@ -673,6 +717,17 @@
       },
       {
         "team": "Panama",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "team": "Ghana",
         "played": 0,
         "won": 0,
         "drawn": 0,

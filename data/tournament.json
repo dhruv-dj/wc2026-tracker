@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-15T16:38:54.093559+00:00",
+  "last_updated": "2026-06-15T19:22:50.693682+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -57,10 +57,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 9.2,
-      "final_probability": 15.6,
-      "semis_probability": 25.2,
-      "quarters_probability": 40.7
+      "win_probability": 9.7,
+      "final_probability": 16.1,
+      "semis_probability": 25.5,
+      "quarters_probability": 40.8
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -80,9 +80,9 @@
       "form": [],
       "eliminated": false,
       "win_probability": 5.2,
-      "final_probability": 9.8,
-      "semis_probability": 17.8,
-      "quarters_probability": 31.0
+      "final_probability": 9.7,
+      "semis_probability": 17.7,
+      "quarters_probability": 31.5
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -90,21 +90,23 @@
       "secondary": "#F4C300",
       "abbreviation": "ESP",
       "group": "Group H",
-      "played": 0,
+      "played": 1,
       "won": 0,
-      "drawn": 0,
+      "drawn": 1,
       "lost": 0,
       "gf": 0,
       "ga": 0,
       "gd": 0,
-      "points": 0,
+      "points": 1,
       "position": 1,
-      "form": [],
+      "form": [
+        "D"
+      ],
       "eliminated": false,
-      "win_probability": 6.6,
-      "final_probability": 12.6,
-      "semis_probability": 21.7,
-      "quarters_probability": 36.6
+      "win_probability": 5.1,
+      "final_probability": 10.0,
+      "semis_probability": 19.6,
+      "quarters_probability": 34.3
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -123,10 +125,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 12.3,
-      "final_probability": 19.0,
+      "win_probability": 11.8,
+      "final_probability": 18.9,
       "semis_probability": 29.8,
-      "quarters_probability": 45.4
+      "quarters_probability": 45.2
     }
   },
   "recent_matches": [
@@ -223,15 +225,6 @@
   ],
   "upcoming_matches": [
     {
-      "home": "Spain",
-      "away": "Cape Verde",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-15",
-      "status": "SCHEDULED"
-    },
-    {
       "home": "Belgium",
       "away": "Egypt",
       "home_score": null,
@@ -324,6 +317,15 @@
     {
       "home": "Uzbekistan",
       "away": "Colombia",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-18",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Czech Republic",
+      "away": "South Africa",
       "home_score": null,
       "away_score": null,
       "stage": "Group Stage",
@@ -657,14 +659,25 @@
     "Group H": [
       {
         "team": "Spain",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 0,
         "gf": 0,
         "ga": 0,
         "gd": 0,
-        "points": 0
+        "points": 1
+      },
+      {
+        "team": "Cape Verde",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 1
       },
       {
         "team": "Uruguay",
@@ -679,17 +692,6 @@
       },
       {
         "team": "Saudi Arabia",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
-        "team": "Cape Verde",
         "played": 0,
         "won": 0,
         "drawn": 0,

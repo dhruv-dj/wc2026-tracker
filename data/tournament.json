@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-15T21:53:05.989890+00:00",
+  "last_updated": "2026-06-16T01:00:23.275306+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -57,10 +57,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 9.2,
-      "final_probability": 15.4,
-      "semis_probability": 25.4,
-      "quarters_probability": 40.2
+      "win_probability": 9.7,
+      "final_probability": 15.9,
+      "semis_probability": 25.9,
+      "quarters_probability": 41.0
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -79,10 +79,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 5.2,
-      "final_probability": 9.9,
-      "semis_probability": 17.8,
-      "quarters_probability": 31.5
+      "win_probability": 5.0,
+      "final_probability": 9.7,
+      "semis_probability": 17.5,
+      "quarters_probability": 31.3
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -98,15 +98,15 @@
       "ga": 0,
       "gd": 0,
       "points": 1,
-      "position": 1,
+      "position": 3,
       "form": [
         "D"
       ],
       "eliminated": false,
-      "win_probability": 5.6,
-      "final_probability": 10.5,
-      "semis_probability": 19.3,
-      "quarters_probability": 34.1
+      "win_probability": 5.2,
+      "final_probability": 10.3,
+      "semis_probability": 18.6,
+      "quarters_probability": 33.5
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -125,22 +125,13 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 12.4,
-      "final_probability": 19.7,
-      "semis_probability": 30.9,
-      "quarters_probability": 46.2
+      "win_probability": 11.8,
+      "final_probability": 19.4,
+      "semis_probability": 29.8,
+      "quarters_probability": 45.3
     }
   },
   "recent_matches": [
-    {
-      "home": "USA",
-      "away": "Paraguay",
-      "home_score": 4,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-13",
-      "status": "FINISHED"
-    },
     {
       "home": "Qatar",
       "away": "Switzerland",
@@ -221,18 +212,18 @@
       "stage": "Group Stage",
       "date": "2026-06-15",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "Saudi Arabia",
       "away": "Uruguay",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-15",
-      "status": "SCHEDULED"
-    },
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "France",
       "away": "Senegal",
@@ -326,6 +317,15 @@
     {
       "home": "Switzerland",
       "away": "Bosnia and Herzegovina",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-18",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Canada",
+      "away": "Qatar",
       "home_score": null,
       "away_score": null,
       "stage": "Group Stage",
@@ -658,6 +658,28 @@
     ],
     "Group H": [
       {
+        "team": "Uruguay",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 1,
+        "ga": 1,
+        "gd": 0,
+        "points": 1
+      },
+      {
+        "team": "Saudi Arabia",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 1,
+        "ga": 1,
+        "gd": 0,
+        "points": 1
+      },
+      {
         "team": "Spain",
         "played": 1,
         "won": 0,
@@ -678,28 +700,6 @@
         "ga": 0,
         "gd": 0,
         "points": 1
-      },
-      {
-        "team": "Uruguay",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
-        "team": "Saudi Arabia",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
       }
     ],
     "Group I": [

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16T21:51:27.822345+00:00",
+  "last_updated": "2026-06-17T00:55:02.810934+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -54,15 +54,15 @@
       "ga": 1,
       "gd": 2,
       "points": 3,
-      "position": 1,
+      "position": 2,
       "form": [
         "W"
       ],
       "eliminated": false,
-      "win_probability": 15.5,
-      "final_probability": 23.4,
-      "semis_probability": 34.3,
-      "quarters_probability": 50.3
+      "win_probability": 16.6,
+      "final_probability": 24.2,
+      "semis_probability": 34.6,
+      "quarters_probability": 50.1
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -81,10 +81,10 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 4.9,
+      "win_probability": 4.6,
       "final_probability": 9.5,
-      "semis_probability": 17.8,
-      "quarters_probability": 32.0
+      "semis_probability": 17.4,
+      "quarters_probability": 30.8
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -105,10 +105,10 @@
         "D"
       ],
       "eliminated": false,
-      "win_probability": 5.4,
-      "final_probability": 10.2,
-      "semis_probability": 18.9,
-      "quarters_probability": 33.4
+      "win_probability": 4.7,
+      "final_probability": 9.8,
+      "semis_probability": 18.4,
+      "quarters_probability": 32.8
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -127,22 +127,13 @@
       "position": 1,
       "form": [],
       "eliminated": false,
-      "win_probability": 11.3,
-      "final_probability": 18.2,
-      "semis_probability": 28.9,
-      "quarters_probability": 45.0
+      "win_probability": 11.4,
+      "final_probability": 18.6,
+      "semis_probability": 29.1,
+      "quarters_probability": 44.4
     }
   },
   "recent_matches": [
-    {
-      "home": "Brazil",
-      "away": "Morocco",
-      "home_score": 1,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-13",
-      "status": "FINISHED"
-    },
     {
       "home": "Haiti",
       "away": "Scotland",
@@ -223,18 +214,18 @@
       "stage": "Group Stage",
       "date": "2026-06-16",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "Iraq",
       "away": "Norway",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 4,
       "stage": "Group Stage",
       "date": "2026-06-16",
-      "status": "SCHEDULED"
-    },
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "Argentina",
       "away": "Algeria",
@@ -328,6 +319,15 @@
     {
       "home": "USA",
       "away": "Australia",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-19",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Scotland",
+      "away": "Morocco",
       "home_score": null,
       "away_score": null,
       "stage": "Group Stage",
@@ -706,6 +706,17 @@
     ],
     "Group I": [
       {
+        "team": "Norway",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 4,
+        "ga": 1,
+        "gd": 3,
+        "points": 3
+      },
+      {
         "team": "France",
         "played": 1,
         "won": 1,
@@ -717,28 +728,6 @@
         "points": 3
       },
       {
-        "team": "Norway",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
-        "team": "Iraq",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
         "team": "Senegal",
         "played": 1,
         "won": 0,
@@ -747,6 +736,17 @@
         "gf": 1,
         "ga": 3,
         "gd": -2,
+        "points": 0
+      },
+      {
+        "team": "Iraq",
+        "played": 1,
+        "won": 0,
+        "drawn": 0,
+        "lost": 1,
+        "gf": 1,
+        "ga": 4,
+        "gd": -3,
         "points": 0
       }
     ],

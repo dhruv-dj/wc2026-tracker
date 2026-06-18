@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18T13:13:08.969033+00:00",
+  "last_updated": "2026-06-18T13:11:33.895053+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -56,13 +56,17 @@
       "points": 3,
       "position": 2,
       "form": [
-        "W"
+        {
+          "r": "W",
+          "score": "3\u20131",
+          "vs": "Senegal"
+        }
       ],
       "eliminated": false,
-      "win_probability": 14.0,
-      "final_probability": 21.4,
-      "semis_probability": 32.7,
-      "quarters_probability": 48.7
+      "win_probability": 13.5,
+      "final_probability": 20.9,
+      "semis_probability": 31.9,
+      "quarters_probability": 47.9
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -80,13 +84,17 @@
       "points": 1,
       "position": 3,
       "form": [
-        "D"
+        {
+          "r": "D",
+          "score": "1\u20131",
+          "vs": "Congo DR"
+        }
       ],
       "eliminated": false,
-      "win_probability": 3.5,
-      "final_probability": 7.6,
-      "semis_probability": 14.9,
-      "quarters_probability": 29.7
+      "win_probability": 3.4,
+      "final_probability": 7.1,
+      "semis_probability": 15.1,
+      "quarters_probability": 29.1
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -104,13 +112,17 @@
       "points": 1,
       "position": 3,
       "form": [
-        "D"
+        {
+          "r": "D",
+          "score": "0\u20130",
+          "vs": "Cape Verde"
+        }
       ],
       "eliminated": false,
       "win_probability": 4.0,
-      "final_probability": 9.1,
-      "semis_probability": 17.5,
-      "quarters_probability": 32.2
+      "final_probability": 8.6,
+      "semis_probability": 17.0,
+      "quarters_probability": 31.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -128,13 +140,17 @@
       "points": 3,
       "position": 1,
       "form": [
-        "W"
+        {
+          "r": "W",
+          "score": "3\u20130",
+          "vs": "Algeria"
+        }
       ],
       "eliminated": false,
-      "win_probability": 17.7,
-      "final_probability": 25.8,
-      "semis_probability": 37.1,
-      "quarters_probability": 52.4
+      "win_probability": 18.1,
+      "final_probability": 26.4,
+      "semis_probability": 38.1,
+      "quarters_probability": 53.5
     }
   },
   "recent_matches": [
@@ -145,6 +161,7 @@
       "away_score": 0,
       "stage": "Group Stage",
       "date": "2026-06-14",
+      "datetime": "2026-06-14T23:00Z",
       "status": "FINISHED"
     },
     {
@@ -154,6 +171,7 @@
       "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-15",
+      "datetime": "2026-06-15T02:00Z",
       "status": "FINISHED"
     },
     {
@@ -163,6 +181,7 @@
       "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-15",
+      "datetime": "2026-06-15T19:00Z",
       "status": "FINISHED"
     },
     {
@@ -172,6 +191,7 @@
       "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-15",
+      "datetime": "2026-06-15T22:00Z",
       "status": "FINISHED"
     },
     {
@@ -181,6 +201,7 @@
       "away_score": 2,
       "stage": "Group Stage",
       "date": "2026-06-16",
+      "datetime": "2026-06-16T01:00Z",
       "status": "FINISHED"
     },
     {
@@ -190,6 +211,7 @@
       "away_score": 4,
       "stage": "Group Stage",
       "date": "2026-06-16",
+      "datetime": "2026-06-16T22:00Z",
       "status": "FINISHED"
     },
     {
@@ -199,6 +221,7 @@
       "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-17",
+      "datetime": "2026-06-17T04:00Z",
       "status": "FINISHED"
     },
     {
@@ -208,6 +231,7 @@
       "away_score": 2,
       "stage": "Group Stage",
       "date": "2026-06-17",
+      "datetime": "2026-06-17T20:00Z",
       "status": "FINISHED"
     },
     {
@@ -217,6 +241,7 @@
       "away_score": 0,
       "stage": "Group Stage",
       "date": "2026-06-17",
+      "datetime": "2026-06-17T23:00Z",
       "status": "FINISHED"
     },
     {
@@ -226,6 +251,7 @@
       "away_score": 3,
       "stage": "Group Stage",
       "date": "2026-06-18",
+      "datetime": "2026-06-18T02:00Z",
       "status": "FINISHED"
     }
   ],
@@ -237,6 +263,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-18",
+      "datetime": "2026-06-18T16:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -246,6 +273,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-18",
+      "datetime": "2026-06-18T19:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -255,6 +283,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-18",
+      "datetime": "2026-06-18T22:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -264,6 +293,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-19",
+      "datetime": "2026-06-19T01:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -273,6 +303,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-19",
+      "datetime": "2026-06-19T19:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -282,6 +313,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-19",
+      "datetime": "2026-06-19T22:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -291,6 +323,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-20",
+      "datetime": "2026-06-20T00:30Z",
       "status": "SCHEDULED"
     },
     {
@@ -300,6 +333,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-20",
+      "datetime": "2026-06-20T03:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -309,6 +343,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-20",
+      "datetime": "2026-06-20T17:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -318,6 +353,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-20",
+      "datetime": "2026-06-20T20:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -327,6 +363,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-21",
+      "datetime": "2026-06-21T16:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -336,6 +373,7 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-21",
+      "datetime": "2026-06-21T00:00Z",
       "status": "SCHEDULED"
     }
   ],

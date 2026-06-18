@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18T18:50:52.380991+00:00",
+  "last_updated": "2026-06-18T21:43:29.376301+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -63,10 +63,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 13.3,
-      "final_probability": 21.5,
+      "win_probability": 13.7,
+      "final_probability": 21.1,
       "semis_probability": 32.8,
-      "quarters_probability": 49.1
+      "quarters_probability": 48.5
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -91,10 +91,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 3.5,
-      "final_probability": 7.7,
-      "semis_probability": 15.3,
-      "quarters_probability": 28.9
+      "win_probability": 3.2,
+      "final_probability": 7.4,
+      "semis_probability": 14.9,
+      "quarters_probability": 29.5
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -119,10 +119,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.4,
-      "final_probability": 9.3,
-      "semis_probability": 17.5,
-      "quarters_probability": 32.6
+      "win_probability": 4.3,
+      "final_probability": 8.7,
+      "semis_probability": 16.8,
+      "quarters_probability": 31.1
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -147,23 +147,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.4,
-      "final_probability": 25.5,
-      "semis_probability": 36.9,
-      "quarters_probability": 52.8
+      "win_probability": 17.3,
+      "final_probability": 25.8,
+      "semis_probability": 37.6,
+      "quarters_probability": 53.0
     }
   },
   "recent_matches": [
-    {
-      "home": "Sweden",
-      "away": "Tunisia",
-      "home_score": 5,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-15",
-      "datetime": "2026-06-15T02:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Belgium",
       "away": "Egypt",
@@ -253,19 +243,19 @@
       "date": "2026-06-18",
       "datetime": "2026-06-18T16:00Z",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "Switzerland",
       "away": "Bosnia and Herzegovina",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 4,
+      "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-18",
       "datetime": "2026-06-18T19:00Z",
-      "status": "SCHEDULED"
-    },
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "Canada",
       "away": "Qatar",
@@ -375,6 +365,16 @@
       "date": "2026-06-21",
       "datetime": "2026-06-21T04:00Z",
       "status": "SCHEDULED"
+    },
+    {
+      "home": "Belgium",
+      "away": "Iran",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-21",
+      "datetime": "2026-06-21T19:00Z",
+      "status": "SCHEDULED"
     }
   ],
   "all_groups": {
@@ -426,29 +426,18 @@
     ],
     "Group B": [
       {
-        "team": "Canada",
-        "played": 1,
-        "won": 0,
-        "drawn": 1,
-        "lost": 0,
-        "gf": 1,
-        "ga": 1,
-        "gd": 0,
-        "points": 1
-      },
-      {
-        "team": "Bosnia and Herzegovina",
-        "played": 1,
-        "won": 0,
-        "drawn": 1,
-        "lost": 0,
-        "gf": 1,
-        "ga": 1,
-        "gd": 0,
-        "points": 1
-      },
-      {
         "team": "Switzerland",
+        "played": 2,
+        "won": 1,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 5,
+        "ga": 2,
+        "gd": 3,
+        "points": 4
+      },
+      {
+        "team": "Canada",
         "played": 1,
         "won": 0,
         "drawn": 1,
@@ -467,6 +456,17 @@
         "gf": 1,
         "ga": 1,
         "gd": 0,
+        "points": 1
+      },
+      {
+        "team": "Bosnia and Herzegovina",
+        "played": 2,
+        "won": 0,
+        "drawn": 1,
+        "lost": 1,
+        "gf": 2,
+        "ga": 5,
+        "gd": -3,
         "points": 1
       }
     ],

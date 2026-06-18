@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18T00:54:47.565174+00:00",
+  "last_updated": "2026-06-18T04:33:01.079070+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -59,9 +59,9 @@
         "W"
       ],
       "eliminated": false,
-      "win_probability": 13.6,
-      "final_probability": 21.5,
-      "semis_probability": 32.4,
+      "win_probability": 13.5,
+      "final_probability": 21.6,
+      "semis_probability": 33.5,
       "quarters_probability": 49.0
     },
     "Portugal": {
@@ -78,15 +78,15 @@
       "ga": 1,
       "gd": 0,
       "points": 1,
-      "position": 2,
+      "position": 3,
       "form": [
         "D"
       ],
       "eliminated": false,
-      "win_probability": 3.2,
-      "final_probability": 7.8,
-      "semis_probability": 15.7,
-      "quarters_probability": 29.7
+      "win_probability": 3.5,
+      "final_probability": 7.3,
+      "semis_probability": 14.5,
+      "quarters_probability": 28.9
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -108,9 +108,9 @@
       ],
       "eliminated": false,
       "win_probability": 4.1,
-      "final_probability": 9.0,
-      "semis_probability": 17.7,
-      "quarters_probability": 32.7
+      "final_probability": 8.8,
+      "semis_probability": 16.8,
+      "quarters_probability": 31.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -131,31 +131,13 @@
         "W"
       ],
       "eliminated": false,
-      "win_probability": 18.2,
-      "final_probability": 27.0,
-      "semis_probability": 38.7,
-      "quarters_probability": 53.3
+      "win_probability": 16.8,
+      "final_probability": 25.3,
+      "semis_probability": 37.1,
+      "quarters_probability": 52.5
     }
   },
   "recent_matches": [
-    {
-      "home": "Germany",
-      "away": "Curacao",
-      "home_score": 7,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-14",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Netherlands",
-      "away": "Japan",
-      "home_score": 2,
-      "away_score": 2,
-      "stage": "Group Stage",
-      "date": "2026-06-14",
-      "status": "FINISHED"
-    },
     {
       "home": "C\u00f4te d'Ivoire",
       "away": "Ecuador",
@@ -227,27 +209,27 @@
       "stage": "Group Stage",
       "date": "2026-06-17",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "Ghana",
       "away": "Panama",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 0,
       "stage": "Group Stage",
       "date": "2026-06-17",
-      "status": "SCHEDULED"
+      "status": "FINISHED"
     },
     {
       "home": "Uzbekistan",
       "away": "Colombia",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 3,
       "stage": "Group Stage",
       "date": "2026-06-18",
-      "status": "SCHEDULED"
-    },
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "Czech Republic",
       "away": "South Africa",
@@ -336,6 +318,24 @@
       "away_score": null,
       "stage": "Group Stage",
       "date": "2026-06-20",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Spain",
+      "away": "Saudi Arabia",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-21",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Ecuador",
+      "away": "Curacao",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-21",
       "status": "SCHEDULED"
     }
   ],
@@ -802,6 +802,17 @@
     ],
     "Group K": [
       {
+        "team": "Colombia",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 3,
+        "ga": 1,
+        "gd": 2,
+        "points": 3
+      },
+      {
         "team": "Portugal",
         "played": 1,
         "won": 0,
@@ -824,25 +835,14 @@
         "points": 1
       },
       {
-        "team": "Colombia",
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      {
         "team": "Uzbekistan",
-        "played": 0,
+        "played": 1,
         "won": 0,
         "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
+        "lost": 1,
+        "gf": 1,
+        "ga": 3,
+        "gd": -2,
         "points": 0
       }
     ],
@@ -859,25 +859,25 @@
         "points": 3
       },
       {
-        "team": "Panama",
-        "played": 0,
-        "won": 0,
+        "team": "Ghana",
+        "played": 1,
+        "won": 1,
         "drawn": 0,
         "lost": 0,
-        "gf": 0,
+        "gf": 1,
         "ga": 0,
-        "gd": 0,
-        "points": 0
+        "gd": 1,
+        "points": 3
       },
       {
-        "team": "Ghana",
-        "played": 0,
+        "team": "Panama",
+        "played": 1,
         "won": 0,
         "drawn": 0,
-        "lost": 0,
+        "lost": 1,
         "gf": 0,
-        "ga": 0,
-        "gd": 0,
+        "ga": 1,
+        "gd": -1,
         "points": 0
       },
       {

@@ -992,6 +992,90 @@
     .b-modal-input:focus { outline: none; border-color: var(--gold); }
     .b-modal-actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
 
+    /* ── Onboarding modal ────────────────────────────────────────────── */
+    .ob-overlay {
+      position: fixed; inset: 0;
+      background: rgba(5,5,11,0.88);
+      z-index: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .ob-modal {
+      background: var(--card);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: 2rem 1.75rem 1.5rem;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+    }
+    .ob-dismiss {
+      position: absolute;
+      top: 0.85rem; right: 0.85rem;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      line-height: 1;
+      transition: color 0.15s;
+    }
+    .ob-dismiss:hover { color: var(--text); }
+    .ob-step { display: none; }
+    .ob-step.ob-active { display: block; }
+    .ob-icon { font-size: 2rem; margin-bottom: 0.65rem; }
+    .ob-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--gold-lt);
+      margin-bottom: 0.6rem;
+    }
+    .ob-body {
+      font-size: 0.84rem;
+      color: #888899;
+      line-height: 1.72;
+    }
+    .ob-body strong { color: var(--text); }
+    .ob-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.4rem 0 1.2rem;
+    }
+    .ob-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--border);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .ob-dot.ob-active {
+      background: var(--gold);
+      transform: scale(1.35);
+    }
+    .ob-actions {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ob-skip {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0.4rem 0;
+      transition: color 0.15s;
+    }
+    .ob-skip:hover { color: var(--text); }
+    .ob-nav { display: flex; gap: 0.5rem; }
+
     @media (max-width: 480px) {
       .lb-item { flex-wrap: wrap; }
       .lb-probs { text-align: left; width: 100%; padding-left: 4.2rem; }
@@ -1206,6 +1290,70 @@
     <div class="b-modal-actions">
       <button class="btn btn-outline" onclick="closeTokenModal()">Cancel</button>
       <button class="btn" onclick="saveToken()">Save token</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Onboarding Modal ───────────────────────────────────────────────── -->
+<div class="ob-overlay" id="ob-overlay" style="display:none">
+  <div class="ob-modal">
+    <button class="ob-dismiss" onclick="closeOnboarding()">✕</button>
+
+    <!-- Step 1 -->
+    <div class="ob-step ob-active" id="ob-step-0">
+      <div class="ob-icon">🏆</div>
+      <div class="ob-title">Welcome, <span class="ob-username"></span>!</div>
+      <div class="ob-body">
+        This is the <strong>Knockout Bracket Challenge</strong>.<br><br>
+        Pick the winner of every match — from the <strong>Round of 32</strong> all the way to the <strong>Final</strong>. See how your predictions stack up against your friends!
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="ob-step" id="ob-step-1">
+      <div class="ob-icon">👆</div>
+      <div class="ob-title">Tap to pick a winner</div>
+      <div class="ob-body">
+        Each match shows two teams. <strong>Tap the team you think will win</strong> to select them.<br><br>
+        The selected team gets a gold highlight and automatically advances to the next round's slot.
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="ob-step" id="ob-step-2">
+      <div class="ob-icon">🔄</div>
+      <div class="ob-title">Picks flow forward</div>
+      <div class="ob-body">
+        If you <strong>change an earlier pick</strong>, any dependent picks further down the bracket are automatically cleared — since that team can no longer be there.<br><br>
+        Just re-pick your way forward.
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="ob-step" id="ob-step-3">
+      <div class="ob-icon">🔒</div>
+      <div class="ob-title">Save &amp; Lock before Jun 26</div>
+      <div class="ob-body">
+        Hit <strong>Save Draft</strong> any time to keep your progress. When you're ready, hit <strong>Lock Picks</strong> to finalise — locked picks can't be changed.<br><br>
+        The bracket <strong>auto-locks on Jun 26</strong> when the knockouts begin. Good luck!
+      </div>
+    </div>
+
+    <!-- Progress dots -->
+    <div class="ob-dots">
+      <div class="ob-dot ob-active" id="ob-dot-0"></div>
+      <div class="ob-dot" id="ob-dot-1"></div>
+      <div class="ob-dot" id="ob-dot-2"></div>
+      <div class="ob-dot" id="ob-dot-3"></div>
+    </div>
+
+    <!-- Actions -->
+    <div class="ob-actions">
+      <button class="ob-skip" onclick="closeOnboarding()">Skip</button>
+      <div class="ob-nav">
+        <button class="btn btn-outline" id="ob-back-btn" onclick="obNav(-1)" style="display:none">← Back</button>
+        <button class="btn" id="ob-next-btn" onclick="obNav(1)">Next →</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1867,6 +2015,7 @@ function showLoggedInUI() {
   $("b-actions").style.display = locked ? "none" : "";
 
   renderBracket();
+  showOnboarding(currentUser);
 }
 
 // ══════════════════════════════════════════════════════════════════════════
@@ -2234,6 +2383,46 @@ function saveToken() {
   }
   closeTokenModal();
   updateTokenNotice();
+}
+
+// ── Onboarding modal ──────────────────────────────────────────────────────
+let obStep = 0;
+const OB_TOTAL = 4;
+
+function hasSeenOnboarding(name) {
+  return !!localStorage.getItem('wc2026_ob_' + name);
+}
+function markOnboardingSeen(name) {
+  localStorage.setItem('wc2026_ob_' + name, '1');
+}
+
+function showOnboarding(name) {
+  if (hasSeenOnboarding(name)) return;
+  obStep = 0;
+  document.querySelectorAll('.ob-username').forEach(el => { el.textContent = name; });
+  renderObStep();
+  $('ob-overlay').style.display = '';
+}
+
+function closeOnboarding() {
+  if (currentUser) markOnboardingSeen(currentUser);
+  $('ob-overlay').style.display = 'none';
+}
+
+function renderObStep() {
+  for (let i = 0; i < OB_TOTAL; i++) {
+    document.getElementById('ob-step-' + i).classList.toggle('ob-active', i === obStep);
+    document.getElementById('ob-dot-' + i).classList.toggle('ob-active', i === obStep);
+  }
+  $('ob-back-btn').style.display = obStep === 0 ? 'none' : '';
+  $('ob-next-btn').textContent = obStep === OB_TOTAL - 1 ? 'Got it! ✓' : 'Next →';
+}
+
+function obNav(dir) {
+  obStep += dir;
+  if (obStep >= OB_TOTAL) { closeOnboarding(); return; }
+  if (obStep < 0) obStep = 0;
+  renderObStep();
 }
 </script>
 </body>

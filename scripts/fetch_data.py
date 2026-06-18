@@ -166,6 +166,7 @@ def parse_espn_matches(events):
             "away_score": int(float(away["score"])) if finished and away.get("score") else None,
             "stage":      stage,
             "date":       event["date"][:10],
+            "datetime":   event["date"],   # full ISO for kickoff time display
             "status":     "FINISHED" if finished else "SCHEDULED",
         })
     return matches
@@ -329,9 +330,11 @@ def get_form(matches, team):
         if hs is None or as_ is None:
             continue
         if m["home"] == team:
-            form.append("W" if hs > as_ else ("D" if hs == as_ else "L"))
+            r = "W" if hs > as_ else ("D" if hs == as_ else "L")
+            form.append({"r": r, "score": f"{hs}–{as_}", "vs": m["away"]})
         elif m["away"] == team:
-            form.append("W" if as_ > hs else ("D" if as_ == hs else "L"))
+            r = "W" if as_ > hs else ("D" if as_ == hs else "L")
+            form.append({"r": r, "score": f"{as_}–{hs}", "vs": m["home"]})
     return form
 
 

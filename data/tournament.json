@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-19T18:39:28.853911+00:00",
+  "last_updated": "2026-06-19T21:27:17.641832+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -63,10 +63,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 13.6,
-      "final_probability": 21.5,
-      "semis_probability": 32.6,
-      "quarters_probability": 48.8
+      "win_probability": 12.9,
+      "final_probability": 20.7,
+      "semis_probability": 32.3,
+      "quarters_probability": 48.5
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -91,10 +91,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 3.0,
-      "final_probability": 6.7,
-      "semis_probability": 14.7,
-      "quarters_probability": 28.9
+      "win_probability": 3.4,
+      "final_probability": 7.4,
+      "semis_probability": 15.3,
+      "quarters_probability": 29.2
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -119,10 +119,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.2,
-      "final_probability": 8.8,
+      "win_probability": 4.0,
+      "final_probability": 8.7,
       "semis_probability": 17.2,
-      "quarters_probability": 31.5
+      "quarters_probability": 31.3
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -147,23 +147,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.3,
-      "final_probability": 25.3,
-      "semis_probability": 37.1,
-      "quarters_probability": 52.8
+      "win_probability": 17.8,
+      "final_probability": 26.6,
+      "semis_probability": 38.1,
+      "quarters_probability": 53.9
     }
   },
   "recent_matches": [
-    {
-      "home": "Iran",
-      "away": "New Zealand",
-      "home_score": 2,
-      "away_score": 2,
-      "stage": "Group Stage",
-      "date": "2026-06-16",
-      "datetime": "2026-06-16T01:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Iraq",
       "away": "Norway",
@@ -253,19 +243,19 @@
       "date": "2026-06-19",
       "datetime": "2026-06-19T01:00Z",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "USA",
       "away": "Australia",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 0,
       "stage": "Group Stage",
       "date": "2026-06-19",
       "datetime": "2026-06-19T19:00Z",
-      "status": "SCHEDULED"
-    },
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "Scotland",
       "away": "Morocco",
@@ -374,6 +364,16 @@
       "stage": "Group Stage",
       "date": "2026-06-22",
       "datetime": "2026-06-22T17:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "France",
+      "away": "Iraq",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-22",
+      "datetime": "2026-06-22T21:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -519,24 +519,24 @@
     "Group D": [
       {
         "team": "USA",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "drawn": 0,
         "lost": 0,
-        "gf": 4,
+        "gf": 6,
         "ga": 1,
-        "gd": 3,
-        "points": 3
+        "gd": 5,
+        "points": 6
       },
       {
         "team": "Australia",
-        "played": 1,
+        "played": 2,
         "won": 1,
         "drawn": 0,
-        "lost": 0,
+        "lost": 1,
         "gf": 2,
-        "ga": 0,
-        "gd": 2,
+        "ga": 2,
+        "gd": 0,
         "points": 3
       },
       {

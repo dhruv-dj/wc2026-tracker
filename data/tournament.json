@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-21T00:55:01.538154+00:00",
+  "last_updated": "2026-06-21T04:34:14.404930+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -63,10 +63,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.2,
-      "final_probability": 22.2,
-      "semis_probability": 33.7,
-      "quarters_probability": 49.9
+      "win_probability": 13.7,
+      "final_probability": 22.0,
+      "semis_probability": 33.3,
+      "quarters_probability": 49.6
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -91,10 +91,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 3.1,
-      "final_probability": 6.8,
-      "semis_probability": 14.7,
-      "quarters_probability": 29.4
+      "win_probability": 3.3,
+      "final_probability": 7.0,
+      "semis_probability": 14.6,
+      "quarters_probability": 28.8
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -119,10 +119,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.2,
-      "final_probability": 8.6,
-      "semis_probability": 16.9,
-      "quarters_probability": 32.2
+      "win_probability": 3.7,
+      "final_probability": 8.3,
+      "semis_probability": 16.8,
+      "quarters_probability": 31.4
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -147,23 +147,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 16.8,
-      "final_probability": 25.1,
-      "semis_probability": 37.1,
-      "quarters_probability": 52.9
+      "win_probability": 17.2,
+      "final_probability": 25.7,
+      "semis_probability": 37.3,
+      "quarters_probability": 52.5
     }
   },
   "recent_matches": [
-    {
-      "home": "Czech Republic",
-      "away": "South Africa",
-      "home_score": 1,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-18",
-      "datetime": "2026-06-18T16:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Switzerland",
       "away": "Bosnia and Herzegovina",
@@ -253,6 +243,16 @@
       "date": "2026-06-20",
       "datetime": "2026-06-20T20:00Z",
       "status": "FINISHED"
+    },
+    {
+      "home": "Ecuador",
+      "away": "Curacao",
+      "home_score": 0,
+      "away_score": 0,
+      "stage": "Group Stage",
+      "date": "2026-06-21",
+      "datetime": "2026-06-21T00:00Z",
+      "status": "FINISHED"
     }
   ],
   "upcoming_matches": [
@@ -264,16 +264,6 @@
       "stage": "Group Stage",
       "date": "2026-06-21",
       "datetime": "2026-06-21T16:00Z",
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Ecuador",
-      "away": "Curacao",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-21",
-      "datetime": "2026-06-21T00:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -374,6 +364,16 @@
       "stage": "Group Stage",
       "date": "2026-06-23",
       "datetime": "2026-06-23T20:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Panama",
+      "away": "Croatia",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-23",
+      "datetime": "2026-06-23T23:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -587,25 +587,25 @@
       },
       {
         "team": "Ecuador",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 1,
         "gf": 0,
         "ga": 1,
         "gd": -1,
-        "points": 0
+        "points": 1
       },
       {
         "team": "Curacao",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 1,
         "gf": 1,
         "ga": 7,
         "gd": -6,
-        "points": 0
+        "points": 1
       }
     ],
     "Group F": [

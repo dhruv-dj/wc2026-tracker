@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-20T21:30:49.930568+00:00",
+  "last_updated": "2026-06-21T00:55:01.538154+00:00",
   "tournament_stage": "Group Stage",
   "data_source": "live",
   "friends": {
@@ -63,10 +63,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 13.1,
-      "final_probability": 21.2,
-      "semis_probability": 32.5,
-      "quarters_probability": 49.0
+      "win_probability": 14.2,
+      "final_probability": 22.2,
+      "semis_probability": 33.7,
+      "quarters_probability": 49.9
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -92,9 +92,9 @@
       ],
       "eliminated": false,
       "win_probability": 3.1,
-      "final_probability": 6.9,
-      "semis_probability": 14.0,
-      "quarters_probability": 28.0
+      "final_probability": 6.8,
+      "semis_probability": 14.7,
+      "quarters_probability": 29.4
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -119,10 +119,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.3,
-      "final_probability": 8.9,
-      "semis_probability": 16.8,
-      "quarters_probability": 32.1
+      "win_probability": 4.2,
+      "final_probability": 8.6,
+      "semis_probability": 16.9,
+      "quarters_probability": 32.2
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -147,23 +147,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 16.5,
-      "final_probability": 24.8,
-      "semis_probability": 36.3,
-      "quarters_probability": 51.6
+      "win_probability": 16.8,
+      "final_probability": 25.1,
+      "semis_probability": 37.1,
+      "quarters_probability": 52.9
     }
   },
   "recent_matches": [
-    {
-      "home": "Uzbekistan",
-      "away": "Colombia",
-      "home_score": 1,
-      "away_score": 3,
-      "stage": "Group Stage",
-      "date": "2026-06-18",
-      "datetime": "2026-06-18T02:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Czech Republic",
       "away": "South Africa",
@@ -253,19 +243,19 @@
       "date": "2026-06-20",
       "datetime": "2026-06-20T17:00Z",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "Germany",
       "away": "C\u00f4te d'Ivoire",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-20",
       "datetime": "2026-06-20T20:00Z",
-      "status": "SCHEDULED"
-    },
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "Spain",
       "away": "Saudi Arabia",
@@ -374,6 +364,16 @@
       "stage": "Group Stage",
       "date": "2026-06-23",
       "datetime": "2026-06-23T03:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "England",
+      "away": "Ghana",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-23",
+      "datetime": "2026-06-23T20:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -565,24 +565,24 @@
     "Group E": [
       {
         "team": "Germany",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "drawn": 0,
         "lost": 0,
-        "gf": 7,
-        "ga": 1,
-        "gd": 6,
-        "points": 3
+        "gf": 9,
+        "ga": 2,
+        "gd": 7,
+        "points": 6
       },
       {
         "team": "C\u00f4te d'Ivoire",
-        "played": 1,
+        "played": 2,
         "won": 1,
         "drawn": 0,
-        "lost": 0,
-        "gf": 1,
-        "ga": 0,
-        "gd": 1,
+        "lost": 1,
+        "gf": 2,
+        "ga": 2,
+        "gd": 0,
         "points": 3
       },
       {

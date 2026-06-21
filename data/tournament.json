@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-21T15:36:53.082332+00:00",
+  "last_updated": "2026-06-21T18:34:29.128443+00:00",
   "tournament_stage": "Knockout Stage",
   "data_source": "live",
   "friends": {
@@ -63,10 +63,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 13.2,
-      "final_probability": 20.6,
-      "semis_probability": 32.7,
-      "quarters_probability": 49.1
+      "win_probability": 13.0,
+      "final_probability": 20.5,
+      "semis_probability": 31.7,
+      "quarters_probability": 47.1
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -92,9 +92,9 @@
       ],
       "eliminated": false,
       "win_probability": 3.1,
-      "final_probability": 7.1,
-      "semis_probability": 14.9,
-      "quarters_probability": 28.6
+      "final_probability": 7.3,
+      "semis_probability": 14.6,
+      "quarters_probability": 28.0
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -102,16 +102,21 @@
       "secondary": "#F4C300",
       "abbreviation": "ESP",
       "group": "Group H",
-      "played": 1,
-      "won": 0,
+      "played": 2,
+      "won": 1,
       "drawn": 1,
       "lost": 0,
-      "gf": 0,
+      "gf": 4,
       "ga": 0,
-      "gd": 0,
-      "points": 1,
-      "position": 3,
+      "gd": 4,
+      "points": 4,
+      "position": 1,
       "form": [
+        {
+          "r": "W",
+          "score": "4\u20130",
+          "vs": "Saudi Arabia"
+        },
         {
           "r": "D",
           "score": "0\u20130",
@@ -119,10 +124,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.1,
-      "final_probability": 8.5,
-      "semis_probability": 16.8,
-      "quarters_probability": 31.8
+      "win_probability": 7.3,
+      "final_probability": 13.7,
+      "semis_probability": 24.1,
+      "quarters_probability": 40.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -147,10 +152,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.4,
-      "final_probability": 25.8,
-      "semis_probability": 37.2,
-      "quarters_probability": 52.4
+      "win_probability": 16.7,
+      "final_probability": 24.4,
+      "semis_probability": 35.5,
+      "quarters_probability": 51.6
     }
   },
   "recent_matches": [
@@ -256,16 +261,6 @@
     }
   ],
   "upcoming_matches": [
-    {
-      "home": "Spain",
-      "away": "Saudi Arabia",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-21",
-      "datetime": "2026-06-21T16:00Z",
-      "status": "SCHEDULED"
-    },
     {
       "home": "Belgium",
       "away": "Iran",
@@ -374,6 +369,16 @@
       "stage": "Group Stage",
       "date": "2026-06-24",
       "datetime": "2026-06-24T02:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Bosnia and Herzegovina",
+      "away": "Qatar",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-24",
+      "datetime": "2026-06-24T19:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -702,6 +707,17 @@
     ],
     "Group H": [
       {
+        "team": "Spain",
+        "played": 2,
+        "won": 1,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 4,
+        "ga": 0,
+        "gd": 4,
+        "points": 4
+      },
+      {
         "team": "Uruguay",
         "played": 1,
         "won": 0,
@@ -709,28 +725,6 @@
         "lost": 0,
         "gf": 1,
         "ga": 1,
-        "gd": 0,
-        "points": 1
-      },
-      {
-        "team": "Saudi Arabia",
-        "played": 1,
-        "won": 0,
-        "drawn": 1,
-        "lost": 0,
-        "gf": 1,
-        "ga": 1,
-        "gd": 0,
-        "points": 1
-      },
-      {
-        "team": "Spain",
-        "played": 1,
-        "won": 0,
-        "drawn": 1,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
         "gd": 0,
         "points": 1
       },
@@ -743,6 +737,17 @@
         "gf": 0,
         "ga": 0,
         "gd": 0,
+        "points": 1
+      },
+      {
+        "team": "Saudi Arabia",
+        "played": 2,
+        "won": 0,
+        "drawn": 1,
+        "lost": 1,
+        "gf": 1,
+        "ga": 5,
+        "gd": -4,
         "points": 1
       }
     ],

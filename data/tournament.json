@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-22T16:35:32.511039+00:00",
+  "last_updated": "2026-06-22T19:08:58.246312+00:00",
   "tournament_stage": "Knockout Stage",
   "data_source": "live",
   "friends": {
@@ -63,10 +63,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 12.4,
-      "final_probability": 19.6,
-      "semis_probability": 30.5,
-      "quarters_probability": 46.9
+      "win_probability": 12.8,
+      "final_probability": 20.5,
+      "semis_probability": 31.6,
+      "quarters_probability": 48.1
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -91,10 +91,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 3.0,
-      "final_probability": 6.7,
-      "semis_probability": 14.1,
-      "quarters_probability": 27.9
+      "win_probability": 2.6,
+      "final_probability": 6.5,
+      "semis_probability": 14.2,
+      "quarters_probability": 28.4
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -124,10 +124,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 7.6,
-      "final_probability": 14.0,
-      "semis_probability": 24.1,
-      "quarters_probability": 40.0
+      "win_probability": 6.9,
+      "final_probability": 12.9,
+      "semis_probability": 22.7,
+      "quarters_probability": 38.9
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -135,16 +135,21 @@
       "secondary": "#FFFFFF",
       "abbreviation": "ARG",
       "group": "Group J",
-      "played": 1,
-      "won": 1,
+      "played": 2,
+      "won": 2,
       "drawn": 0,
       "lost": 0,
-      "gf": 3,
+      "gf": 5,
       "ga": 0,
-      "gd": 3,
-      "points": 3,
+      "gd": 5,
+      "points": 6,
       "position": 1,
       "form": [
+        {
+          "r": "W",
+          "score": "2\u20130",
+          "vs": "Austria"
+        },
         {
           "r": "W",
           "score": "3\u20130",
@@ -152,10 +157,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 16.5,
-      "final_probability": 24.9,
-      "semis_probability": 36.0,
-      "quarters_probability": 52.2
+      "win_probability": 17.9,
+      "final_probability": 26.3,
+      "semis_probability": 38.0,
+      "quarters_probability": 53.5
     }
   },
   "recent_matches": [
@@ -261,16 +266,6 @@
     }
   ],
   "upcoming_matches": [
-    {
-      "home": "Argentina",
-      "away": "Austria",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-22",
-      "datetime": "2026-06-22T17:00Z",
-      "status": "SCHEDULED"
-    },
     {
       "home": "France",
       "away": "Iraq",
@@ -379,6 +374,16 @@
       "stage": "Group Stage",
       "date": "2026-06-24",
       "datetime": "2026-06-24T22:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Czech Republic",
+      "away": "Mexico",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-25",
+      "datetime": "2026-06-25T01:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -800,24 +805,24 @@
     "Group J": [
       {
         "team": "Argentina",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "drawn": 0,
         "lost": 0,
-        "gf": 3,
+        "gf": 5,
         "ga": 0,
-        "gd": 3,
-        "points": 3
+        "gd": 5,
+        "points": 6
       },
       {
         "team": "Austria",
-        "played": 1,
+        "played": 2,
         "won": 1,
         "drawn": 0,
-        "lost": 0,
+        "lost": 1,
         "gf": 3,
-        "ga": 1,
-        "gd": 2,
+        "ga": 3,
+        "gd": 0,
         "points": 3
       },
       {

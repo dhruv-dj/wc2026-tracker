@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-23T00:48:07.760920+00:00",
+  "last_updated": "2026-06-23T04:25:50.074270+00:00",
   "tournament_stage": "Knockout Stage",
   "data_source": "live",
   "friends": {
@@ -46,16 +46,21 @@
       "secondary": "#EF3340",
       "abbreviation": "FRA",
       "group": "Group I",
-      "played": 1,
-      "won": 1,
+      "played": 2,
+      "won": 2,
       "drawn": 0,
       "lost": 0,
-      "gf": 3,
+      "gf": 6,
       "ga": 1,
-      "gd": 2,
-      "points": 3,
-      "position": 2,
+      "gd": 5,
+      "points": 6,
+      "position": 1,
       "form": [
+        {
+          "r": "W",
+          "score": "3\u20130",
+          "vs": "Iraq"
+        },
         {
           "r": "W",
           "score": "3\u20131",
@@ -63,10 +68,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 12.3,
-      "final_probability": 19.5,
-      "semis_probability": 30.8,
-      "quarters_probability": 47.4
+      "win_probability": 13.2,
+      "final_probability": 21.3,
+      "semis_probability": 32.6,
+      "quarters_probability": 49.4
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -91,10 +96,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 2.8,
+      "win_probability": 2.7,
       "final_probability": 6.5,
-      "semis_probability": 14.2,
-      "quarters_probability": 28.2
+      "semis_probability": 14.1,
+      "quarters_probability": 28.3
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -124,10 +129,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 7.3,
-      "final_probability": 14.0,
-      "semis_probability": 24.3,
-      "quarters_probability": 40.4
+      "win_probability": 6.9,
+      "final_probability": 12.8,
+      "semis_probability": 23.8,
+      "quarters_probability": 40.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -157,23 +162,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.7,
-      "final_probability": 26.2,
-      "semis_probability": 37.5,
-      "quarters_probability": 53.0
+      "win_probability": 17.5,
+      "final_probability": 25.7,
+      "semis_probability": 36.8,
+      "quarters_probability": 52.3
     }
   },
   "recent_matches": [
-    {
-      "home": "Scotland",
-      "away": "Morocco",
-      "home_score": 0,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-19",
-      "datetime": "2026-06-19T22:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Brazil",
       "away": "Haiti",
@@ -263,19 +258,19 @@
       "date": "2026-06-22",
       "datetime": "2026-06-22T01:00Z",
       "status": "FINISHED"
+    },
+    {
+      "home": "Norway",
+      "away": "Senegal",
+      "home_score": 3,
+      "away_score": 2,
+      "stage": "Group Stage",
+      "date": "2026-06-23",
+      "datetime": "2026-06-23T00:00Z",
+      "status": "FINISHED"
     }
   ],
   "upcoming_matches": [
-    {
-      "home": "France",
-      "away": "Iraq",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-22",
-      "datetime": "2026-06-22T21:00Z",
-      "status": "SCHEDULED"
-    },
     {
       "home": "Portugal",
       "away": "Uzbekistan",
@@ -284,16 +279,6 @@
       "stage": "Group Stage",
       "date": "2026-06-23",
       "datetime": "2026-06-23T17:00Z",
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Norway",
-      "away": "Senegal",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-23",
-      "datetime": "2026-06-23T00:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -384,6 +369,26 @@
       "stage": "Group Stage",
       "date": "2026-06-25",
       "datetime": "2026-06-25T01:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "South Africa",
+      "away": "South Korea",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-25",
+      "datetime": "2026-06-25T01:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Curacao",
+      "away": "C\u00f4te d'Ivoire",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-25",
+      "datetime": "2026-06-25T20:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -758,47 +763,47 @@
     ],
     "Group I": [
       {
-        "team": "Norway",
-        "played": 1,
-        "won": 1,
+        "team": "France",
+        "played": 2,
+        "won": 2,
         "drawn": 0,
         "lost": 0,
-        "gf": 4,
+        "gf": 6,
         "ga": 1,
-        "gd": 3,
-        "points": 3
+        "gd": 5,
+        "points": 6
       },
       {
-        "team": "France",
-        "played": 1,
-        "won": 1,
+        "team": "Norway",
+        "played": 2,
+        "won": 2,
         "drawn": 0,
         "lost": 0,
-        "gf": 3,
-        "ga": 1,
-        "gd": 2,
-        "points": 3
+        "gf": 7,
+        "ga": 3,
+        "gd": 4,
+        "points": 6
       },
       {
         "team": "Senegal",
-        "played": 1,
+        "played": 2,
         "won": 0,
         "drawn": 0,
-        "lost": 1,
-        "gf": 1,
-        "ga": 3,
-        "gd": -2,
+        "lost": 2,
+        "gf": 3,
+        "ga": 6,
+        "gd": -3,
         "points": 0
       },
       {
         "team": "Iraq",
-        "played": 1,
+        "played": 2,
         "won": 0,
         "drawn": 0,
-        "lost": 1,
+        "lost": 2,
         "gf": 1,
-        "ga": 4,
-        "gd": -3,
+        "ga": 7,
+        "gd": -6,
         "points": 0
       }
     ],

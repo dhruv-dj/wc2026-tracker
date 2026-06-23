@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-23T18:45:09.588587+00:00",
+  "last_updated": "2026-06-23T21:34:56.286954+00:00",
   "tournament_stage": "Knockout Stage",
   "data_source": "live",
   "friends": {
@@ -68,9 +68,9 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 13.3,
-      "final_probability": 21.3,
-      "semis_probability": 32.9,
+      "win_probability": 13.6,
+      "final_probability": 21.4,
+      "semis_probability": 32.4,
       "quarters_probability": 48.2
     },
     "Portugal": {
@@ -79,16 +79,21 @@
       "secondary": "#006A35",
       "abbreviation": "POR",
       "group": "Group K",
-      "played": 1,
-      "won": 0,
+      "played": 2,
+      "won": 1,
       "drawn": 1,
       "lost": 0,
-      "gf": 1,
+      "gf": 6,
       "ga": 1,
-      "gd": 0,
-      "points": 1,
-      "position": 3,
+      "gd": 5,
+      "points": 4,
+      "position": 1,
       "form": [
+        {
+          "r": "W",
+          "score": "5\u20130",
+          "vs": "Uzbekistan"
+        },
         {
           "r": "D",
           "score": "1\u20131",
@@ -96,10 +101,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 2.9,
-      "final_probability": 6.8,
-      "semis_probability": 14.8,
-      "quarters_probability": 28.8
+      "win_probability": 5.8,
+      "final_probability": 11.2,
+      "semis_probability": 21.4,
+      "quarters_probability": 36.9
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -129,10 +134,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 7.1,
+      "win_probability": 6.7,
       "final_probability": 13.0,
-      "semis_probability": 22.8,
-      "quarters_probability": 38.8
+      "semis_probability": 23.3,
+      "quarters_probability": 40.1
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -162,10 +167,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.3,
-      "final_probability": 25.4,
-      "semis_probability": 36.9,
-      "quarters_probability": 52.0
+      "win_probability": 16.5,
+      "final_probability": 25.0,
+      "semis_probability": 36.7,
+      "quarters_probability": 52.8
     }
   },
   "recent_matches": [
@@ -271,16 +276,6 @@
     }
   ],
   "upcoming_matches": [
-    {
-      "home": "Portugal",
-      "away": "Uzbekistan",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-23",
-      "datetime": "2026-06-23T17:00Z",
-      "status": "SCHEDULED"
-    },
     {
       "home": "England",
       "away": "Ghana",
@@ -389,6 +384,16 @@
       "stage": "Group Stage",
       "date": "2026-06-25",
       "datetime": "2026-06-25T20:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Japan",
+      "away": "Sweden",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-25",
+      "datetime": "2026-06-25T23:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -855,6 +860,17 @@
     ],
     "Group K": [
       {
+        "team": "Portugal",
+        "played": 2,
+        "won": 1,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 6,
+        "ga": 1,
+        "gd": 5,
+        "points": 4
+      },
+      {
         "team": "Colombia",
         "played": 1,
         "won": 1,
@@ -864,17 +880,6 @@
         "ga": 1,
         "gd": 2,
         "points": 3
-      },
-      {
-        "team": "Portugal",
-        "played": 1,
-        "won": 0,
-        "drawn": 1,
-        "lost": 0,
-        "gf": 1,
-        "ga": 1,
-        "gd": 0,
-        "points": 1
       },
       {
         "team": "Congo DR",
@@ -889,13 +894,13 @@
       },
       {
         "team": "Uzbekistan",
-        "played": 1,
+        "played": 2,
         "won": 0,
         "drawn": 0,
-        "lost": 1,
+        "lost": 2,
         "gf": 1,
-        "ga": 3,
-        "gd": -2,
+        "ga": 8,
+        "gd": -7,
         "points": 0
       }
     ],

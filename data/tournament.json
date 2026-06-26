@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-26T00:50:19.761152+00:00",
+  "last_updated": "2026-06-26T04:30:41.114272+00:00",
   "tournament_stage": "Knockout Stage",
   "data_source": "live",
   "friends": {
@@ -68,10 +68,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.1,
-      "final_probability": 22.0,
-      "semis_probability": 33.3,
-      "quarters_probability": 49.4
+      "win_probability": 13.8,
+      "final_probability": 21.9,
+      "semis_probability": 32.6,
+      "quarters_probability": 48.7
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -101,10 +101,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 6.0,
-      "final_probability": 11.1,
-      "semis_probability": 20.2,
-      "quarters_probability": 36.0
+      "win_probability": 5.9,
+      "final_probability": 11.6,
+      "semis_probability": 21.0,
+      "quarters_probability": 37.4
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -134,10 +134,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 7.0,
-      "final_probability": 13.2,
-      "semis_probability": 23.5,
-      "quarters_probability": 39.2
+      "win_probability": 6.5,
+      "final_probability": 12.6,
+      "semis_probability": 22.9,
+      "quarters_probability": 38.8
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -167,53 +167,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.1,
-      "final_probability": 25.1,
-      "semis_probability": 36.9,
-      "quarters_probability": 52.4
+      "win_probability": 17.5,
+      "final_probability": 25.7,
+      "semis_probability": 37.5,
+      "quarters_probability": 53.2
     }
   },
   "recent_matches": [
-    {
-      "home": "Panama",
-      "away": "Croatia",
-      "home_score": 0,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-23",
-      "datetime": "2026-06-23T23:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Colombia",
-      "away": "Congo DR",
-      "home_score": 1,
-      "away_score": 0,
-      "stage": "Group Stage",
-      "date": "2026-06-24",
-      "datetime": "2026-06-24T02:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Bosnia and Herzegovina",
-      "away": "Qatar",
-      "home_score": 3,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-24",
-      "datetime": "2026-06-24T19:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Switzerland",
-      "away": "Canada",
-      "home_score": 2,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-24",
-      "datetime": "2026-06-24T19:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Morocco",
       "away": "Haiti",
@@ -273,29 +233,49 @@
       "date": "2026-06-25",
       "datetime": "2026-06-25T20:00Z",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "Japan",
       "away": "Sweden",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "stage": "Group Stage",
       "date": "2026-06-25",
       "datetime": "2026-06-25T23:00Z",
-      "status": "SCHEDULED"
+      "status": "FINISHED"
     },
     {
       "home": "Tunisia",
       "away": "Netherlands",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 3,
       "stage": "Group Stage",
       "date": "2026-06-25",
       "datetime": "2026-06-25T23:00Z",
-      "status": "SCHEDULED"
+      "status": "FINISHED"
     },
+    {
+      "home": "Paraguay",
+      "away": "Australia",
+      "home_score": 0,
+      "away_score": 0,
+      "stage": "Group Stage",
+      "date": "2026-06-26",
+      "datetime": "2026-06-26T02:00Z",
+      "status": "FINISHED"
+    },
+    {
+      "home": "Turkey",
+      "away": "USA",
+      "home_score": 3,
+      "away_score": 2,
+      "stage": "Group Stage",
+      "date": "2026-06-26",
+      "datetime": "2026-06-26T02:00Z",
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "Norway",
       "away": "France",
@@ -304,26 +284,6 @@
       "stage": "Group Stage",
       "date": "2026-06-26",
       "datetime": "2026-06-26T19:00Z",
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Paraguay",
-      "away": "Australia",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-26",
-      "datetime": "2026-06-26T02:00Z",
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Turkey",
-      "away": "USA",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Group Stage",
-      "date": "2026-06-26",
-      "datetime": "2026-06-26T02:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -394,6 +354,46 @@
       "stage": "Group Stage",
       "date": "2026-06-27",
       "datetime": "2026-06-27T21:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Panama",
+      "away": "England",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-27",
+      "datetime": "2026-06-27T21:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Congo DR",
+      "away": "Uzbekistan",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-27",
+      "datetime": "2026-06-27T23:30Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Jordan",
+      "away": "Argentina",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-28",
+      "datetime": "2026-06-28T02:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Algeria",
+      "away": "Austria",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Group Stage",
+      "date": "2026-06-28",
+      "datetime": "2026-06-28T02:00Z",
       "status": "SCHEDULED"
     }
   ],
@@ -539,47 +539,47 @@
     "Group D": [
       {
         "team": "USA",
-        "played": 2,
+        "played": 3,
         "won": 2,
         "drawn": 0,
-        "lost": 0,
-        "gf": 6,
-        "ga": 1,
-        "gd": 5,
+        "lost": 1,
+        "gf": 8,
+        "ga": 4,
+        "gd": 4,
         "points": 6
       },
       {
         "team": "Australia",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 1,
         "gf": 2,
         "ga": 2,
         "gd": 0,
-        "points": 3
+        "points": 4
       },
       {
         "team": "Paraguay",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 1,
         "gf": 2,
         "ga": 4,
         "gd": -2,
-        "points": 3
+        "points": 4
       },
       {
         "team": "Turkey",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "drawn": 0,
         "lost": 2,
-        "gf": 0,
-        "ga": 3,
-        "gd": -3,
-        "points": 0
+        "gf": 3,
+        "ga": 5,
+        "gd": -2,
+        "points": 3
       }
     ],
     "Group E": [
@@ -631,46 +631,46 @@
     "Group F": [
       {
         "team": "Netherlands",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "drawn": 1,
+        "lost": 0,
+        "gf": 10,
+        "ga": 4,
+        "gd": 6,
+        "points": 7
+      },
+      {
+        "team": "Japan",
+        "played": 3,
+        "won": 1,
+        "drawn": 2,
         "lost": 0,
         "gf": 7,
         "ga": 3,
         "gd": 4,
-        "points": 4
-      },
-      {
-        "team": "Japan",
-        "played": 2,
-        "won": 1,
-        "drawn": 1,
-        "lost": 0,
-        "gf": 6,
-        "ga": 2,
-        "gd": 4,
-        "points": 4
+        "points": 5
       },
       {
         "team": "Sweden",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 1,
-        "gf": 6,
-        "ga": 6,
+        "gf": 7,
+        "ga": 7,
         "gd": 0,
-        "points": 3
+        "points": 4
       },
       {
         "team": "Tunisia",
-        "played": 2,
+        "played": 3,
         "won": 0,
         "drawn": 0,
-        "lost": 2,
-        "gf": 1,
-        "ga": 9,
-        "gd": -8,
+        "lost": 3,
+        "gf": 2,
+        "ga": 12,
+        "gd": -10,
         "points": 0
       }
     ],

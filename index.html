@@ -730,12 +730,22 @@
       display: flex; flex-direction: column;
       justify-content: space-around; gap: 0;
       min-width: 130px; width: 130px;
+      position: relative;
+      padding-top: 2rem; /* leave room for absolute-positioned header */
     }
     .b-col-final {
       display: flex; flex-direction: column;
       justify-content: center; align-items: center;
       min-width: 155px; width: 155px; gap: 0.5rem;
     }
+    .b-match-time {
+      font-size: 0.6rem; color: var(--muted); text-align: center;
+      padding: 0.2rem 0.4rem; letter-spacing: 0.04em; border-bottom: 1px solid var(--border);
+    }
+    .b-match-ft { color: var(--gold); font-weight: 700; }
+    .b-team-winner { background: rgba(60,172,59,0.08); }
+    .b-check-real { color: var(--mexico) !important; }
+
     /* ── Mobile bracket: rounds stacked ─────────────────────────────── */
     .b-mobile-section { margin-bottom: 1.25rem; }
     .b-mobile-grid {
@@ -744,6 +754,8 @@
     }
     @media (max-width: 400px) { .b-mobile-grid { grid-template-columns: 1fr; } }
     .b-col-header {
+      position: absolute;
+      top: 0; left: 0; right: 0;
       font-size: 0.62rem;
       font-weight: 800;
       color: var(--gold);
@@ -752,12 +764,15 @@
       text-align: center;
       padding: 0.4rem 0;
       border-bottom: 1px solid var(--border-gold);
-      margin-bottom: 0.35rem;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      background: var(--bg); /* prevent overlap bleed */
+      z-index: 1;
     }
+    /* Final col header is not absolute */
+    .b-col-final .b-col-header { position: static; margin-bottom: 0.5rem; }
     .b-col-header::before {
       content: '';
       display: block;
@@ -1316,7 +1331,7 @@
   <!-- Header -->
   <div class="b-header">
     <h2>🏆 Knockout Bracket Challenge</h2>
-    <div class="b-deadline">Lock deadline: <strong>26 Jun 2026, 00:00 UTC</strong></div>
+    <div class="b-deadline">Lock deadline: <strong>4 Jul 2026, 22:00 UTC</strong> (before R16)</div>
     <div class="b-countdown" id="b-countdown">Loading countdown…</div>
   </div>
 
@@ -1361,33 +1376,34 @@
   <!-- Bracket fill -->
   <section class="section" id="b-bracket-section" style="display:none">
 
-    <!-- Step 1: Group picks -->
-    <div class="b-phase-header">
-      <div class="b-phase-left">
-        <span class="b-phase-num">Step 1</span>
-        <span class="b-phase-label">Who advances from each group?</span>
+    <!-- Group picks (shown only during group stage) -->
+    <div id="b-group-phase">
+      <div class="b-phase-header">
+        <div class="b-phase-left">
+          <span class="b-phase-num">Step 1</span>
+          <span class="b-phase-label">Who advances from each group?</span>
+        </div>
+        <span class="b-phase-progress" id="b-group-progress">0 / 12 groups done</span>
       </div>
-      <span class="b-phase-progress" id="b-group-progress">0 / 12 groups done</span>
-    </div>
-    <div class="gp-grid" id="b-group-picks"></div>
+      <div class="gp-grid" id="b-group-picks"></div>
 
-    <!-- Step 1b: Best 3rd-place picks -->
-    <div class="b-phase-header" style="margin-top:1.5rem" id="b-thirds-header">
-      <div class="b-phase-left">
-        <span class="b-phase-num">Step 1b</span>
-        <span class="b-phase-label">🃏 Wildcards <span style="font-weight:400;color:var(--muted);font-size:0.8em">— pick the 8 best 3rd-place teams that sneak through</span></span>
+      <div class="b-phase-header" style="margin-top:1.5rem" id="b-thirds-header">
+        <div class="b-phase-left">
+          <span class="b-phase-num">Step 1b</span>
+          <span class="b-phase-label">🃏 Wildcards <span style="font-weight:400;color:var(--muted);font-size:0.8em">— pick 8 best 3rd-place teams</span></span>
+        </div>
+        <span class="b-phase-progress" id="b-thirds-progress">0 / 8 selected</span>
       </div>
-      <span class="b-phase-progress" id="b-thirds-progress">0 / 8 selected</span>
+      <div class="gp-thirds-wrap" id="b-thirds-wrap"></div>
     </div>
-    <div class="gp-thirds-wrap" id="b-thirds-wrap"></div>
 
-    <!-- Step 2: Knockout bracket -->
-    <div class="b-phase-header" style="margin-top:2rem">
+    <!-- Knockout bracket phase header -->
+    <div class="b-phase-header" id="b-knockout-header" style="margin-top:1rem">
       <div class="b-phase-left">
-        <span class="b-phase-num">Step 2</span>
-        <span class="b-phase-label">Predict the knockout bracket</span>
+        <span class="b-phase-num" id="b-bracket-step-num">Step 2</span>
+        <span class="b-phase-label" id="b-bracket-step-label">Predict the knockout bracket</span>
       </div>
-      <span class="b-phase-progress" style="color:var(--muted)">Fills from your picks above</span>
+      <span class="b-phase-progress" id="b-bracket-step-hint" style="color:var(--muted)">Fills from your picks above</span>
     </div>
     <div class="b-bracket-wrap">
       <div class="b-bracket-cols" id="b-bracket-cols"></div>
@@ -1491,7 +1507,8 @@ function sbHeaders(extra) {
 
 // ── R32 matchup seeds (WC 2026 bracket structure) ─────────────────────────
 // Hints resolve to actual teams from current group standings
-const LOCK_DEADLINE = new Date("2026-06-26T00:00:00Z");
+// Updated: R16 starts ~July 5 — new deadline before first R16 match
+const LOCK_DEADLINE = new Date("2026-07-04T22:00:00Z");
 const R32_MATCHUPS = [
   { hint1:"1A", hint2:"2B" }, { hint1:"1C", hint2:"2D" },
   { hint1:"1E", hint2:"2F" }, { hint1:"1G", hint2:"2H" },
@@ -1502,6 +1519,23 @@ const R32_MATCHUPS = [
   { hint1:"3rd·1", hint2:"3rd·2" }, { hint1:"3rd·3", hint2:"3rd·4" },
   { hint1:"3rd·5", hint2:"3rd·6" }, { hint1:"3rd·7", hint2:"3rd·8" },
 ];
+
+// Actual FIFA WC 2026 bracket routing (0-indexed).
+// R16[i] is played between R32[r16_routes[i][0]] winner and R32[r16_routes[i][1]] winner.
+const R16_ROUTES = [[0,2],[1,4],[3,5],[6,7],[10,11],[8,9],[13,15],[12,14]];
+// QF[i] is played between R16[qf_routes[i][0]] winner and R16[qf_routes[i][1]] winner.
+const QF_ROUTES  = [[0,1],[4,5],[2,3],[6,7]];
+// SF[i] is played between QF[sf_routes[i][0]] winner and QF[sf_routes[i][1]] winner.
+const SF_ROUTES  = [[0,1],[2,3]];
+
+// Given a R32 index, return [r16Idx, qfIdx, sfIdx] using the real routes.
+function getKnockoutPath(r32Idx) {
+  const r16i = R16_ROUTES.findIndex(p => p.includes(r32Idx));
+  if (r16i === -1) return null;
+  const qfi  = QF_ROUTES.findIndex(p => p.includes(r16i));
+  const sfi  = SF_ROUTES.findIndex(p => p.includes(qfi));
+  return { r16i, qfi, sfi };
+}
 
 // Safely embed a JS value inside an HTML attribute (double-quote delimited)
 function jq(val) { return JSON.stringify(val).replace(/"/g, '&quot;'); }
@@ -2137,12 +2171,11 @@ function clearFromR32(r32Idx) {
   const old = userPicks.r32[r32Idx];
   if (!old) return;
   userPicks.r32[r32Idx] = null;
-  // Cascade through rounds
-  const r16i = Math.floor(r32Idx / 2);
+  const path = getKnockoutPath(r32Idx);
+  if (!path) return;
+  const { r16i, qfi, sfi } = path;
   if (userPicks.r16[r16i] === old) { userPicks.r16[r16i] = null;
-    const qfi = Math.floor(r16i / 2);
     if (userPicks.qf[qfi] === old) { userPicks.qf[qfi] = null;
-      const sfi = Math.floor(qfi / 2);
       if (userPicks.sf[sfi] === old) { userPicks.sf[sfi] = null;
         if (userPicks.final === old) userPicks.final = null;
       }
@@ -2383,31 +2416,44 @@ function pickTeam(round, matchIdx, teamName) {
 }
 
 function cascadeClear(round, matchIdx) {
-  // Clear this slot and propagate up through subsequent rounds
-  const roundSeq = ["r32", "r16", "qf", "sf", "final"];
-  const ri = roundSeq.indexOf(round);
-  if (ri === -1) return;
+  if (round === "final") { userPicks.final = null; return; }
 
-  let oldName = round === "final" ? userPicks.final : userPicks[round][matchIdx];
-  if (round === "final") {
-    userPicks.final = null;
-    return;
-  }
+  const oldName = userPicks[round][matchIdx];
+  if (!oldName) return;
   userPicks[round][matchIdx] = null;
 
-  // Walk up
-  let curIdx = matchIdx;
-  for (let i = ri + 1; i < roundSeq.length; i++) {
-    const r = roundSeq[i];
-    const parentIdx = Math.floor(curIdx / 2);
-    const cur = r === "final" ? userPicks.final : userPicks[r][parentIdx];
-    if (cur !== oldName) break; // old pick wasn't advanced here, stop
-    if (r === "final") {
-      userPicks.final = null;
-    } else {
-      userPicks[r][parentIdx] = null;
+  // Determine the parent index in the next round using real FIFA routes.
+  function parentOf(r, idx) {
+    if (r === "r32") {
+      const r16i = R16_ROUTES.findIndex(p => p.includes(idx));
+      return { nextRound: "r16", nextIdx: r16i };
     }
-    curIdx = parentIdx;
+    if (r === "r16") {
+      const qfi = QF_ROUTES.findIndex(p => p.includes(idx));
+      return { nextRound: "qf", nextIdx: qfi };
+    }
+    if (r === "qf") {
+      const sfi = SF_ROUTES.findIndex(p => p.includes(idx));
+      return { nextRound: "sf", nextIdx: sfi };
+    }
+    if (r === "sf") {
+      return { nextRound: "final", nextIdx: 0 };
+    }
+    return null;
+  }
+
+  let curRound = round;
+  let curIdx   = matchIdx;
+  while (true) {
+    const p = parentOf(curRound, curIdx);
+    if (!p || p.nextIdx === -1) break;
+    const { nextRound, nextIdx } = p;
+    const cur = nextRound === "final" ? userPicks.final : userPicks[nextRound][nextIdx];
+    if (cur !== oldName) break;
+    if (nextRound === "final") { userPicks.final = null; break; }
+    userPicks[nextRound][nextIdx] = null;
+    curRound = nextRound;
+    curIdx   = nextIdx;
   }
 }
 
@@ -2427,13 +2473,21 @@ function renderBracketMobile() {
     { id: "sf",  label: "Semi-finals",    count: 2  },
   ];
 
+  function mobileFeeders(id, i) {
+    if (id === "r16") return R16_ROUTES[i];
+    if (id === "qf")  return QF_ROUTES[i];
+    if (id === "sf")  return SF_ROUTES[i];
+    return [i * 2, i * 2 + 1];
+  }
+
   let html = rounds.map(rd => {
     const cards = Array.from({ length: rd.count }, (_, i) => {
       if (rd.id === "r32") {
         return renderR32Card(i, matchups[i]?.hint1 ?? "?", matchups[i]?.hint2 ?? "?", locked);
       }
-      const t1 = userPicks[prevRd[rd.id]][i * 2]     || null;
-      const t2 = userPicks[prevRd[rd.id]][i * 2 + 1] || null;
+      const [f1, f2] = mobileFeeders(rd.id, i);
+      const t1 = userPicks[prevRd[rd.id]][f1] || null;
+      const t2 = userPicks[prevRd[rd.id]][f2] || null;
       return renderMatchCard(rd.id, i, t1, t2, userPicks[rd.id][i], locked, matchups);
     }).join("");
     return `<div class="b-mobile-section">
@@ -2455,20 +2509,47 @@ function renderBracketMobile() {
 
 function renderBracket() {
   if (!userPicks || !bracketMeta) return;
-  renderGroupPicks();
-  renderThirdPicker();
+
+  const groupsDone = trackerData?.groups_complete ?? false;
+  const groupPhase = $("b-group-phase");
+  if (groupPhase) groupPhase.style.display = groupsDone ? "none" : "";
+
+  // Update knockout phase header text
+  const stepNum   = $("b-bracket-step-num");
+  const stepLabel = $("b-bracket-step-label");
+  const stepHint  = $("b-bracket-step-hint");
+  if (groupsDone) {
+    if (stepNum)   stepNum.textContent   = "🏆 Knockout Bracket";
+    if (stepLabel) stepLabel.textContent = "Pick the winners — Round of 32 onwards";
+    if (stepHint)  stepHint.textContent  = "Matches below are confirmed — lock in before R16 starts";
+    if (stepNum)   stepNum.style.background = "var(--canada)"; // red = urgent
+  }
+
+  if (!groupsDone) {
+    renderGroupPicks();
+    renderThirdPicker();
+  }
 
   const matchups = R32_MATCHUPS;
   const locked   = userPicks.locked || isDeadlinePassed();
   const prevRd   = { r16: "r32", qf: "r16", sf: "qf" };
+
+  function feeders(id, i) {
+    // Return the two previous-round indices that feed into match i of round id.
+    if (id === "r16") return R16_ROUTES[i];
+    if (id === "qf")  return QF_ROUTES[i];
+    if (id === "sf")  return SF_ROUTES[i];
+    return [i * 2, i * 2 + 1]; // fallback (shouldn't hit)
+  }
 
   function buildCol(id, label, indices) {
     const cards = indices.map(i => {
       if (id === "r32") {
         return renderR32Card(i, matchups[i]?.hint1 ?? "?", matchups[i]?.hint2 ?? "?", locked);
       }
-      const t1 = userPicks[prevRd[id]][i * 2]     || null;
-      const t2 = userPicks[prevRd[id]][i * 2 + 1] || null;
+      const [f1, f2] = feeders(id, i);
+      const t1 = userPicks[prevRd[id]][f1] || null;
+      const t2 = userPicks[prevRd[id]][f2] || null;
       return renderMatchCard(id, i, t1, t2, userPicks[id][i], locked, matchups);
     }).join("");
     return `<div class="b-col"><div class="b-col-header">${label}</div>${cards}</div>`;
@@ -2476,8 +2557,8 @@ function renderBracket() {
 
   $("b-bracket-cols").innerHTML = `
     <div class="b-bracket-half left">
-      ${buildCol("r32", "Round of 32",    [0,1,2,3,4,5,6,7])}
-      ${buildCol("r16", "Round of 16",    [0,1,2,3])}
+      ${buildCol("r32", "Round of 32",    [0,2,1,4,10,11,8,9])}
+      ${buildCol("r16", "Round of 16",    [0,1,4,5])}
       ${buildCol("qf",  "Quarter-finals", [0,1])}
       ${buildCol("sf",  "Semi-finals",    [0])}
     </div>
@@ -2489,38 +2570,50 @@ function renderBracket() {
     <div class="b-bracket-half right">
       ${buildCol("sf",  "Semi-finals",    [1])}
       ${buildCol("qf",  "Quarter-finals", [2,3])}
-      ${buildCol("r16", "Round of 16",    [4,5,6,7])}
-      ${buildCol("r32", "Round of 32",    [8,9,10,11,12,13,14,15])}
+      ${buildCol("r16", "Round of 16",    [2,3,6,7])}
+      ${buildCol("r32", "Round of 32",    [3,5,6,7,13,15,12,14])}
     </div>`;
 
   renderBracketMobile();
 }
 
 function renderR32Card(i, hint1, hint2, locked) {
-  // Resolve hints from the user's own group stage predictions
-  const team1 = resolveFromUserPicks(hint1);
-  const team2 = resolveFromUserPicks(hint2);
-  const pick  = userPicks.r32[i];
+  // Use actual R32 matchup from live data when groups are done
+  const actual = trackerData?.r32_actual?.[i];
+  const team1  = actual ? actual.home : resolveFromUserPicks(hint1);
+  const team2  = actual ? actual.away : resolveFromUserPicks(hint2);
+  const pick   = userPicks.r32[i];
+  const val1   = team1 ?? hint1;
+  const val2   = team2 ?? hint2;
 
-  // Use resolved name as the pick value; fall back to hint string if unresolved
-  const val1 = team1 ?? hint1;
-  const val2 = team2 ?? hint2;
+  // If match is finished, auto-highlight the actual winner
+  const matchFinished = actual?.status === "FINISHED";
+  const actualWinner  = matchFinished
+    ? (actual.home_score > actual.away_score ? team1 : team2)
+    : null;
 
   const trackedColor = (team1 && trackedTeams.has(team1) ? teamColor(team1) : null)
-    || (team2 && trackedTeams.has(team2) ? teamColor(team2) : null);
+                    || (team2 && trackedTeams.has(team2) ? teamColor(team2) : null);
   const matchClass = trackedColor ? "b-match b-match-tracked" : "b-match";
   const trackStyle = trackedColor ? `border-left-color:${trackedColor}` : "";
 
+  // Date/time badge for scheduled matches
+  const timeBadge = (!matchFinished && actual?.datetime)
+    ? `<div class="b-match-time">${new Date(actual.datetime).toLocaleString([], {month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"})}</div>`
+    : matchFinished ? `<div class="b-match-time b-match-ft">${actual.home_score}–${actual.away_score} FT</div>` : "";
+
   function teamRow(teamName, pickVal, hint) {
-    const isPicked = pick === pickVal;
+    const isPicked  = pick === pickVal;
+    const isWinner  = actualWinner === teamName;
     const isResolved = !!teamName;
     const displayName = teamName ?? hintLabel(hint);
     const flag = teamName ? teamFlag(teamName) : "❓";
-    const cls = isPicked ? "b-team b-picked"
-              : locked     ? "b-team b-locked"
-              : !isResolved ? "b-team b-tbd"
-              : "b-team";
-    const check = isPicked ? `<span class="b-check">✓</span>` : "";
+    let cls = isPicked ? "b-team b-picked"
+            : locked    ? "b-team b-locked"
+            : !isResolved ? "b-team b-tbd"
+            : "b-team";
+    if (isWinner && !isPicked) cls += " b-team-winner";
+    const check = isPicked ? `<span class="b-check">✓</span>` : isWinner ? `<span class="b-check b-check-real">✓</span>` : "";
     const onclick = (locked || !isResolved)
       ? ""
       : `onclick="pickTeam('r32', ${i}, ${jq(pickVal)})"`;
@@ -2532,6 +2625,7 @@ function renderR32Card(i, hint1, hint2, locked) {
   }
 
   return `<div class="${matchClass}" style="${trackStyle}">
+    ${timeBadge}
     ${teamRow(team1, val1, hint1)}
     <div class="b-divider"></div>
     ${teamRow(team2, val2, hint2)}

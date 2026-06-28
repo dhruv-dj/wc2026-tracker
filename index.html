@@ -1521,10 +1521,11 @@ const R32_MATCHUPS = [
 ];
 
 // Actual FIFA WC 2026 bracket routing.
-// r32_actual is ordered CHRONOLOGICALLY (by match date).
-// ESPN bracket page numbers R32 by bracket position, not date — these routes
-// reflect that mapping. R16[i] = [a,b] means R32[a] winner plays R32[b] winner.
-const R16_ROUTES = [[0,2],[5,11],[10,3],[8,9],[7,6],[4,1],[12,14],[15,13]];
+// r32_actual is ordered CHRONOLOGICALLY. ESPN slots R32 matches by event ID
+// (760486=slot1 S.Africa, 760487=slot2 Brazil, 760488=slot3 Netherlands,
+//  760489=slot4 Germany, ...760492=slot7 France...).
+// R16[i] = [a,b] means r32_actual[a] winner plays r32_actual[b] winner.
+const R16_ROUTES = [[0,3],[1,4],[2,6],[5,8],[11,10],[9,7],[12,14],[13,15]];
 // QF[i] = [a,b] means R16[a] winner plays R16[b] winner.
 const QF_ROUTES  = [[0,1],[4,5],[2,3],[6,7]];
 // SF[i] = [a,b] means QF[a] winner plays QF[b] winner.
@@ -2559,7 +2560,7 @@ function renderBracket() {
 
   $("b-bracket-cols").innerHTML = `
     <div class="b-bracket-half left">
-      ${buildCol("r32", "Round of 32",    [0,2,5,11,7,6,4,1])}
+      ${buildCol("r32", "Round of 32",    [0,3,1,4,11,10,9,7])}
       ${buildCol("r16", "Round of 16",    [0,1,4,5])}
       ${buildCol("qf",  "Quarter-finals", [0,1])}
       ${buildCol("sf",  "Semi-finals",    [0])}
@@ -2573,7 +2574,7 @@ function renderBracket() {
       ${buildCol("sf",  "Semi-finals",    [1])}
       ${buildCol("qf",  "Quarter-finals", [2,3])}
       ${buildCol("r16", "Round of 16",    [2,3,6,7])}
-      ${buildCol("r32", "Round of 32",    [10,3,8,9,12,14,15,13])}
+      ${buildCol("r32", "Round of 32",    [2,6,5,8,12,14,13,15])}
     </div>`;
 
   renderBracketMobile();

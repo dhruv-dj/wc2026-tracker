@@ -1520,12 +1520,14 @@ const R32_MATCHUPS = [
   { hint1:"3rd·5", hint2:"3rd·6" }, { hint1:"3rd·7", hint2:"3rd·8" },
 ];
 
-// Actual FIFA WC 2026 bracket routing (0-indexed).
-// R16[i] is played between R32[r16_routes[i][0]] winner and R32[r16_routes[i][1]] winner.
-const R16_ROUTES = [[0,2],[1,4],[3,5],[6,7],[10,11],[8,9],[13,15],[12,14]];
-// QF[i] is played between R16[qf_routes[i][0]] winner and R16[qf_routes[i][1]] winner.
+// Actual FIFA WC 2026 bracket routing.
+// r32_actual is ordered CHRONOLOGICALLY (by match date).
+// ESPN bracket page numbers R32 by bracket position, not date — these routes
+// reflect that mapping. R16[i] = [a,b] means R32[a] winner plays R32[b] winner.
+const R16_ROUTES = [[2,0],[5,11],[3,10],[9,8],[6,7],[1,4],[13,15],[14,12]];
+// QF[i] = [a,b] means R16[a] winner plays R16[b] winner.
 const QF_ROUTES  = [[0,1],[4,5],[2,3],[6,7]];
-// SF[i] is played between QF[sf_routes[i][0]] winner and QF[sf_routes[i][1]] winner.
+// SF[i] = [a,b] means QF[a] winner plays QF[b] winner.
 const SF_ROUTES  = [[0,1],[2,3]];
 
 // Given a R32 index, return [r16Idx, qfIdx, sfIdx] using the real routes.
@@ -2557,7 +2559,7 @@ function renderBracket() {
 
   $("b-bracket-cols").innerHTML = `
     <div class="b-bracket-half left">
-      ${buildCol("r32", "Round of 32",    [0,2,1,4,10,11,8,9])}
+      ${buildCol("r32", "Round of 32",    [2,0,5,11,6,7,1,4])}
       ${buildCol("r16", "Round of 16",    [0,1,4,5])}
       ${buildCol("qf",  "Quarter-finals", [0,1])}
       ${buildCol("sf",  "Semi-finals",    [0])}
@@ -2571,7 +2573,7 @@ function renderBracket() {
       ${buildCol("sf",  "Semi-finals",    [1])}
       ${buildCol("qf",  "Quarter-finals", [2,3])}
       ${buildCol("r16", "Round of 16",    [2,3,6,7])}
-      ${buildCol("r32", "Round of 32",    [3,5,6,7,13,15,12,14])}
+      ${buildCol("r32", "Round of 32",    [3,10,9,8,13,15,14,12])}
     </div>`;
 
   renderBracketMobile();

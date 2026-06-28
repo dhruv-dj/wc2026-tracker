@@ -85,6 +85,49 @@ def fetch_espn_standings():
     return None
 
 
+def fetch_espn_knockout_matchups():
+    """Fetch actual R32 matchups — returns list of 16 {home, away, ...} dicts in bracket order."""
+    from datetime import date
+    # R32 runs ~June 28 – July 5
+    r32_start, r32_end = date(2026, 6, 28), date(2026, 7, 6)
+    date_param = f"{r32_start.strftime('%Y%m%d')}-{r32_end.strftime('%Y%m%d')}"
+    try:
+        r = requests.get(
+            f"https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+            f"?limit=100&dates={date_param}",
+            timeout=15)
+        if r.status_code != 200:
+            return []
+        events = r.json().get("events", [])
+        matchups = []
+        for event in events:
+            comp = event["competitions"][0]
+            competitors = comp.get("competitors", [])
+            home = next((c for c in competitors if c["homeAway"] == "home"), None)
+            away = next((c for c in competitors if c["homeAway"] == "away"), None)
+            if not home or not away:
+                continue
+            home_name = _norm(home["team"]["displayName"])
+            away_name = _norm(away["team"]["displayName"])
+            # Skip placeholder "Round of 32 X Winner" entries
+            if "Winner" in home_name or "Winner" in away_name:
+                continue
+            finished = comp["status"]["type"].get("completed", False)
+            matchups.append({
+                "home":       home_name,
+                "away":       away_name,
+                "home_score": int(float(home["score"])) if finished and home.get("score") else None,
+                "away_score": int(float(away["score"])) if finished and away.get("score") else None,
+                "datetime":   event["date"],
+                "date":       event["date"][:10],
+                "status":     "FINISHED" if finished else "SCHEDULED",
+            })
+        return matchups
+    except Exception as e:
+        print(f"ESPN R32 matchups error: {e}")
+        return []
+
+
 def fetch_espn_matches_all():
     from datetime import date, timedelta
     start = date(2026, 6, 11)
@@ -384,11 +427,16 @@ def build_output(groups, matches, probs):
     )
 
     total_played = sum(t["played"] for gt in groups.values() for t in gt)
-    stage = "Knockout Stage" if total_played >= 72 else "Group Stage"
+    groups_done  = total_played >= 72
+    stage = "Round of 32" if groups_done else "Group Stage"
+
+    r32_actual = fetch_espn_knockout_matchups() if groups_done else []
 
     return {
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "tournament_stage": stage,
+        "groups_complete": groups_done,
+        "r32_actual": r32_actual,   # actual R32 matchups once groups are done
         "data_source": "live",
         "friends": {
             name: {

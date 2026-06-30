@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-30T18:39:55.195559+00:00",
+  "last_updated": "2026-06-30T21:33:21.675330+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -42,11 +42,11 @@
     {
       "home": "C\u00f4te d'Ivoire",
       "away": "Norway",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 2,
       "datetime": "2026-06-30T17:00Z",
       "date": "2026-06-30",
-      "status": "SCHEDULED"
+      "status": "FINISHED"
     },
     {
       "home": "France",
@@ -155,6 +155,15 @@
       "datetime": "2026-07-04T17:00Z",
       "date": "2026-07-04",
       "status": "SCHEDULED"
+    },
+    {
+      "home": "Brazil",
+      "away": "Norway",
+      "home_score": null,
+      "away_score": null,
+      "datetime": "2026-07-05T20:00Z",
+      "date": "2026-07-05",
+      "status": "SCHEDULED"
     }
   ],
   "data_source": "live",
@@ -229,10 +238,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.1,
-      "final_probability": 22.3,
-      "semis_probability": 33.5,
-      "quarters_probability": 49.6
+      "win_probability": 14.2,
+      "final_probability": 22.0,
+      "semis_probability": 33.9,
+      "quarters_probability": 50.1
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -267,10 +276,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.5,
-      "final_probability": 9.9,
-      "semis_probability": 20.2,
-      "quarters_probability": 35.4
+      "win_probability": 4.9,
+      "final_probability": 10.0,
+      "semis_probability": 19.2,
+      "quarters_probability": 34.9
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -305,10 +314,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 8.1,
-      "final_probability": 14.7,
-      "semis_probability": 25.1,
-      "quarters_probability": 41.7
+      "win_probability": 7.4,
+      "final_probability": 13.7,
+      "semis_probability": 24.4,
+      "quarters_probability": 41.0
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -343,23 +352,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.4,
-      "final_probability": 26.2,
-      "semis_probability": 37.8,
-      "quarters_probability": 53.7
+      "win_probability": 16.9,
+      "final_probability": 25.1,
+      "semis_probability": 36.5,
+      "quarters_probability": 52.0
     }
   },
   "recent_matches": [
-    {
-      "home": "Egypt",
-      "away": "Iran",
-      "home_score": 1,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-27",
-      "datetime": "2026-06-27T03:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "New Zealand",
       "away": "Belgium",
@@ -449,6 +448,16 @@
       "date": "2026-06-30",
       "datetime": "2026-06-30T01:00Z",
       "status": "FINISHED"
+    },
+    {
+      "home": "C\u00f4te d'Ivoire",
+      "away": "Norway",
+      "home_score": 1,
+      "away_score": 2,
+      "stage": "Round Of 32",
+      "date": "2026-06-30",
+      "datetime": "2026-06-30T17:00Z",
+      "status": "FINISHED"
     }
   ],
   "upcoming_matches": [
@@ -460,16 +469,6 @@
       "stage": "Round Of 32",
       "date": "2026-06-30",
       "datetime": "2026-06-30T21:00Z",
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "C\u00f4te d'Ivoire",
-      "away": "Norway",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Round Of 32",
-      "date": "2026-06-30",
-      "datetime": "2026-06-30T17:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -570,6 +569,16 @@
       "stage": "Round Of 32",
       "date": "2026-07-04",
       "datetime": "2026-07-04T01:30Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Canada",
+      "away": "Morocco",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Round Of 16",
+      "date": "2026-07-04",
+      "datetime": "2026-07-04T17:00Z",
       "status": "SCHEDULED"
     }
   ],

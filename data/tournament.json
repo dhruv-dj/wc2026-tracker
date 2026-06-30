@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-30T00:48:34.076396+00:00",
+  "last_updated": "2026-06-30T04:27:57.618103+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -33,11 +33,11 @@
     {
       "home": "Netherlands",
       "away": "Morocco",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 1,
+      "away_score": 1,
       "datetime": "2026-06-30T01:00Z",
       "date": "2026-06-30",
-      "status": "SCHEDULED"
+      "status": "FINISHED"
     },
     {
       "home": "C\u00f4te d'Ivoire",
@@ -146,6 +146,15 @@
       "datetime": "2026-07-04T01:30Z",
       "date": "2026-07-04",
       "status": "SCHEDULED"
+    },
+    {
+      "home": "Canada",
+      "away": "Morocco",
+      "home_score": null,
+      "away_score": null,
+      "datetime": "2026-07-04T17:00Z",
+      "date": "2026-07-04",
+      "status": "SCHEDULED"
     }
   ],
   "data_source": "live",
@@ -220,10 +229,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.4,
-      "final_probability": 22.1,
-      "semis_probability": 33.3,
-      "quarters_probability": 48.9
+      "win_probability": 14.2,
+      "final_probability": 22.9,
+      "semis_probability": 33.8,
+      "quarters_probability": 49.4
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -258,10 +267,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.7,
-      "final_probability": 10.0,
-      "semis_probability": 19.2,
-      "quarters_probability": 35.0
+      "win_probability": 4.6,
+      "final_probability": 9.6,
+      "semis_probability": 19.6,
+      "quarters_probability": 36.1
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -296,10 +305,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 8.0,
-      "final_probability": 14.2,
-      "semis_probability": 23.8,
-      "quarters_probability": 40.2
+      "win_probability": 7.8,
+      "final_probability": 14.3,
+      "semis_probability": 24.5,
+      "quarters_probability": 41.2
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -335,22 +344,12 @@
       ],
       "eliminated": false,
       "win_probability": 17.6,
-      "final_probability": 26.0,
-      "semis_probability": 37.9,
-      "quarters_probability": 53.1
+      "final_probability": 25.8,
+      "semis_probability": 36.9,
+      "quarters_probability": 52.4
     }
   },
   "recent_matches": [
-    {
-      "home": "Cape Verde",
-      "away": "Saudi Arabia",
-      "home_score": 0,
-      "away_score": 0,
-      "stage": "Group Stage",
-      "date": "2026-06-27",
-      "datetime": "2026-06-27T00:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Egypt",
       "away": "Iran",
@@ -440,6 +439,16 @@
       "date": "2026-06-29",
       "datetime": "2026-06-29T20:30Z",
       "status": "FINISHED"
+    },
+    {
+      "home": "Netherlands",
+      "away": "Morocco",
+      "home_score": 1,
+      "away_score": 1,
+      "stage": "Round Of 32",
+      "date": "2026-06-30",
+      "datetime": "2026-06-30T01:00Z",
+      "status": "FINISHED"
     }
   ],
   "upcoming_matches": [
@@ -451,16 +460,6 @@
       "stage": "Round Of 32",
       "date": "2026-06-30",
       "datetime": "2026-06-30T21:00Z",
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Netherlands",
-      "away": "Morocco",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Round Of 32",
-      "date": "2026-06-30",
-      "datetime": "2026-06-30T01:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -561,6 +560,16 @@
       "stage": "Round Of 32",
       "date": "2026-07-03",
       "datetime": "2026-07-03T18:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Colombia",
+      "away": "Ghana",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Round Of 32",
+      "date": "2026-07-04",
+      "datetime": "2026-07-04T01:30Z",
       "status": "SCHEDULED"
     }
   ],

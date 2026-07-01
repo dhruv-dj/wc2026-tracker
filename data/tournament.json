@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-01T18:42:03.031059+00:00",
+  "last_updated": "2026-07-01T21:33:27.835633+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -261,10 +261,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.7,
-      "final_probability": 22.7,
-      "semis_probability": 33.5,
-      "quarters_probability": 49.7
+      "win_probability": 14.3,
+      "final_probability": 22.3,
+      "semis_probability": 33.9,
+      "quarters_probability": 50.0
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -299,10 +299,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.7,
-      "final_probability": 9.9,
-      "semis_probability": 19.5,
-      "quarters_probability": 34.8
+      "win_probability": 4.3,
+      "final_probability": 9.2,
+      "semis_probability": 19.8,
+      "quarters_probability": 35.2
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -337,10 +337,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 7.8,
-      "final_probability": 14.4,
-      "semis_probability": 25.1,
-      "quarters_probability": 41.1
+      "win_probability": 8.3,
+      "final_probability": 15.2,
+      "semis_probability": 25.3,
+      "quarters_probability": 40.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -375,23 +375,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 16.6,
-      "final_probability": 25.1,
-      "semis_probability": 37.1,
-      "quarters_probability": 52.6
+      "win_probability": 18.0,
+      "final_probability": 26.2,
+      "semis_probability": 37.7,
+      "quarters_probability": 53.5
     }
   },
   "recent_matches": [
-    {
-      "home": "Croatia",
-      "away": "Ghana",
-      "home_score": 2,
-      "away_score": 1,
-      "stage": "Group Stage",
-      "date": "2026-06-27",
-      "datetime": "2026-06-27T21:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "Panama",
       "away": "England",
@@ -481,19 +471,19 @@
       "date": "2026-07-01",
       "datetime": "2026-07-01T02:00Z",
       "status": "FINISHED"
-    }
-  ],
-  "upcoming_matches": [
+    },
     {
       "home": "England",
       "away": "Congo DR",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "stage": "Round Of 32",
       "date": "2026-07-01",
       "datetime": "2026-07-01T16:00Z",
-      "status": "SCHEDULED"
-    },
+      "status": "FINISHED"
+    }
+  ],
+  "upcoming_matches": [
     {
       "home": "Belgium",
       "away": "Senegal",
@@ -602,6 +592,16 @@
       "stage": "Round Of 16",
       "date": "2026-07-05",
       "datetime": "2026-07-05T20:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Mexico",
+      "away": "England",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Round Of 16",
+      "date": "2026-07-06",
+      "datetime": "2026-07-06T00:00Z",
       "status": "SCHEDULED"
     }
   ],

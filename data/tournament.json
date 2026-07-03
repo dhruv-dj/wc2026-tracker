@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03T04:19:18.050834+00:00",
+  "last_updated": "2026-07-03T07:08:08.302956+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -105,11 +105,11 @@
     {
       "home": "Portugal",
       "away": "Croatia",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 1,
       "datetime": "2026-07-02T23:00Z",
       "date": "2026-07-02",
-      "status": "SCHEDULED"
+      "status": "FINISHED"
     },
     {
       "home": "Switzerland",
@@ -180,6 +180,15 @@
       "home_score": null,
       "away_score": null,
       "datetime": "2026-07-06T00:00Z",
+      "date": "2026-07-06",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Portugal",
+      "away": "Spain",
+      "home_score": null,
+      "away_score": null,
+      "datetime": "2026-07-06T19:00Z",
       "date": "2026-07-06",
       "status": "SCHEDULED"
     },
@@ -270,10 +279,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.7,
-      "final_probability": 22.8,
-      "semis_probability": 34.2,
-      "quarters_probability": 50.3
+      "win_probability": 14.4,
+      "final_probability": 22.9,
+      "semis_probability": 34.6,
+      "quarters_probability": 49.8
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -313,10 +322,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.7,
-      "final_probability": 10.1,
-      "semis_probability": 19.2,
-      "quarters_probability": 34.6
+      "win_probability": 4.8,
+      "final_probability": 9.9,
+      "semis_probability": 19.8,
+      "quarters_probability": 35.5
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -356,10 +365,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 8.1,
-      "final_probability": 14.2,
-      "semis_probability": 24.8,
-      "quarters_probability": 41.9
+      "win_probability": 8.2,
+      "final_probability": 14.7,
+      "semis_probability": 25.1,
+      "quarters_probability": 41.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -394,23 +403,13 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 16.9,
-      "final_probability": 26.0,
-      "semis_probability": 37.0,
-      "quarters_probability": 52.6
+      "win_probability": 17.1,
+      "final_probability": 24.8,
+      "semis_probability": 36.5,
+      "quarters_probability": 52.4
     }
   },
   "recent_matches": [
-    {
-      "home": "Algeria",
-      "away": "Austria",
-      "home_score": 3,
-      "away_score": 3,
-      "stage": "Group Stage",
-      "date": "2026-06-28",
-      "datetime": "2026-06-28T02:00Z",
-      "status": "FINISHED"
-    },
     {
       "home": "South Africa",
       "away": "Canada",
@@ -500,6 +499,16 @@
       "date": "2026-07-02",
       "datetime": "2026-07-02T00:00Z",
       "status": "FINISHED"
+    },
+    {
+      "home": "Switzerland",
+      "away": "Algeria",
+      "home_score": 2,
+      "away_score": 0,
+      "stage": "Round Of 32",
+      "date": "2026-07-03",
+      "datetime": "2026-07-03T03:00Z",
+      "status": "FINISHED"
     }
   ],
   "upcoming_matches": [
@@ -511,16 +520,6 @@
       "stage": "Round Of 32",
       "date": "2026-07-03",
       "datetime": "2026-07-03T22:00Z",
-      "status": "SCHEDULED"
-    },
-    {
-      "home": "Switzerland",
-      "away": "Algeria",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Round Of 32",
-      "date": "2026-07-03",
-      "datetime": "2026-07-03T03:00Z",
       "status": "SCHEDULED"
     },
     {
@@ -614,13 +613,23 @@
       "status": "SCHEDULED"
     },
     {
-      "home": "Round of 32 13 Winner",
+      "home": "Switzerland",
       "away": "Round of 32 15 Winner",
       "home_score": null,
       "away_score": null,
       "stage": "Round Of 16",
       "date": "2026-07-07",
       "datetime": "2026-07-07T20:00Z",
+      "status": "SCHEDULED"
+    },
+    {
+      "home": "Round of 16 1 Winner",
+      "away": "Round of 16 2 Winner",
+      "home_score": null,
+      "away_score": null,
+      "stage": "Quarterfinals",
+      "date": "2026-07-09",
+      "datetime": "2026-07-09T20:00Z",
       "status": "SCHEDULED"
     }
   ],

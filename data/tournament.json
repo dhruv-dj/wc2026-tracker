@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-06T00:40:53.428527+00:00",
+  "last_updated": "2026-07-06T04:29:50.782719+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -177,11 +177,11 @@
     {
       "home": "Mexico",
       "away": "England",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 2,
+      "away_score": 3,
       "datetime": "2026-07-06T01:00Z",
       "date": "2026-07-06",
-      "status": "SCHEDULED"
+      "status": "FINISHED"
     },
     {
       "home": "Portugal",
@@ -284,9 +284,9 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.2,
-      "final_probability": 22.8,
-      "semis_probability": 33.8,
+      "win_probability": 13.9,
+      "final_probability": 21.5,
+      "semis_probability": 33.6,
       "quarters_probability": 50.1
     },
     "Portugal": {
@@ -328,9 +328,9 @@
       ],
       "eliminated": false,
       "win_probability": 4.9,
-      "final_probability": 9.9,
-      "semis_probability": 19.7,
-      "quarters_probability": 36.5
+      "final_probability": 10.2,
+      "semis_probability": 19.1,
+      "quarters_probability": 35.5
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -370,10 +370,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 8.0,
-      "final_probability": 14.9,
-      "semis_probability": 25.4,
-      "quarters_probability": 41.6
+      "win_probability": 7.7,
+      "final_probability": 14.3,
+      "semis_probability": 24.9,
+      "quarters_probability": 41.1
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -413,10 +413,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.7,
-      "final_probability": 26.2,
-      "semis_probability": 37.4,
-      "quarters_probability": 53.4
+      "win_probability": 18.1,
+      "final_probability": 26.5,
+      "semis_probability": 37.8,
+      "quarters_probability": 54.3
     }
   },
   "recent_matches": [

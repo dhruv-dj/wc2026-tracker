@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-10T18:32:03.189059+00:00",
+  "last_updated": "2026-07-10T21:24:33.373138+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -284,10 +284,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.8,
-      "final_probability": 22.7,
-      "semis_probability": 33.9,
-      "quarters_probability": 49.8
+      "win_probability": 14.6,
+      "final_probability": 22.6,
+      "semis_probability": 33.8,
+      "quarters_probability": 49.4
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -332,10 +332,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.8,
-      "final_probability": 10.1,
-      "semis_probability": 19.1,
-      "quarters_probability": 34.6
+      "win_probability": 4.1,
+      "final_probability": 9.6,
+      "semis_probability": 19.5,
+      "quarters_probability": 34.9
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -355,6 +355,11 @@
       "form": [
         {
           "r": "W",
+          "score": "2\u20131",
+          "vs": "Belgium"
+        },
+        {
+          "r": "W",
           "score": "1\u20130",
           "vs": "Portugal"
         },
@@ -372,18 +377,13 @@
           "r": "W",
           "score": "4\u20130",
           "vs": "Saudi Arabia"
-        },
-        {
-          "r": "D",
-          "score": "0\u20130",
-          "vs": "Cape Verde"
         }
       ],
       "eliminated": false,
-      "win_probability": 7.8,
-      "final_probability": 14.3,
-      "semis_probability": 25.5,
-      "quarters_probability": 42.4
+      "win_probability": 8.0,
+      "final_probability": 14.2,
+      "semis_probability": 24.8,
+      "quarters_probability": 41.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -428,10 +428,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.4,
-      "final_probability": 26.0,
-      "semis_probability": 37.9,
-      "quarters_probability": 53.9
+      "win_probability": 17.2,
+      "final_probability": 25.7,
+      "semis_probability": 37.7,
+      "quarters_probability": 53.0
     }
   },
   "recent_matches": [
@@ -538,16 +538,6 @@
   ],
   "upcoming_matches": [
     {
-      "home": "Spain",
-      "away": "Belgium",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Quarterfinals",
-      "date": "2026-07-10",
-      "datetime": "2026-07-10T19:00Z",
-      "status": "SCHEDULED"
-    },
-    {
       "home": "Norway",
       "away": "England",
       "home_score": null,
@@ -569,7 +559,7 @@
     },
     {
       "home": "France",
-      "away": "Quarterfinal 2 Winner",
+      "away": "Spain",
       "home_score": null,
       "away_score": null,
       "stage": "Semifinals",

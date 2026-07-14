@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14T18:26:08.973017+00:00",
+  "last_updated": "2026-07-14T21:21:56.691505+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -258,6 +258,11 @@
       "position": 1,
       "form": [
         {
+          "r": "L",
+          "score": "0\u20132",
+          "vs": "Spain"
+        },
+        {
           "r": "W",
           "score": "2\u20130",
           "vs": "Morocco"
@@ -276,18 +281,13 @@
           "r": "W",
           "score": "4\u20131",
           "vs": "Norway"
-        },
-        {
-          "r": "W",
-          "score": "3\u20130",
-          "vs": "Iraq"
         }
       ],
       "eliminated": false,
-      "win_probability": 14.1,
-      "final_probability": 22.3,
-      "semis_probability": 34.2,
-      "quarters_probability": 50.1
+      "win_probability": 14.2,
+      "final_probability": 21.8,
+      "semis_probability": 33.0,
+      "quarters_probability": 49.2
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -332,10 +332,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.8,
-      "final_probability": 9.7,
-      "semis_probability": 18.9,
-      "quarters_probability": 35.5
+      "win_probability": 4.7,
+      "final_probability": 10.0,
+      "semis_probability": 19.0,
+      "quarters_probability": 34.2
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -355,6 +355,11 @@
       "form": [
         {
           "r": "W",
+          "score": "2\u20130",
+          "vs": "France"
+        },
+        {
+          "r": "W",
           "score": "2\u20131",
           "vs": "Belgium"
         },
@@ -372,18 +377,13 @@
           "r": "W",
           "score": "1\u20130",
           "vs": "Uruguay"
-        },
-        {
-          "r": "W",
-          "score": "4\u20130",
-          "vs": "Saudi Arabia"
         }
       ],
       "eliminated": false,
-      "win_probability": 8.0,
-      "final_probability": 14.6,
-      "semis_probability": 25.1,
-      "quarters_probability": 41.4
+      "win_probability": 8.1,
+      "final_probability": 14.9,
+      "semis_probability": 25.9,
+      "quarters_probability": 42.0
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -428,10 +428,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.5,
-      "final_probability": 26.2,
-      "semis_probability": 37.9,
-      "quarters_probability": 53.2
+      "win_probability": 17.4,
+      "final_probability": 25.9,
+      "semis_probability": 37.0,
+      "quarters_probability": 53.5
     }
   },
   "recent_matches": [
@@ -537,16 +537,6 @@
     }
   ],
   "upcoming_matches": [
-    {
-      "home": "France",
-      "away": "Spain",
-      "home_score": null,
-      "away_score": null,
-      "stage": "Semifinals",
-      "date": "2026-07-14",
-      "datetime": "2026-07-14T19:00Z",
-      "status": "SCHEDULED"
-    },
     {
       "home": "England",
       "away": "Argentina",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14T21:21:56.691505+00:00",
+  "last_updated": "2026-07-15T00:28:37.311756+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -284,9 +284,9 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.2,
-      "final_probability": 21.8,
-      "semis_probability": 33.0,
+      "win_probability": 14.5,
+      "final_probability": 22.3,
+      "semis_probability": 34.0,
       "quarters_probability": 49.2
     },
     "Portugal": {
@@ -332,10 +332,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.7,
-      "final_probability": 10.0,
-      "semis_probability": 19.0,
-      "quarters_probability": 34.2
+      "win_probability": 4.2,
+      "final_probability": 9.5,
+      "semis_probability": 18.9,
+      "quarters_probability": 35.0
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -380,10 +380,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 8.1,
-      "final_probability": 14.9,
-      "semis_probability": 25.9,
-      "quarters_probability": 42.0
+      "win_probability": 7.6,
+      "final_probability": 14.3,
+      "semis_probability": 24.6,
+      "quarters_probability": 41.9
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -429,9 +429,9 @@
       ],
       "eliminated": false,
       "win_probability": 17.4,
-      "final_probability": 25.9,
-      "semis_probability": 37.0,
-      "quarters_probability": 53.5
+      "final_probability": 25.5,
+      "semis_probability": 37.1,
+      "quarters_probability": 52.6
     }
   },
   "recent_matches": [
@@ -548,7 +548,7 @@
       "status": "SCHEDULED"
     },
     {
-      "home": "Semifinal 1 Loser",
+      "home": "France",
       "away": "Semifinal 2 Loser",
       "home_score": null,
       "away_score": null,
@@ -558,7 +558,7 @@
       "status": "SCHEDULED"
     },
     {
-      "home": "Semifinal 1 Winner",
+      "home": "Spain",
       "away": "Semifinal 2 Winner",
       "home_score": null,
       "away_score": null,

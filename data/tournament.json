@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-01T12:23:26.660963+00:00",
+  "last_updated": "2026-08-01T15:24:11.417066+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [
@@ -284,10 +284,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.5,
-      "final_probability": 22.5,
-      "semis_probability": 33.7,
-      "quarters_probability": 50.1
+      "win_probability": 13.6,
+      "final_probability": 21.6,
+      "semis_probability": 33.1,
+      "quarters_probability": 49.7
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -332,10 +332,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.5,
-      "final_probability": 10.0,
-      "semis_probability": 19.1,
-      "quarters_probability": 34.8
+      "win_probability": 4.8,
+      "final_probability": 9.9,
+      "semis_probability": 19.0,
+      "quarters_probability": 35.1
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -380,10 +380,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 8.5,
-      "final_probability": 14.7,
-      "semis_probability": 25.2,
-      "quarters_probability": 41.8
+      "win_probability": 7.9,
+      "final_probability": 14.6,
+      "semis_probability": 25.0,
+      "quarters_probability": 41.5
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -428,10 +428,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.4,
-      "final_probability": 25.6,
-      "semis_probability": 37.1,
-      "quarters_probability": 52.6
+      "win_probability": 16.6,
+      "final_probability": 25.4,
+      "semis_probability": 37.3,
+      "quarters_probability": 52.9
     }
   },
   "recent_matches": [

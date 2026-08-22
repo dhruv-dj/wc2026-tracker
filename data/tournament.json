@@ -1,207 +1,8 @@
 {
-  "last_updated": "2026-08-22T15:17:39.098188+00:00",
+  "last_updated": "2026-08-22T18:26:36.030115+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
-  "r32_actual": [
-    {
-      "home": "South Africa",
-      "away": "Canada",
-      "home_score": 0,
-      "away_score": 1,
-      "datetime": "2026-06-28T19:00Z",
-      "date": "2026-06-28",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Brazil",
-      "away": "Japan",
-      "home_score": 2,
-      "away_score": 1,
-      "datetime": "2026-06-29T17:00Z",
-      "date": "2026-06-29",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Germany",
-      "away": "Paraguay",
-      "home_score": 1,
-      "away_score": 1,
-      "datetime": "2026-06-29T20:30Z",
-      "date": "2026-06-29",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Netherlands",
-      "away": "Morocco",
-      "home_score": 1,
-      "away_score": 1,
-      "datetime": "2026-06-30T01:00Z",
-      "date": "2026-06-30",
-      "status": "FINISHED"
-    },
-    {
-      "home": "C\u00f4te d'Ivoire",
-      "away": "Norway",
-      "home_score": 1,
-      "away_score": 2,
-      "datetime": "2026-06-30T17:00Z",
-      "date": "2026-06-30",
-      "status": "FINISHED"
-    },
-    {
-      "home": "France",
-      "away": "Sweden",
-      "home_score": 3,
-      "away_score": 0,
-      "datetime": "2026-06-30T21:00Z",
-      "date": "2026-06-30",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Mexico",
-      "away": "Ecuador",
-      "home_score": 2,
-      "away_score": 0,
-      "datetime": "2026-07-01T02:00Z",
-      "date": "2026-07-01",
-      "status": "FINISHED"
-    },
-    {
-      "home": "England",
-      "away": "Congo DR",
-      "home_score": 2,
-      "away_score": 1,
-      "datetime": "2026-07-01T16:00Z",
-      "date": "2026-07-01",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Belgium",
-      "away": "Senegal",
-      "home_score": 3,
-      "away_score": 2,
-      "datetime": "2026-07-01T20:00Z",
-      "date": "2026-07-01",
-      "status": "FINISHED"
-    },
-    {
-      "home": "USA",
-      "away": "Bosnia and Herzegovina",
-      "home_score": 2,
-      "away_score": 0,
-      "datetime": "2026-07-02T00:00Z",
-      "date": "2026-07-02",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Spain",
-      "away": "Austria",
-      "home_score": 3,
-      "away_score": 0,
-      "datetime": "2026-07-02T19:00Z",
-      "date": "2026-07-02",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Portugal",
-      "away": "Croatia",
-      "home_score": 2,
-      "away_score": 1,
-      "datetime": "2026-07-02T23:00Z",
-      "date": "2026-07-02",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Switzerland",
-      "away": "Algeria",
-      "home_score": 2,
-      "away_score": 0,
-      "datetime": "2026-07-03T03:00Z",
-      "date": "2026-07-03",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Australia",
-      "away": "Egypt",
-      "home_score": 1,
-      "away_score": 1,
-      "datetime": "2026-07-03T18:00Z",
-      "date": "2026-07-03",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Argentina",
-      "away": "Cape Verde",
-      "home_score": 3,
-      "away_score": 2,
-      "datetime": "2026-07-03T22:00Z",
-      "date": "2026-07-03",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Colombia",
-      "away": "Ghana",
-      "home_score": 1,
-      "away_score": 0,
-      "datetime": "2026-07-04T01:30Z",
-      "date": "2026-07-04",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Canada",
-      "away": "Morocco",
-      "home_score": 0,
-      "away_score": 3,
-      "datetime": "2026-07-04T17:00Z",
-      "date": "2026-07-04",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Paraguay",
-      "away": "France",
-      "home_score": 0,
-      "away_score": 1,
-      "datetime": "2026-07-04T21:00Z",
-      "date": "2026-07-04",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Brazil",
-      "away": "Norway",
-      "home_score": 1,
-      "away_score": 2,
-      "datetime": "2026-07-05T20:00Z",
-      "date": "2026-07-05",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Mexico",
-      "away": "England",
-      "home_score": 2,
-      "away_score": 3,
-      "datetime": "2026-07-06T01:00Z",
-      "date": "2026-07-06",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Portugal",
-      "away": "Spain",
-      "home_score": 0,
-      "away_score": 1,
-      "datetime": "2026-07-06T19:00Z",
-      "date": "2026-07-06",
-      "status": "FINISHED"
-    },
-    {
-      "home": "USA",
-      "away": "Belgium",
-      "home_score": 1,
-      "away_score": 4,
-      "datetime": "2026-07-07T00:00Z",
-      "date": "2026-07-07",
-      "status": "FINISHED"
-    }
-  ],
+  "r32_actual": [],
   "data_source": "live",
   "friends": {
     "Dhruv": {
@@ -284,9 +85,9 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.0,
-      "final_probability": 22.5,
-      "semis_probability": 34.0,
+      "win_probability": 14.1,
+      "final_probability": 21.8,
+      "semis_probability": 33.6,
       "quarters_probability": 49.7
     },
     "Portugal": {
@@ -332,10 +133,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.6,
-      "final_probability": 9.8,
-      "semis_probability": 19.2,
-      "quarters_probability": 34.8
+      "win_probability": 4.8,
+      "final_probability": 9.7,
+      "semis_probability": 19.1,
+      "quarters_probability": 34.9
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -380,10 +181,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 7.6,
-      "final_probability": 14.0,
+      "win_probability": 7.9,
+      "final_probability": 14.5,
       "semis_probability": 25.2,
-      "quarters_probability": 41.5
+      "quarters_probability": 42.2
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -424,25 +225,24 @@
         {
           "r": "W",
           "score": "3\u20132",
-          "vs": "Cape Verde"
+          "vs": "Cape Verde Islands"
         }
       ],
       "eliminated": false,
-      "win_probability": 17.9,
-      "final_probability": 26.6,
-      "semis_probability": 38.2,
+      "win_probability": 17.0,
+      "final_probability": 25.9,
+      "semis_probability": 37.4,
       "quarters_probability": 52.7
     }
   },
   "recent_matches": [
     {
-      "home": "USA",
-      "away": "Bosnia and Herzegovina",
+      "home": "United States",
+      "away": "Bosnia-Herzegovina",
       "home_score": 2,
       "away_score": 0,
-      "stage": "Round Of 32",
+      "stage": "LAST_32",
       "date": "2026-07-02",
-      "datetime": "2026-07-02T00:00Z",
       "status": "FINISHED"
     },
     {
@@ -450,19 +250,17 @@
       "away": "Algeria",
       "home_score": 2,
       "away_score": 0,
-      "stage": "Round Of 32",
+      "stage": "LAST_32",
       "date": "2026-07-03",
-      "datetime": "2026-07-03T03:00Z",
       "status": "FINISHED"
     },
     {
       "home": "Australia",
       "away": "Egypt",
-      "home_score": 1,
-      "away_score": 1,
-      "stage": "Round Of 32",
+      "home_score": 3,
+      "away_score": 5,
+      "stage": "LAST_32",
       "date": "2026-07-03",
-      "datetime": "2026-07-03T18:00Z",
       "status": "FINISHED"
     },
     {
@@ -470,9 +268,8 @@
       "away": "Ghana",
       "home_score": 1,
       "away_score": 0,
-      "stage": "Round Of 32",
+      "stage": "LAST_32",
       "date": "2026-07-04",
-      "datetime": "2026-07-04T01:30Z",
       "status": "FINISHED"
     },
     {
@@ -480,9 +277,8 @@
       "away": "Morocco",
       "home_score": 0,
       "away_score": 3,
-      "stage": "Round Of 16",
+      "stage": "LAST_16",
       "date": "2026-07-04",
-      "datetime": "2026-07-04T17:00Z",
       "status": "FINISHED"
     },
     {
@@ -490,9 +286,8 @@
       "away": "Norway",
       "home_score": 1,
       "away_score": 2,
-      "stage": "Round Of 16",
+      "stage": "LAST_16",
       "date": "2026-07-05",
-      "datetime": "2026-07-05T20:00Z",
       "status": "FINISHED"
     },
     {
@@ -500,29 +295,26 @@
       "away": "England",
       "home_score": 2,
       "away_score": 3,
-      "stage": "Round Of 16",
+      "stage": "LAST_16",
       "date": "2026-07-06",
-      "datetime": "2026-07-06T01:00Z",
       "status": "FINISHED"
     },
     {
-      "home": "USA",
+      "home": "United States",
       "away": "Belgium",
       "home_score": 1,
       "away_score": 4,
-      "stage": "Round Of 16",
+      "stage": "LAST_16",
       "date": "2026-07-07",
-      "datetime": "2026-07-07T00:00Z",
       "status": "FINISHED"
     },
     {
       "home": "Switzerland",
       "away": "Colombia",
-      "home_score": 0,
-      "away_score": 0,
-      "stage": "Round Of 16",
+      "home_score": 4,
+      "away_score": 3,
+      "stage": "LAST_16",
       "date": "2026-07-07",
-      "datetime": "2026-07-07T20:00Z",
       "status": "FINISHED"
     },
     {
@@ -530,9 +322,8 @@
       "away": "England",
       "home_score": 1,
       "away_score": 2,
-      "stage": "Quarterfinals",
+      "stage": "QUARTER_FINALS",
       "date": "2026-07-11",
-      "datetime": "2026-07-11T21:00Z",
       "status": "FINISHED"
     }
   ],
@@ -573,7 +364,7 @@
         "points": 3
       },
       {
-        "team": "Czech Republic",
+        "team": "Czechia",
         "played": 3,
         "won": 0,
         "drawn": 1,
@@ -608,7 +399,7 @@
         "points": 4
       },
       {
-        "team": "Bosnia and Herzegovina",
+        "team": "Bosnia-Herzegovina",
         "played": 3,
         "won": 1,
         "drawn": 1,
@@ -678,7 +469,7 @@
     ],
     "Group D": [
       {
-        "team": "USA",
+        "team": "United States",
         "played": 3,
         "won": 2,
         "drawn": 0,
@@ -735,7 +526,7 @@
         "points": 6
       },
       {
-        "team": "C\u00f4te d'Ivoire",
+        "team": "Ivory Coast",
         "played": 3,
         "won": 2,
         "drawn": 0,
@@ -757,7 +548,7 @@
         "points": 4
       },
       {
-        "team": "Curacao",
+        "team": "Cura\u00e7ao",
         "played": 3,
         "won": 0,
         "drawn": 1,
@@ -873,7 +664,7 @@
         "points": 7
       },
       {
-        "team": "Cape Verde",
+        "team": "Cape Verde Islands",
         "played": 3,
         "won": 0,
         "drawn": 3,

@@ -1,207 +1,8 @@
 {
-  "last_updated": "2026-09-15T16:13:50.357885+00:00",
+  "last_updated": "2026-09-15T20:51:32.961300+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
-  "r32_actual": [
-    {
-      "home": "South Africa",
-      "away": "Canada",
-      "home_score": 0,
-      "away_score": 1,
-      "datetime": "2026-06-28T19:00Z",
-      "date": "2026-06-28",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Brazil",
-      "away": "Japan",
-      "home_score": 2,
-      "away_score": 1,
-      "datetime": "2026-06-29T17:00Z",
-      "date": "2026-06-29",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Germany",
-      "away": "Paraguay",
-      "home_score": 1,
-      "away_score": 1,
-      "datetime": "2026-06-29T20:30Z",
-      "date": "2026-06-29",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Netherlands",
-      "away": "Morocco",
-      "home_score": 1,
-      "away_score": 1,
-      "datetime": "2026-06-30T01:00Z",
-      "date": "2026-06-30",
-      "status": "FINISHED"
-    },
-    {
-      "home": "C\u00f4te d'Ivoire",
-      "away": "Norway",
-      "home_score": 1,
-      "away_score": 2,
-      "datetime": "2026-06-30T17:00Z",
-      "date": "2026-06-30",
-      "status": "FINISHED"
-    },
-    {
-      "home": "France",
-      "away": "Sweden",
-      "home_score": 3,
-      "away_score": 0,
-      "datetime": "2026-06-30T21:00Z",
-      "date": "2026-06-30",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Mexico",
-      "away": "Ecuador",
-      "home_score": 2,
-      "away_score": 0,
-      "datetime": "2026-07-01T02:00Z",
-      "date": "2026-07-01",
-      "status": "FINISHED"
-    },
-    {
-      "home": "England",
-      "away": "Congo DR",
-      "home_score": 2,
-      "away_score": 1,
-      "datetime": "2026-07-01T16:00Z",
-      "date": "2026-07-01",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Belgium",
-      "away": "Senegal",
-      "home_score": 3,
-      "away_score": 2,
-      "datetime": "2026-07-01T20:00Z",
-      "date": "2026-07-01",
-      "status": "FINISHED"
-    },
-    {
-      "home": "USA",
-      "away": "Bosnia and Herzegovina",
-      "home_score": 2,
-      "away_score": 0,
-      "datetime": "2026-07-02T00:00Z",
-      "date": "2026-07-02",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Spain",
-      "away": "Austria",
-      "home_score": 3,
-      "away_score": 0,
-      "datetime": "2026-07-02T19:00Z",
-      "date": "2026-07-02",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Portugal",
-      "away": "Croatia",
-      "home_score": 2,
-      "away_score": 1,
-      "datetime": "2026-07-02T23:00Z",
-      "date": "2026-07-02",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Switzerland",
-      "away": "Algeria",
-      "home_score": 2,
-      "away_score": 0,
-      "datetime": "2026-07-03T03:00Z",
-      "date": "2026-07-03",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Australia",
-      "away": "Egypt",
-      "home_score": 1,
-      "away_score": 1,
-      "datetime": "2026-07-03T18:00Z",
-      "date": "2026-07-03",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Argentina",
-      "away": "Cape Verde",
-      "home_score": 3,
-      "away_score": 2,
-      "datetime": "2026-07-03T22:00Z",
-      "date": "2026-07-03",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Colombia",
-      "away": "Ghana",
-      "home_score": 1,
-      "away_score": 0,
-      "datetime": "2026-07-04T01:30Z",
-      "date": "2026-07-04",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Canada",
-      "away": "Morocco",
-      "home_score": 0,
-      "away_score": 3,
-      "datetime": "2026-07-04T17:00Z",
-      "date": "2026-07-04",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Paraguay",
-      "away": "France",
-      "home_score": 0,
-      "away_score": 1,
-      "datetime": "2026-07-04T21:00Z",
-      "date": "2026-07-04",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Brazil",
-      "away": "Norway",
-      "home_score": 1,
-      "away_score": 2,
-      "datetime": "2026-07-05T20:00Z",
-      "date": "2026-07-05",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Mexico",
-      "away": "England",
-      "home_score": 2,
-      "away_score": 3,
-      "datetime": "2026-07-06T01:00Z",
-      "date": "2026-07-06",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Portugal",
-      "away": "Spain",
-      "home_score": 0,
-      "away_score": 1,
-      "datetime": "2026-07-06T19:00Z",
-      "date": "2026-07-06",
-      "status": "FINISHED"
-    },
-    {
-      "home": "USA",
-      "away": "Belgium",
-      "home_score": 1,
-      "away_score": 4,
-      "datetime": "2026-07-07T00:00Z",
-      "date": "2026-07-07",
-      "status": "FINISHED"
-    }
-  ],
+  "r32_actual": [],
   "data_source": "live",
   "friends": {
     "Dhruv": {
@@ -284,10 +85,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 14.4,
-      "final_probability": 22.7,
-      "semis_probability": 34.2,
-      "quarters_probability": 49.6
+      "win_probability": 13.5,
+      "final_probability": 21.1,
+      "semis_probability": 33.0,
+      "quarters_probability": 48.5
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -332,10 +133,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 4.3,
-      "final_probability": 10.0,
-      "semis_probability": 19.3,
-      "quarters_probability": 35.1
+      "win_probability": 4.9,
+      "final_probability": 9.8,
+      "semis_probability": 19.4,
+      "quarters_probability": 34.8
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -380,10 +181,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 7.7,
+      "win_probability": 8.7,
       "final_probability": 14.8,
-      "semis_probability": 25.6,
-      "quarters_probability": 42.0
+      "semis_probability": 25.2,
+      "quarters_probability": 41.6
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -428,10 +229,10 @@
         }
       ],
       "eliminated": false,
-      "win_probability": 17.9,
-      "final_probability": 25.8,
-      "semis_probability": 37.3,
-      "quarters_probability": 52.3
+      "win_probability": 17.0,
+      "final_probability": 26.1,
+      "semis_probability": 37.7,
+      "quarters_probability": 53.6
     }
   },
   "recent_matches": [

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-15T20:51:32.961300+00:00",
+  "last_updated": "2026-09-15T23:23:22.462068+00:00",
   "tournament_stage": "Round of 32",
   "groups_complete": true,
   "r32_actual": [],
@@ -57,38 +57,12 @@
       "gd": 8,
       "points": 9,
       "position": 1,
-      "form": [
-        {
-          "r": "L",
-          "score": "4\u20136",
-          "vs": "England"
-        },
-        {
-          "r": "L",
-          "score": "0\u20132",
-          "vs": "Spain"
-        },
-        {
-          "r": "W",
-          "score": "2\u20130",
-          "vs": "Morocco"
-        },
-        {
-          "r": "W",
-          "score": "1\u20130",
-          "vs": "Paraguay"
-        },
-        {
-          "r": "W",
-          "score": "3\u20130",
-          "vs": "Sweden"
-        }
-      ],
+      "form": [],
       "eliminated": false,
-      "win_probability": 13.5,
-      "final_probability": 21.1,
-      "semis_probability": 33.0,
-      "quarters_probability": 48.5
+      "win_probability": 14.6,
+      "final_probability": 22.2,
+      "semis_probability": 33.5,
+      "quarters_probability": 49.8
     },
     "Portugal": {
       "flag": "\ud83c\uddf5\ud83c\uddf9",
@@ -105,38 +79,12 @@
       "gd": 5,
       "points": 5,
       "position": 2,
-      "form": [
-        {
-          "r": "L",
-          "score": "0\u20131",
-          "vs": "Spain"
-        },
-        {
-          "r": "W",
-          "score": "2\u20131",
-          "vs": "Croatia"
-        },
-        {
-          "r": "D",
-          "score": "0\u20130",
-          "vs": "Colombia"
-        },
-        {
-          "r": "W",
-          "score": "5\u20130",
-          "vs": "Uzbekistan"
-        },
-        {
-          "r": "D",
-          "score": "1\u20131",
-          "vs": "Congo DR"
-        }
-      ],
+      "form": [],
       "eliminated": false,
       "win_probability": 4.9,
-      "final_probability": 9.8,
-      "semis_probability": 19.4,
-      "quarters_probability": 34.8
+      "final_probability": 9.7,
+      "semis_probability": 18.6,
+      "quarters_probability": 34.1
     },
     "Spain": {
       "flag": "\ud83c\uddea\ud83c\uddf8",
@@ -153,38 +101,12 @@
       "gd": 5,
       "points": 7,
       "position": 1,
-      "form": [
-        {
-          "r": "W",
-          "score": "1\u20130",
-          "vs": "Argentina"
-        },
-        {
-          "r": "W",
-          "score": "2\u20130",
-          "vs": "France"
-        },
-        {
-          "r": "W",
-          "score": "2\u20131",
-          "vs": "Belgium"
-        },
-        {
-          "r": "W",
-          "score": "1\u20130",
-          "vs": "Portugal"
-        },
-        {
-          "r": "W",
-          "score": "3\u20130",
-          "vs": "Austria"
-        }
-      ],
+      "form": [],
       "eliminated": false,
-      "win_probability": 8.7,
-      "final_probability": 14.8,
-      "semis_probability": 25.2,
-      "quarters_probability": 41.6
+      "win_probability": 8.2,
+      "final_probability": 14.4,
+      "semis_probability": 24.9,
+      "quarters_probability": 41.4
     },
     "Argentina": {
       "flag": "\ud83c\udde6\ud83c\uddf7",
@@ -201,142 +123,15 @@
       "gd": 7,
       "points": 9,
       "position": 1,
-      "form": [
-        {
-          "r": "L",
-          "score": "0\u20131",
-          "vs": "Spain"
-        },
-        {
-          "r": "W",
-          "score": "2\u20131",
-          "vs": "England"
-        },
-        {
-          "r": "W",
-          "score": "3\u20131",
-          "vs": "Switzerland"
-        },
-        {
-          "r": "W",
-          "score": "3\u20132",
-          "vs": "Egypt"
-        },
-        {
-          "r": "W",
-          "score": "3\u20132",
-          "vs": "Cape Verde"
-        }
-      ],
+      "form": [],
       "eliminated": false,
-      "win_probability": 17.0,
-      "final_probability": 26.1,
-      "semis_probability": 37.7,
-      "quarters_probability": 53.6
+      "win_probability": 17.2,
+      "final_probability": 25.8,
+      "semis_probability": 37.0,
+      "quarters_probability": 53.0
     }
   },
-  "recent_matches": [
-    {
-      "home": "USA",
-      "away": "Bosnia and Herzegovina",
-      "home_score": 2,
-      "away_score": 0,
-      "stage": "Round Of 32",
-      "date": "2026-07-02",
-      "datetime": "2026-07-02T00:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Switzerland",
-      "away": "Algeria",
-      "home_score": 2,
-      "away_score": 0,
-      "stage": "Round Of 32",
-      "date": "2026-07-03",
-      "datetime": "2026-07-03T03:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Australia",
-      "away": "Egypt",
-      "home_score": 1,
-      "away_score": 1,
-      "stage": "Round Of 32",
-      "date": "2026-07-03",
-      "datetime": "2026-07-03T18:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Colombia",
-      "away": "Ghana",
-      "home_score": 1,
-      "away_score": 0,
-      "stage": "Round Of 32",
-      "date": "2026-07-04",
-      "datetime": "2026-07-04T01:30Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Canada",
-      "away": "Morocco",
-      "home_score": 0,
-      "away_score": 3,
-      "stage": "Round Of 16",
-      "date": "2026-07-04",
-      "datetime": "2026-07-04T17:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Brazil",
-      "away": "Norway",
-      "home_score": 1,
-      "away_score": 2,
-      "stage": "Round Of 16",
-      "date": "2026-07-05",
-      "datetime": "2026-07-05T20:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Mexico",
-      "away": "England",
-      "home_score": 2,
-      "away_score": 3,
-      "stage": "Round Of 16",
-      "date": "2026-07-06",
-      "datetime": "2026-07-06T01:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "USA",
-      "away": "Belgium",
-      "home_score": 1,
-      "away_score": 4,
-      "stage": "Round Of 16",
-      "date": "2026-07-07",
-      "datetime": "2026-07-07T00:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Switzerland",
-      "away": "Colombia",
-      "home_score": 0,
-      "away_score": 0,
-      "stage": "Round Of 16",
-      "date": "2026-07-07",
-      "datetime": "2026-07-07T20:00Z",
-      "status": "FINISHED"
-    },
-    {
-      "home": "Norway",
-      "away": "England",
-      "home_score": 1,
-      "away_score": 2,
-      "stage": "Quarterfinals",
-      "date": "2026-07-11",
-      "datetime": "2026-07-11T21:00Z",
-      "status": "FINISHED"
-    }
-  ],
+  "recent_matches": [],
   "upcoming_matches": [],
   "all_groups": {
     "Group A": [
